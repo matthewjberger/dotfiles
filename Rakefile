@@ -93,7 +93,9 @@ end
 
 def install_editors
     puts "Installing Vim and Emacs"
-    sh "bash -c 'sudo apt-get install -y vim-nox
+    sh "bash -c 'sudo apt-get update
+		 sudo apt-get upgrade
+		 sudo apt-get install -y vim-nox
                  sudo apt-get install -y emacs'"
     system %Q{git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d}
 end
