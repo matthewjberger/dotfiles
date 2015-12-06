@@ -13,6 +13,14 @@ task :install do
    install_common_packages
    install_dotfiles(files)
    install_spacemacs
+
+   install_go
+   #install_python_anaconda
+   #install_ruby_on_rails_rbenv
+   #install_node_npm
+
+   # Vim's youcompleteme auto-completion plugin requires go-lang to be installed
+   # in order to have code-completion for go programs
    install_vim
 end
 
@@ -129,11 +137,18 @@ def install_common_packages
     case $stdin.gets.chomp
     when 'y'
         puts "Installing common packages..."
-        system %Q{bash -c 'sudo apt-get install -y ack-grep
+        system %Q{
+                  bash -c '
+                           sudo apt-get update
+                           sudo apt-get upgrade
+                           sudo apt-get autoremove
+                           sudo apt-get install -y ack-grep
                            sudo apt-get install -y silversearcher-ag
                            sudo apt-get install -y exuberant-ctags
                            sudo apt-get install -y build-essential cmake
-                           sudo apt-get install -y python-dev'}
+                           sudo apt-get install -y python-dev
+                          '
+                 }
     when 'q'
         exit
     else
@@ -146,10 +161,7 @@ def install_spacemacs
     case $stdin.gets.chomp
     when 'y'
         puts "Installing Spacemacs..."
-        system %Q{bash -c 'sudo apt-get update
-                           sudo apt-get upgrade
-                           sudo apt-get autoremove
-                           sudo apt-get install -y emacs'}
+        system %Q{sudo apt-get install -y emacs}
         system %Q{git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d}
     when 'q'
         exit
@@ -174,14 +186,37 @@ def install_vim
 end
 
 # TODO
-def install_anaconda
+def install_python_anaconda
 end
 
-def install_ruby_on_rails
+def install_ruby_on_rails_rbenv
 end
 
-def install_node
+def install_node_npm
 end
 
 def install_go
+    print "Install Go? [ynq]"
+    case $stdin.gets.chomp
+    when 'y'
+        puts "Installing Go"
+        system %Q{sudo apt-get install -y golang}
+        puts "Installing GPM"
+        system %Q{ bash -c ' git clone https://github.com/pote/gvp.git
+                            cd gvp
+                            ./configure
+                            sudo make install
+                            cd ../
+                            git clone https://github.com/pote/gpm.git
+                            cd gpm
+                            ./configure && sudo make install
+                            cd ../
+                            go get -u -v github.com/nsf/gocode
+                            go get -u -v github.com/rogpeppe/godef
+                            go get -u -v golang.org/x/tools/cmd/oracle'}
+    when 'q'
+        exit
+    else
+        puts "Skipping go installation"
+    end
 end

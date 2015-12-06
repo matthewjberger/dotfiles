@@ -18,8 +18,8 @@ export PATH="$HOME/anaconda3/bin:$PATH"
 # added by Anaconda2 2.4.0 installer
 export PATH="$HOME/anaconda2/bin:$PATH"
 
-# Golang version manager
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+# GoLang package manager
+source gvp
 
 alias zshconfig="emacs ~/.zshrc"
 alias ohmyzsh="emacs ~/.oh-my-zsh"
