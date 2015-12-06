@@ -13,13 +13,13 @@ eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
 # added by Anaconda3 2.4.0 installer
-export PATH="/home/odin/anaconda3/bin:$PATH"
+export PATH="$HOME/anaconda3/bin:$PATH"
 
 # added by Anaconda2 2.4.0 installer
-export PATH="/home/odin/anaconda2/bin:$PATH"
+export PATH="$HOME/anaconda2/bin:$PATH"
 
 # Golang version manager
-[[ -s "/home/odin/.gvm/scripts/gvm" ]] && source "/home/odin/.gvm/scripts/gvm"
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
 alias zshconfig="emacs ~/.zshrc"
 alias ohmyzsh="emacs ~/.oh-my-zsh"
