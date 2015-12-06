@@ -16,7 +16,7 @@ task :install do
 
    install_go
    #install_python_anaconda
-   #install_ruby_on_rails_rbenv
+   install_ruby_on_rails_rbenv
    #install_node_npm
 
    # Vim's youcompleteme auto-completion plugin requires go-lang to be installed
@@ -190,6 +190,77 @@ def install_python_anaconda
 end
 
 def install_ruby_on_rails_rbenv
+    print "Install Rails? [ynq]"
+    case $stdin.gets.chomp
+    when 'y'
+        puts "Installing Ruby Dependencies..."
+        system %Q{ bash -c '
+                   sudo apt-get update
+                   sudo apt-get install -y git-core
+                   sudo apt-get install -y curl
+                   sudo apt-get install -y zlib1g-dev
+                   sudo apt-get install -y build-essential
+                   sudo apt-get install -y libssl-dev
+                   sudo apt-get install -y libreadline-dev
+                   sudo apt-get install -y libyaml-dev
+                   sudo apt-get install -y libsqlite3-dev
+                   sudo apt-get install -y sqlite3
+                   sudo apt-get install -y libxml2-dev
+                   sudo apt-get install -y libxslt1-dev
+                   sudo apt-get install -y libcurl4-openssl-dev
+                   sudo apt-get install -y python-software-properties
+                   sudo apt-get install -y libffi-dev
+        '}
+
+        # Path variables are already set in zshrc
+        puts "Installing Rbenv"
+        system %Q{ bash -c '
+                   cd
+                   git clone git://github.com/sstephenson/rbenv.git .rbenv
+                   git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+                   exec $SHELL
+
+                   git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash
+
+                   rbenv install 2.2.3
+                   rbenv global 2.2.3
+                   ruby -v
+                   echo "gem: --no-ri --no-rdoc" > ~/.gemrc
+                   gem install bundler
+         '}
+
+        puts "Installing Rails"
+        system %Q{ bash -c '
+                   sudo add-apt-repository ppa:chris-lea/node.js
+                   sudo apt-get update
+                   sudo apt-get install -y nodejs
+
+                   gem install rails -v 4.2.4
+
+                   rbenv rehash
+         '}
+
+         puts "Installing MySQL"
+         system %Q{ bash -c '
+                    sudo apt-get install -y mysql-server
+                    sudo apt-get install -y mysql-client
+                    sudo apt-get install -y libmysqlclient-dev
+         '}
+
+         puts "Installing MySQL"
+         system %Q{ bash -c '
+                    sudo sh -c "echo 'deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main' > /etc/apt/sources.list.d/pgdg.list"
+                    wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo apt-key add -
+                    sudo apt-get update
+                    sudo apt-get install -y postgresql-common
+                    sudo apt-get install -y postgresql-9.3 libpq-dev
+                    sudo -u postgres createuser defaultUser -s
+         '}
+    when 'q'
+        exit
+    else
+        puts "Skipping Ruby on Rails installation"
+    end
 end
 
 def install_node_npm
@@ -199,10 +270,10 @@ def install_go
     print "Install Go? [ynq]"
     case $stdin.gets.chomp
     when 'y'
-        puts "Installing Go"
+        puts "Installing Go..."
         system %Q{sudo apt-get install -y golang}
-        puts "Installing GPM"
-        system %Q{ bash -c ' git clone https://github.com/pote/gvp.git
+        puts "Installing GPM..."
+        system %Q{ bash -c 'git clone https://github.com/pote/gvp.git
                             cd gvp
                             ./configure
                             sudo make install
