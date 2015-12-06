@@ -247,7 +247,7 @@ def install_ruby_on_rails_rbenv
                     sudo apt-get install -y libmysqlclient-dev
          '}
 
-         puts "Installing MySQL"
+         puts "Installing Postgresql"
          system %Q{ bash -c '
                     sudo sh -c "echo 'deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main' > /etc/apt/sources.list.d/pgdg.list"
                     wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo apt-key add -
