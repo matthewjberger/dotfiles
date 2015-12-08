@@ -14,14 +14,19 @@ task :install do
    install_dotfiles(files)
    install_spacemacs
 
+   # Install tools and languages
    install_go
-   #install_python_anaconda
+   install_python_anaconda2
+   install_python_anaconda3
    install_ruby_on_rails_rbenv
-   #install_node_npm
+   install_node_npm
+   install_sdl_opengl
 
    # Vim's youcompleteme auto-completion plugin requires go-lang to be installed
    # in order to have code-completion for go programs
    install_vim
+
+   puts "Finished setting up environment!"
 end
 
 def install_dotfiles(files)
@@ -185,8 +190,34 @@ def install_vim
     end
 end
 
-# TODO
-def install_python_anaconda
+def install_python_anaconda2
+    print "Install Anaconda Python 2.7? [ynq]"
+    case $stdin.gets.chomp
+    when 'y'
+        puts "Downloading Anaconda Python 2.7..."
+        system %Q{wget https://3230d63b5fc54e62148e-c95ac804525aac4b6dba79b00b39d1d3.ssl.cf1.rackcdn.com/Anaconda2-2.4.0-Linux-x86_64.sh}
+        puts "Installing Anaconda Python 2.7..."
+        system %Q{bash Anaconda2-2.4.0-Linux-x86_64.sh}
+    when 'q'
+        exit
+    else
+        puts "Skipping Anaconda Python 2.7."
+    end
+end
+
+def install_python_anaconda3
+    print "Install Anaconda Python 3.5? [ynq]"
+    case $stdin.gets.chomp
+    when 'y'
+        puts "Downloading Anaconda Python 3.5..."
+        system %Q{wget https://3230d63b5fc54e62148e-c95ac804525aac4b6dba79b00b39d1d3.ssl.cf1.rackcdn.com/Anaconda3-2.4.0-Linux-x86_64.sh}
+        puts "Installing Anaconda Python 3.5..."
+        system %Q{bash Anaconda3-2.4.0-Linux-x86_64.sh}
+    when 'q'
+        exit
+    else
+        puts "Skipping Anaconda Python 3.5."
+    end
 end
 
 def install_ruby_on_rails_rbenv
@@ -259,11 +290,23 @@ def install_ruby_on_rails_rbenv
     when 'q'
         exit
     else
-        puts "Skipping Ruby on Rails installation"
+        puts "Skipping Ruby on Rails installation."
     end
 end
 
 def install_node_npm
+    print "Install Node? [ynq]"
+    case $stdin.gets.chomp
+    when 'y'
+        puts "Installing Node..."
+        system %Q{bash -c 'sudo apt-get install -y nodejs
+                           sudo apt-get install -y npm
+                           sudo apt-get install -y build-essential'}
+    when 'q'
+        exit
+    else
+        puts "Skipping Node installation."
+    end
 end
 
 def install_go
@@ -272,7 +315,7 @@ def install_go
     when 'y'
         puts "Installing Go..."
         system %Q{sudo apt-get install -y golang}
-        puts "Installing GPM..."
+        puts "Installing Go Package Manager (GPM)..."
         system %Q{ bash -c 'git clone https://github.com/pote/gvp.git
                             cd gvp
                             ./configure
@@ -288,6 +331,27 @@ def install_go
     when 'q'
         exit
     else
-        puts "Skipping go installation"
+        puts "Skipping go installation."
+    end
+end
+
+def install_sdl_opengl
+    print "Install SDL2 and OpenGL? [ynq]"
+    case $stdin.gets.chomp
+    when 'y'
+        puts "Installing SDL2 and OpenGL..."
+        system %Q{ bash -c 'sudo apt-get install -y
+                            sudo apt-get install -y libsdl2-dev
+                            sudo apt-get install -y libsdl2-image-dev
+                            sudo apt-get install -y libsdl2-ttf-dev
+                            sudo apt-get install -y libsdl2-mixer-dev
+                            sudo apt-get install -y libglew-dev
+                            sudo apt-get install -y libglm-dev
+                            sudo apt-get install -y libassimp-dev
+                            sudo apt-get install -y libbullet-dev'}
+    when 'q'
+        exit
+    else
+        puts "Skipping SDL2 and OpenGL installation."
     end
 end
