@@ -12,18 +12,19 @@ task :install do
    switch_to_zsh
    install_common_packages
    install_dotfiles(files)
-   install_spacemacs
 
    # Install tools and languages
+   install_spacemacs
    install_go
    install_python_anaconda2
    install_python_anaconda3
    install_ruby_on_rails_rbenv
    install_node_npm
    install_sdl_opengl
+   install_gibo
 
    # Vim's youcompleteme auto-completion plugin requires go-lang to be installed
-   # in order to have code-completion for go programs
+   # in order to have code-completion for go programs, so it must come last
    install_vim
 
    puts "Finished setting up environment!"
@@ -353,5 +354,20 @@ def install_sdl_opengl
         exit
     else
         puts "Skipping SDL2 and OpenGL installation."
+    end
+end
+
+def install_gibo
+    print "Install gibo?"
+    case $stdin.gets.chomp
+    when 'y'
+        puts "Installing Gibo..."
+        system %Q{ bash -c 'curl -L https://raw.github.com/simonwhitaker/gibo/master/gibo -so ~/bin/gibo
+                            chmod +x ~/bin/gibo
+                            gibo -u'}
+    when 'q'
+        exit
+    else
+        puts "Skipping gibo installation."
     end
 end
