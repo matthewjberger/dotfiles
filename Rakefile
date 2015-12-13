@@ -143,6 +143,8 @@ def install_common_packages
     print "Install common packages? [ynq]"
     case $stdin.gets.chomp
     when 'y'
+        # Python-Dev is necessary here so that
+        # the youcompleteme plugin for vim will build properly
         puts "Installing common packages..."
         system %Q{
                   bash -c '
@@ -154,6 +156,7 @@ def install_common_packages
                            sudo apt-get install -y exuberant-ctags
                            sudo apt-get install -y build-essential cmake
                            sudo apt-get install -y python-dev
+                           sudo apt-get install -y xpad
                           '
                  }
     when 'q'

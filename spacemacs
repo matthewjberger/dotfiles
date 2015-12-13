@@ -25,34 +25,33 @@ values."
      ;; ----------------------------------------------------------------
      auto-completion
      better-defaults
+     c-c++
+     colors
      emacs-lisp
-     go
+     emoji
+     extra-langs
+     games
      git
      github
-     markdown
-     python
-     ipython-notebook
-     ycmd
+     go
      html
+     ipython-notebook
      javascript
-     colors
-     c-c++
-     extra-langs
+     markdown
      org
+     python
+     ruby-on-rails
      scala
+     search-engine
+     syntax-checking
+     version-control
+     vim-powerline
+     xkcd
+     ycmd
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom
             shell-default-shell 'multi-term)
-     ;;spell-checking
-     syntax-checking
-     version-control
-     ruby-on-rails
-     xkcd
-     games
-     emoji
-     vim-powerline
-     search-engine
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
