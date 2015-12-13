@@ -151,6 +151,7 @@ def install_common_packages
                            sudo apt-get update
                            sudo apt-get upgrade
                            sudo apt-get autoremove
+                           sudo apt-get install -y wine
                            sudo apt-get install -y ack-grep
                            sudo apt-get install -y silversearcher-ag
                            sudo apt-get install -y exuberant-ctags
