@@ -15,13 +15,13 @@ task :install do
 
    # Install tools and languages
    install_spacemacs
+   install_gibo
    install_go
+   install_node_npm
    install_python_anaconda2
    install_python_anaconda3
    install_ruby_on_rails_rbenv
-   install_node_npm
    install_sdl_opengl
-   install_gibo
 
    # Vim's youcompleteme auto-completion plugin requires go-lang to be installed
    # in order to have code-completion for go programs, so it must come last
@@ -358,11 +358,13 @@ def install_sdl_opengl
 end
 
 def install_gibo
-    print "Install gibo?"
+    print "Install Gibo? [ynq]"
     case $stdin.gets.chomp
     when 'y'
         puts "Installing Gibo..."
-        system %Q{ bash -c 'curl -L https://raw.github.com/simonwhitaker/gibo/master/gibo -so ~/bin/gibo
+        system %Q{ bash -c 'git clone https://github.com/simonwhitaker/gibo ~/bin/gibo
+                            mkdir -p $ZSH/custom/plugins/gibo
+                            ln -s ~/bin/gibo/gibo-completion.zsh $ZSH/custom/plugins/gibo/gibo.plugin.zsh
                             chmod +x ~/bin/gibo
                             gibo -u'}
     when 'q'

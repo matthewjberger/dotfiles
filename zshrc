@@ -1,7 +1,7 @@
 export ZSH=/home/odin/.oh-my-zsh
 export ZSH_THEME="agnoster"
 DISABLE_AUTO_UPDATE="true"
-plugins=(git)
+plugins=(git gibo)
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 source $ZSH/oh-my-zsh.sh
 
@@ -20,6 +20,13 @@ export PATH="$HOME/anaconda2/bin:$PATH"
 
 # GoLang package manager
 source gvp
+
+# Enable autocompletion
+autoload -U compinit
+compinit
+
+# Source gibo
+source ~/bin/gibo/gibo-completion.zsh
 
 alias zshconfig="emacs ~/.zshrc"
 alias ohmyzsh="emacs ~/.oh-my-zsh"
