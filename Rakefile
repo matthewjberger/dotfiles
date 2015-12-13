@@ -21,6 +21,7 @@ task :install do
    install_python_anaconda2
    install_python_anaconda3
    install_ruby_on_rails_rbenv
+   install_scala
    install_sdl_opengl
 
    # Vim's youcompleteme auto-completion plugin requires go-lang to be installed
@@ -371,5 +372,22 @@ def install_gibo
         exit
     else
         puts "Skipping gibo installation."
+    end
+end
+
+def install_scala
+    print "Install Scala? [ynq]"
+    case $stdin.gets.chomp
+    when 'y'
+        puts "Installing Scala..."
+        system %Q{ bash -c 'sudo apt-get install scala
+                            echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
+                            sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 642AC823
+                            sudo apt-get update
+                            sudo apt-get install sbt'}
+    when 'q'
+        exit
+    else
+        puts "Skipping Scala installation."
     end
 end

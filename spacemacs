@@ -31,6 +31,7 @@ values."
      github
      markdown
      python
+     ipython-notebook
      ycmd
      html
      javascript
@@ -38,6 +39,7 @@ values."
      c-c++
      extra-langs
      org
+     scala
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom
