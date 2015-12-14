@@ -268,8 +268,6 @@ def install_ruby_on_rails_rbenv
 
         puts "Installing Rails"
         system %Q{ bash -c '
-                   sudo add-apt-repository ppa:chris-lea/node.js
-                   sudo apt-get update
                    sudo apt-get install -y nodejs
 
                    gem install rails -v 4.2.4
@@ -307,7 +305,8 @@ def install_node_npm
         puts "Installing Node..."
         system %Q{bash -c 'sudo apt-get install -y nodejs
                            sudo apt-get install -y npm
-                           sudo apt-get install -y build-essential'}
+                           sudo apt-get install -y build-essential
+                           sudo ln -s /usr/bin/nodejs /usr/bin/node'}
     when 'q'
         exit
     else
