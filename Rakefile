@@ -302,9 +302,11 @@ def install_node_npm
     print "Install Node? [ynq]"
     case $stdin.gets.chomp
     when 'y'
+        # The nodejs package contains npm automatically
+        # so a seperate installation is not needed
         puts "Installing Node..."
-        system %Q{bash -c 'sudo apt-get install -y nodejs
-                           sudo apt-get install -y npm
+        system %Q{bash -c 'curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+                           sudo apt-get install -y nodejs
                            sudo apt-get install -y build-essential
                            sudo ln -s /usr/bin/nodejs /usr/bin/node'}
     when 'q'
