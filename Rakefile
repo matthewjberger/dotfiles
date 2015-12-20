@@ -6,7 +6,7 @@ desc "Install dot files into home directory"
 task :install do
 
    # Files to be ignored go here
-   files = Dir['*'] - %w[Rakefile README.md oh-my-zsh]
+   files = Dir['*'] - %w[Rakefile README.md oh-my-zsh gpm gvp bin fonts]
 
    install_oh_my_zsh
    switch_to_zsh

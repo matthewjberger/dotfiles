@@ -21,6 +21,9 @@ export PATH="$HOME/anaconda2/bin:$PATH"
 # GoLang package manager
 source gvp
 
+# Gitignore Boilerplates
+export PATH="$HOME/bin/gibo:$PATH"
+
 # Enable autocompletion
 autoload -U compinit
 compinit

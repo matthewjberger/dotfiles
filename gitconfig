@@ -1,0 +1,116 @@
+[user]
+    name           = Matthew J. Berger
+    email          = matthewberger@nevada.unr.edu
+[core]
+    editor         = vim
+    whitespace     = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	excludesfile   = ~/.gitignore
+[sendemail]
+    smtpencryption = tls
+    smtpserver     = smtp.gmail.com
+    smtpuser       = matthewjordanberger@gmail.com
+    smtpserverport = 587
+[web]
+    browser        = chrome
+[rerere]
+    # Reuse Recorded Resolution
+    # allows git to remember how a hunk conflict has been resolved
+    # and remembers for next time
+    enabled        = 1
+    autoupdate     = 1
+[push]
+    # Only push branches one at a time
+    default        = simple
+[color]
+    ui             = auto
+[color "branch"]
+    # Alter coloring by branch
+    current        = yellow bold
+    local          = green bold
+    remote         = cyan bold
+[color "diff"]
+    meta           = yellow bold
+    frag           = magenta bold
+    ld             = red bold
+    new            = green bold
+    whitespace     = red reverse
+[color "status"]
+    added          = green bold
+    changed        = yellow bold
+    untracked      = red bold
+[difftool]
+    tool           = vimdiff
+[github]
+    user           = matthewjberger
+    token          = token
+[gitflow "prefix"]
+    feature        = feature-
+    release        = release-
+    hotfix         = hotfix-
+    support        = support-
+    versiontag     = v
+[url "https://matthewjberger@github.com"]
+    insteadOf      = https://github.com
+[alias]
+
+    # Stage all files
+    a         = add --all
+
+    # Modify previous commit
+    amend     = commit -a --amend
+
+    # Create new branch but don't push it to the repo host
+    cob       = checkout -b
+
+    # Commit with a message
+    com       = commit -m
+
+    # Add and commit all changes
+    comma     = !git add -A && git commit -m
+
+    # Edit config with vim
+    ec        = config --global -e
+
+    # Brett Terpstra's brilliant git alias lister/finder
+    finda     = "!grepalias() { git config --global --get-regexp alias | grep -i \"$1\" | awk -v nr=2 '{sub(/^alias\\./,\"\")};{printf \"\\033[31m%_10s\\033[1;37m\", $1};{sep=FS};{for (x=nr; x<=NF; x++) {printf \"%s%s\", sep, $x; }; print \"\\033[0;39m\"}'; }; grepalias"
+
+	# Show all commits on all branches in a compact, colorized way
+    histories = !git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+    # Show the commit history in a nice format
+    history   = log --pretty=oneline
+
+    # Move current work to a different branch
+    moveto    = stash && checkout $1 && stash pop
+
+    # Create new branch and push to repo host
+    newbranch = checkout -b $1 && push origin $1
+
+    # Has the same effect as deleting the entire repo and re-cloning
+    nuke      = !git fetch && git reset --hard && git clean -x -d -f
+
+    # Quick commit to save progress
+    save      = !git add -A && git commit -m 'SAVEPOINT'
+
+    # Get the current status
+    st        = status
+
+    # Get the concise version of the current status
+    sts       = status -s
+
+    # Undo commit but keep changes
+    undo      = reset HEAD~1 --mixed
+
+    # Unstage all (or specified) files
+    unstage   = reset --
+
+    # Get up to date with the origin
+    # This rebases local commits to come after any commits that are pulled down
+    # --prune removes remote-tracking branches that no longer exist on the remote
+    # This also ensures submodules are recursively updated
+    up        = !git pull --rebase --prune $@ && git submodule update --init --recursive
+
+    # Undo commit and discard changes
+    # Commits everything in working directory and does a hard reset to remove that commit
+    # This is safer than simply discarding changes for good
+    wipe      = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
