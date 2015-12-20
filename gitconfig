@@ -89,6 +89,7 @@
     newbranch = checkout -b $1 && push origin $1
 
     # Has the same effect as deleting the entire repo and re-cloning
+    # Except it doesn't delete files in the .gitignore, to be safe
     nuke      = !git fetch && git reset --hard && git clean -x -d -f
 
     # Quick commit to save progress
