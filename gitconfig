@@ -61,6 +61,9 @@
     # Modify previous commit
     amend     = commit -a --amend
 
+    # Checkout file
+    co        = checkout
+
     # Create new branch but don't push it to the repo host
     cob       = checkout -b
 
