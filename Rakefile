@@ -12,6 +12,7 @@ task :install do
    switch_to_zsh
    install_common_packages
    install_dotfiles(files)
+   install_terminal_config
 
    # Install tools and languages
    install_spacemacs
@@ -112,6 +113,7 @@ def install_oh_my_zsh
         case $stdin.gets.chomp
         when 'y'
             puts "Installing oh-my-zsh"
+            system %Q{sudo apt-get install zsh}
             system %Q{git clone https://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh}
         when 'q'
             exit
@@ -129,7 +131,7 @@ def switch_to_zsh
         case $stdin.gets.chomp
         when 'y'
             puts "Switching to zsh..."
-            system %Q{chsh -s 'which zsh'}
+            system %Q{chsh -s $(which zsh)}
         when 'q'
             exit
         else
@@ -232,7 +234,6 @@ def install_ruby_on_rails_rbenv
     when 'y'
         puts "Installing Ruby Dependencies..."
         system %Q{ bash -c '
-                   sudo apt-get update
                    sudo apt-get install -y git-core
                    sudo apt-get install -y curl
                    sudo apt-get install -y zlib1g-dev
@@ -268,10 +269,7 @@ def install_ruby_on_rails_rbenv
 
         puts "Installing Rails"
         system %Q{ bash -c '
-                   sudo apt-get install -y nodejs
-
                    gem install rails -v 4.2.4
-
                    rbenv rehash
          '}
 
@@ -283,13 +281,12 @@ def install_ruby_on_rails_rbenv
          '}
 
          puts "Installing Postgresql"
+         system %Q{ sudo sh -c "echo 'deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main' > /etc/apt/sources.list.d/pgdg.list" }
          system %Q{ bash -c '
-                    sudo sh -c "echo 'deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main' > /etc/apt/sources.list.d/pgdg.list"
                     wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo apt-key add -
                     sudo apt-get update
                     sudo apt-get install -y postgresql-common
                     sudo apt-get install -y postgresql-9.3 libpq-dev
-                    sudo -u postgres createuser defaultUser -s
          '}
     when 'q'
         exit
@@ -347,7 +344,7 @@ def install_sdl_opengl
     case $stdin.gets.chomp
     when 'y'
         puts "Installing SDL2 and OpenGL..."
-        system %Q{ bash -c 'sudo apt-get install -y
+        system %Q{ bash -c '
                             sudo apt-get install -y libsdl2-dev
                             sudo apt-get install -y libsdl2-image-dev
                             sudo apt-get install -y libsdl2-ttf-dev
@@ -369,10 +366,8 @@ def install_gibo
     when 'y'
         puts "Installing Gibo..."
         system %Q{ bash -c 'git clone https://github.com/simonwhitaker/gibo ~/bin/gibo
-                            mkdir -p $ZSH/custom/plugins/gibo
-                            ln -s ~/bin/gibo/gibo-completion.zsh $ZSH/custom/plugins/gibo/gibo.plugin.zsh
                             chmod +x ~/bin/gibo
-                            gibo -u'}
+                            ./bin/gibo/gibo -u'}
     when 'q'
         exit
     else
@@ -395,4 +390,16 @@ def install_scala
     else
         puts "Skipping Scala installation."
     end
+end
+
+def install_terminal_config
+    # Install solarized dark and patched powerline fonts
+    system %Q{ bash -c' git clone https://github.com/powerline/fonts fonts
+                        cd fonts
+                        ./install.sh'
+                        cd ../}
+    system %Q{ bash -c' git clone https://github.com/anthony25/gnome-terminal-colors-solarized
+                        cd gnome-terminal-colors-solarized
+                        ./install.sh'
+                        cd ../}
 end
