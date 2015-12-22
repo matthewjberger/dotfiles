@@ -12,9 +12,9 @@ task :install do
    switch_to_zsh
    install_common_packages
    install_dotfiles(files)
-   install_terminal_config
 
    # Install tools and languages
+   install_terminal_config
    install_spacemacs
    install_gibo
    install_go
@@ -393,13 +393,21 @@ def install_scala
 end
 
 def install_terminal_config
-    # Install solarized dark and patched powerline fonts
-    system %Q{ bash -c ' git clone https://github.com/powerline/fonts fonts
-                        cd fonts
-                        ./install.sh'
-                        cd ../}
-    system %Q{ bash -c ' git clone https://github.com/anthony25/gnome-terminal-colors-solarized
-                        cd gnome-terminal-colors-solarized
-                        ./install.sh'
-                        cd ../}
+    print "Install powerline fonts and solarized terminal theme? [ynq]"
+    case $stdin.gets.chomp
+    when 'y'
+        # Install solarized dark and patched powerline fonts
+        system %Q{ bash -c ' git clone https://github.com/powerline/fonts fonts
+                            cd fonts
+                            ./install.sh'
+                            cd ../}
+        system %Q{ bash -c ' git clone https://github.com/anthony25/gnome-terminal-colors-solarized
+                            cd gnome-terminal-colors-solarized
+                            ./install.sh'
+                            cd ../}
+    when 'q'
+        eit
+    else
+        puts "Skipping terminal configuration."
+    end
 end
