@@ -394,11 +394,11 @@ end
 
 def install_terminal_config
     # Install solarized dark and patched powerline fonts
-    system %Q{ bash -c' git clone https://github.com/powerline/fonts fonts
+    system %Q{ bash -c ' git clone https://github.com/powerline/fonts fonts
                         cd fonts
                         ./install.sh'
                         cd ../}
-    system %Q{ bash -c' git clone https://github.com/anthony25/gnome-terminal-colors-solarized
+    system %Q{ bash -c ' git clone https://github.com/anthony25/gnome-terminal-colors-solarized
                         cd gnome-terminal-colors-solarized
                         ./install.sh'
                         cd ../}
