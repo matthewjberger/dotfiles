@@ -24,6 +24,7 @@ task :install do
    install_ruby_on_rails_rbenv
    install_scala
    install_sdl_opengl
+   install_sicp
 
    # Vim's youcompleteme auto-completion plugin requires go-lang to be installed
    # in order to have code-completion for go programs, so it must come last
@@ -398,11 +399,11 @@ def install_terminal_config
     case $stdin.gets.chomp
     when 'y'
         # Install solarized dark and patched powerline fonts
-        system %Q{ bash -c ' git clone https://github.com/powerline/fonts fonts
+        system %Q{ bash -c 'git clone https://github.com/powerline/fonts fonts
                             cd fonts
                             ./install.sh'
                             cd ../}
-        system %Q{ bash -c ' git clone https://github.com/anthony25/gnome-terminal-colors-solarized
+        system %Q{ bash -c 'git clone https://github.com/anthony25/gnome-terminal-colors-solarized
                             cd gnome-terminal-colors-solarized
                             ./install.sh'
                             cd ../}
@@ -410,5 +411,21 @@ def install_terminal_config
         exit
     else
         puts "Skipping terminal configuration."
+    end
+end
+
+def install_sicp
+    print "Install racket interpreter and sicp package? [ynq]"
+    case $stdin.gets.chomp
+    when 'y'
+        system %Q{ bash -c '
+                   sudo apt-get install -y racket
+                   sudo racket -p neil/sicp
+                   cp scmindent.rkt ~/bin/scmindent.rkt
+                   sudo ln -s scmindent.rkt ~/bin/scmindent.rkt'}
+    when 'q'
+        exit
+    else
+        puts "Skipping racket installation."
     end
 end

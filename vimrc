@@ -263,7 +263,7 @@ if executable('ag')
     let g:unite_source_grep_default_opts='--nocolor --nogroup -S -C4'
     let g:unite_source_grep_recursive_opt=''
 endif
-nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=files file_rec/async:!<cr>
+nnoremap <leader>L :<C-u>Unite -no-split -buffer-name=files file_rec/async:!<cr>
 nnoremap <leader>f :<C-u>Unite -no-split -buffer-name=files<cr>
 nnoremap <leader>r :<C-u>Unite -no-split -buffer-name=mru file_mru<cr>
 nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank history/yank<cr>
@@ -582,3 +582,9 @@ set writebackup
 cmap W w !sudo tee % >/dev/null<CR>
 
 "}}}
+" TSlime {{{
+let g:tslime_ensure_trailing_newlines = 1
+let g:tslime_normal_mapping = '<leader>t'
+let g:tslime_visual_mapping = '<leader>t'
+let g:tslime_vars_mapping   = '<leader>T'
+" }}}
