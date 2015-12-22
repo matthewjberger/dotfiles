@@ -6,7 +6,7 @@ desc "Install dot files into home directory"
 task :install do
 
    # Files to be ignored go here
-   files = Dir['*'] - %w[Rakefile README.md oh-my-zsh gpm gvp bin fonts]
+   files = Dir['*'] - %w[Rakefile README.md oh-my-zsh gpm gvp bin fonts scmindent.rkt]
 
    install_oh_my_zsh
    switch_to_zsh
@@ -154,6 +154,7 @@ def install_common_packages
                            sudo apt-get upgrade
                            sudo apt-get autoremove
                            sudo apt-get install -y wine
+                           sudo apt-get install -y tmux
                            sudo apt-get install -y ack-grep
                            sudo apt-get install -y silversearcher-ag
                            sudo apt-get install -y exuberant-ctags
@@ -406,7 +407,7 @@ def install_terminal_config
                             ./install.sh'
                             cd ../}
     when 'q'
-        eit
+        exit
     else
         puts "Skipping terminal configuration."
     end

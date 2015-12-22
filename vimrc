@@ -509,8 +509,11 @@ call togglebg#map("<F10>")
 
 " zM to open all folds
 " zR to close all folds
-autocmd Syntax c,cpp,h setlocal foldmethod=syntax
+autocmd Syntax c,cpp,h setlocal foldmethod=indent
 autocmd Syntax c,cpp,h normal zR
+
+" Lisp support
+autocmd filetype lisp,scheme,art setlocal equalprg=scmindent.rkt
 
 "You Complete Me syntax config
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
