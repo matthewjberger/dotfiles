@@ -34,8 +34,10 @@ call plug#begin('~/.vim/bundle/')
 "Plug 'xolox/vim-notes'
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
+Plug 'amdt/vim-niji'
 Plug 'bling/vim-airline'
 Plug 'christoomey/vim-sort-motion'
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'dahu/vim-fanfingtastic'
 Plug 'derekwyatt/vim-fswitch'
 Plug 'derekwyatt/vim-protodef'
@@ -43,7 +45,6 @@ Plug 'fatih/vim-go'
 Plug 'inside/vim-search-pulse'
 Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/vim-peekaboo'
-Plug 'kien/rainbow_parentheses.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'majutsushi/tagbar'
 Plug 'mileszs/ack.vim'
@@ -64,6 +65,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'Valloric/YouCompleteMe', {'do': './install.sh --clang-completer --gocode-completer'}
+Plug 'vim-scripts/paredit.vim'
 Plug 'xolox/vim-easytags'
 Plug 'xolox/vim-misc'
 Plug 'yonchu/accelerated-smooth-scroll'
@@ -521,11 +523,10 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/
 " Enable search pulse
 set cursorline
 
-
-au VimEnter * RainbowParenthesesToggle
-au Syntax   * RainbowParenthesesLoadRound
-au Syntax   * RainbowParenthesesLoadSquare
-au Syntax   * RainbowParenthesesLoadBraces
+"au VimEnter * RainbowParenthesesToggle
+"au Syntax   * RainbowParenthesesLoadRound
+"au Syntax   * RainbowParenthesesLoadSquare
+"au Syntax   * RainbowParenthesesLoadBraces
 
 " Open a quickfix window for the last search
 nnoremap <silent> <leader>ls :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>

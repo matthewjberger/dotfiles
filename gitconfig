@@ -11,7 +11,8 @@
     smtpuser       = matthewjordanberger@gmail.com
     smtpserverport = 587
 [credential]
-	helper = cache --timeout 3600
+    username       = matthewjberger
+    helper         = cache --timeout 3600
 [web]
     browser        = chrome
 [rerere]
