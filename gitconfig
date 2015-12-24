@@ -77,6 +77,9 @@
     # Edit config with vim
     ec        = config --global -e
 
+    # Show last commit
+    last      = log -l HEAD
+
 	# Show all commits on all branches in a compact, colorized way
     histories = !git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
@@ -106,7 +109,7 @@
     undo      = reset HEAD~1 --mixed
 
     # Unstage all (or specified) files
-    unstage   = reset --
+    unstage   = reset HEAD --
 
     # Get up to date with the origin
     # This rebases local commits to come after any commits that are pulled down
