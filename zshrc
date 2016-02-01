@@ -29,7 +29,7 @@ autoload -U compinit
 compinit
 
 # Source gibo
-source ~/bin/gibo/gibo-completion.zsh
+source $HOME/bin/gibo/gibo-completion.zsh
 
 alias zshconfig="emacs ~/.zshrc"
 alias ohmyzsh="emacs ~/.oh-my-zsh"
