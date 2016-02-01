@@ -8,7 +8,7 @@ call plug#begin('~/.vim/bundle/')
 "Plug 'ap/vim-css-color'
 "Plug 'davidhalter/jedi-vim'
 "Plug 'jplaut/vim-arduino-ino'
-"Plug 'klen/python-mode'
+Plug 'klen/python-mode'
 "Plug 'rstacruz/sparkup'
 "Plug 'Shutnik/jshint2.vim'
 "Plug 'sophacles/vim-processing'
@@ -304,6 +304,9 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1"
+
+let g:go_bin_path = "/home/odin/.godeps/bin"
+
 "}}}
 " Misc {{{
 " Make all sorts case insensitive
@@ -482,7 +485,7 @@ nnoremap <silent> <Leader>oJ :FSSplitBelow<cr>
 "vnoremap <silent><F3> :lprevious<CR>
 
 set t_Co=256
-colorscheme solarized
+colorscheme seoul256
 set background=dark
 
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<C-g>u\<Tab>"
