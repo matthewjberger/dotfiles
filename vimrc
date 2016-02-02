@@ -312,6 +312,8 @@ let g:go_bin_path = "/home/odin/.godeps/bin"
 " Make all sorts case insensitive
 let g:sort_motion_flags = "ui"
 
+let NERDTreeIgnore=['\.o$', '\~$']
+
 " Prevent easytags lag
 " vim 7.4 has a 'faster' regex engine which makes easytags lag, a lot.
 set regexpengine=0
