@@ -8,7 +8,6 @@ call plug#begin('~/.vim/bundle/')
 "Plug 'ap/vim-css-color'
 "Plug 'davidhalter/jedi-vim'
 "Plug 'jplaut/vim-arduino-ino'
-Plug 'klen/python-mode'
 "Plug 'rstacruz/sparkup'
 "Plug 'Shutnik/jshint2.vim'
 "Plug 'sophacles/vim-processing'
@@ -17,7 +16,6 @@ Plug 'klen/python-mode'
 "Plug 'tpope/vim-abolish'
 "Plug 'tpope/vim-afterimage'
 "Plug 'tpope/vim-characterize'
-"Plug 'tpope/vim-dispatch'
 "Plug 'tpope/vim-endwise'
 "Plug 'tpope/vim-eunuch'
 "Plug 'tpope/vim-heroku'
@@ -34,7 +32,6 @@ Plug 'klen/python-mode'
 "Plug 'xolox/vim-notes'
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
-Plug 'amdt/vim-niji'
 Plug 'bling/vim-airline'
 Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-tmux-navigator'
@@ -45,7 +42,10 @@ Plug 'fatih/vim-go'
 Plug 'inside/vim-search-pulse'
 Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/vim-peekaboo'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'klen/python-mode'
 Plug 'Lokaltog/vim-easymotion'
+Plug 'losingkeys/vim-niji'
 Plug 'majutsushi/tagbar'
 Plug 'mileszs/ack.vim'
 Plug 'nvie/vim-togglemouse'
@@ -61,6 +61,7 @@ Plug 'sjl/gundo.vim'
 Plug 'sjl/tslime.vim'
 Plug 'tikhomirov/vim-glsl'
 Plug 'tommcdo/vim-lion'
+Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
@@ -528,10 +529,10 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/
 " Enable search pulse
 set cursorline
 
-"au VimEnter * RainbowParenthesesToggle
-"au Syntax   * RainbowParenthesesLoadRound
-"au Syntax   * RainbowParenthesesLoadSquare
-"au Syntax   * RainbowParenthesesLoadBraces
+au VimEnter * RainbowParenthesesToggle
+au Syntax   * RainbowParenthesesLoadRound
+au Syntax   * RainbowParenthesesLoadSquare
+au Syntax   * RainbowParenthesesLoadBraces
 
 " Open a quickfix window for the last search
 nnoremap <silent> <leader>ls :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
