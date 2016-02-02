@@ -12,10 +12,10 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
-# added by Anaconda3 2.4.0 installer
+# Added by Anaconda3 2.4.0 installer
 export PATH="$HOME/anaconda3/bin:$PATH"
 
-# added by Anaconda2 2.4.0 installer
+# Added by Anaconda2 2.4.0 installer
 export PATH="$HOME/anaconda2/bin:$PATH"
 
 # GoLang package manager
@@ -31,5 +31,12 @@ compinit
 # Source gibo
 source $HOME/bin/gibo/gibo-completion.zsh
 
-alias zshconfig="emacs ~/.zshrc"
-alias ohmyzsh="emacs ~/.oh-my-zsh"
+# Automatically start tmux
+tmux attach &> /dev/null
+
+if [[ ! $TERM =~ screen ]]; then
+    exec tmux
+fi
+
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"

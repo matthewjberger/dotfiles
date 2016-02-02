@@ -505,7 +505,7 @@ function! TrimWhiteSpace()
     %s/\s\+$//e
 endfunction
 
-nnoremap <silent> <leader>rtw :call TrimWhiteSpace()<CR>
+"nnoremap <silent> <leader>rtw :call TrimWhiteSpace()<CR>
 
 autocmd FileWritePre   * :call TrimWhiteSpace()
 autocmd FileAppendPre  * :call TrimWhiteSpace()
@@ -555,7 +555,7 @@ nnoremap vv ^vg_
 inoremap <C-B> <C-O>yiW<End>=<C-R>=<C-R>0<CR>
 
 " Sudo to write
-cmap w!! w !sudo tee % >/dev/null
+" cmap w!! w !sudo tee % >/dev/null
 
 " Source
 vnoremap <leader>S y:execute @@<CR>
@@ -585,13 +585,22 @@ set backupskip=/tmp/*,/private/tmp/*
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
 
-" Editing a protected file as 'sudo'
-cmap W w !sudo tee % >/dev/null<CR>
-
 "}}}
 " TSlime {{{
 let g:tslime_ensure_trailing_newlines = 1
 let g:tslime_normal_mapping = '<leader>t'
 let g:tslime_visual_mapping = '<leader>t'
 let g:tslime_vars_mapping   = '<leader>T'
+" }}}
+" Tmux {{{
+" Start a process in a new, focused split pane.
+function! s:StartSplit()
+  let directory = expand('%:p:h')
+  let command = exists('b:start') ? b:start : &shell
+  exec printf('Tmux splitw -c %s %s', directory, command)
+endfunction
+command! -nargs=0 StartSplit call s:StartSplit()
+
+" Dispatch
+nnoremap <leader>r :StartSplit<CR>"
 " }}}
