@@ -67,6 +67,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'Valloric/YouCompleteMe', {'do': './install.sh --clang-completer --gocode-completer'}
 Plug 'vim-scripts/paredit.vim'
+Plug 'vim-scripts/Conque-Shell'
 Plug 'xolox/vim-easytags'
 Plug 'xolox/vim-misc'
 Plug 'yonchu/accelerated-smooth-scroll'
@@ -593,14 +594,16 @@ let g:tslime_visual_mapping = '<leader>t'
 let g:tslime_vars_mapping   = '<leader>T'
 " }}}
 " Tmux {{{
-" Start a process in a new, focused split pane.
-function! s:StartSplit()
-  let directory = expand('%:p:h')
-  let command = exists('b:start') ? b:start : &shell
-  exec printf('Tmux splitw -c %s %s', directory, command)
-endfunction
-command! -nargs=0 StartSplit call s:StartSplit()
+"" Start a process in a new, focused split pane.
+"function! s:StartSplit()
+  "let directory = expand('%:p:h')
+  "let command = exists('b:start') ? b:start : &shell
+  "exec printf('Tmux splitw -c %s %s', directory, command)
+"endfunction
+"command! -nargs=0 StartSplit call s:StartSplit()
 
-" Dispatch
-nnoremap <leader>r :StartSplit<CR>"
+"" Dispatch
+"nnoremap <leader>r :StartSplit<CR>"
+
+"autocmd VimEnter,VimLeave * silent !tmux set status
 " }}}

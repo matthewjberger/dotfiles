@@ -32,11 +32,11 @@ compinit
 source $HOME/bin/gibo/gibo-completion.zsh
 
 # Automatically start tmux
-tmux attach &> /dev/null
+#tmux attach &> /dev/null
 
-if [[ ! $TERM =~ screen ]]; then
-    exec tmux
-fi
+#if [[ ! $TERM =~ screen ]]; then
+    #exec tmux
+#fi
 
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
