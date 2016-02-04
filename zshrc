@@ -44,3 +44,4 @@ source $HOME/bin/gibo/gibo-completion.zsh
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias racket="racket -i -p neil/sicp -l xrepl"
+alias killtmux="tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill"
