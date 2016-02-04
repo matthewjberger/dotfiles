@@ -40,3 +40,4 @@ source $HOME/bin/gibo/gibo-completion.zsh
 
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
+alias racket="racket -i -p neil/sicp -l xrepl"

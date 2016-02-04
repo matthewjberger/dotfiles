@@ -488,6 +488,18 @@ nnoremap <silent> <Leader>oJ :FSSplitBelow<cr>
 "inoremap <silent><F3> <C-O>:lprevious<CR>
 "vnoremap <silent><F3> :lprevious<CR>
 
+"Niji
+let g:niji_dark_colours = [
+    \ [ '81', '#5fd7ff'],
+    \ [ '99', '#875fff'],
+    \ [ '1',  '#dc322f'],
+    \ [ '76', '#5fd700'],
+    \ [ '3',  '#b58900'],
+    \ [ '2',  '#859900'],
+    \ [ '6',  '#2aa198'],
+    \ [ '4',  '#268bd2'],
+    \ ]
+
 set t_Co=256
 colorscheme seoul256
 set background=dark
