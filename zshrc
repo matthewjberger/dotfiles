@@ -8,7 +8,7 @@ source $ZSH/oh-my-zsh.sh
 DISABLE_AUTO_UPDATE=true
 
 # Add custom bin to path
-export PATH="$HOME/bin:PATH"
+export PATH="$HOME/bin:$PATH"
 
 # Ruby
 export PATH="$HOME/.rbenv/bin:$PATH"
