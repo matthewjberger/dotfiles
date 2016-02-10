@@ -180,7 +180,7 @@ set wildmenu
 nnoremap <silent> <leader>a :set opfunc=<sid>ackmotion<cr>g@
 xnoremap <silent> <leader>a :<c-u>call <sid>ackmotion(visualmode())<cr>
 
-nnoremap <bs> :ack! '\b<c-r><c-w>\b'<cr>
+nnoremap <bs> :Ack! '\b<c-r><c-w>\b'<cr>
 xnoremap <silent> <bs> :<c-u>call <sid>ackmotion(visualmode())<cr>
 
 function! s:copymotionfortype(type)
