@@ -74,6 +74,12 @@
     # Add and commit all changes
     comma     = !git add -A && git commit -m
 
+    # Clone self repo
+    cs        = "!sh -c \"git clone https://github.com/matthewjberger/$1\" -"
+
+    # Clone user repo
+    cu        = "!sh -c \"git clone https://github.com/$1\" -"
+
     # Edit config with vim
     ec        = config --global -e
 
@@ -94,7 +100,7 @@
 
     # Has the same effect as deleting the entire repo and re-cloning
     # Except it doesn't delete files in the .gitignore, to be safe
-    nuke      = !git fetch && git reset --hard && git clean -x -d -f
+    nuke      = !git fetch && git reset --hard && git clean -x -d -f && git pull -f
 
     # Quick commit to save progress
     save      = !git add -A && git commit -m 'SAVEPOINT'
