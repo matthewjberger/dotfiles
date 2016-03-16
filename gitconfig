@@ -100,7 +100,7 @@
 
     # Has the same effect as deleting the entire repo and re-cloning
     # Except it doesn't delete files in the .gitignore, to be safe
-    nuke      = !git fetch && git reset --hard && git clean -x -d -f && git pull -f
+    nuke      = !git stash -u && git fetch && git reset --hard origin/master && git clean -x -d -f
 
     # Quick commit to save progress
     save      = !git add -A && git commit -m 'SAVEPOINT'
@@ -117,7 +117,7 @@
     # Unstage all (or specified) files
     unstage   = reset HEAD --
 
-    # Get up to date with the origin
+    # Get up to date with the origin (Use if you have local commits)
     # This rebases local commits to come after any commits that are pulled down
     # --prune removes remote-tracking branches that no longer exist on the remote
     # This also ensures submodules are recursively updated
