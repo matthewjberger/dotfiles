@@ -431,7 +431,7 @@ augroup END
 
 set exrc
 set secure
-set colorcolumn=120
+set colorcolumn=80
 highlight ColorColumn ctermbg=darkgray
 syntax on
 set splitbelow
