@@ -84,7 +84,7 @@
     ec        = config --global -e
 
     # Show last commit
-    last      = log -l HEAD
+    last      = show --name-status
 
 	# Show all commits on all branches in a compact, colorized way
     histories = !git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
