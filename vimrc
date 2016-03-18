@@ -406,85 +406,86 @@ endfunction
 nnoremap <c-]> :silent! call JumpToTag()<cr>:call search_pulse#Pulse()<CR>
 nnoremap <c-\> :silent! call JumpToTagInSplit()<cr> search_pulse#Pulse()<CR>
 
-" Make zO recursively open whatever fold we're in, even if it's partially open.
-nnoremap zO zczO
+    " Make zO recursively open whatever fold we're in, even if it's partially open.
+    nnoremap zO zczO
 
-" Don't move on *
-nnoremap * *<C-O>
+    " Don't move on *
+    nnoremap * *<C-O>
 
-" Keep search matches in the middle of the window and pulse the window
-nnoremap n nzzzv:call search_pulse#Pulse()<CR>
-nnoremap N Nzzzv:call search_pulse#Pulse()<CR>
+    " Keep search matches in the middle of the window and pulse the window
+    nnoremap n nzzzv:call search_pulse#Pulse()<CR>
+    nnoremap N Nzzzv:call search_pulse#Pulse()<CR>
 
-nnoremap g; g;zz:call search_pulse#Pulse()<CR>
-nnoremap g, g,zz:call search_pulse#Pulse()<CR>
-nnoremap <c-o> <c-o>zz:call search_pulse#Pulse()<CR>
+    nnoremap g; g;zz:call search_pulse#Pulse()<CR>
+    nnoremap g, g,zz:call search_pulse#Pulse()<CR>
+    nnoremap <c-o> <c-o>zz:call search_pulse#Pulse()<CR>
 
-" Return to the same line when reopening files
-augroup line_return
-    au!
-    au BufReadPost *
-                \ if line("'\"") > 0 && line("'\"") <= line("$") |
-                \     execute 'normal! g`"zvzz' |
-                \ endif
-augroup END
+    " Return to the same line when reopening files
+    augroup line_return
+        au!
+        au BufReadPost *
+                    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+                    \     execute 'normal! g`"zvzz' |
+                    \ endif
+    augroup END
 
-set exrc
-set secure
-set colorcolumn=80
-highlight ColorColumn ctermbg=darkgray
-syntax on
-set splitbelow
-set splitright
+    set exrc
+    set secure
+    set colorcolumn=80
+    highlight ColorColumn ctermbg=darkgray
+    match ErrorMsg '\%>80v.\+'
+    syntax on
+    set splitbelow
+    set splitright
 
-" easier movement between windows
-noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
+    " easier movement between windows
+    noremap <C-h> <C-w>h
+    noremap <C-j> <C-w>j
+    noremap <C-k> <C-w>k
+    noremap <C-l> <C-w>l
 
-noremap <leader>v <C-w>v
+    noremap <leader>v <C-w>v
 
-" FSwitch mappings
+    " FSwitch mappings
 
-" Switch to the file and load it into the current window
-nnoremap <silent> <Leader>of :FSHere<cr>
+    " Switch to the file and load it into the current window
+    nnoremap <silent> <Leader>of :FSHere<cr>
 
-" Switch to the file and load it into the window on the right
-nnoremap <silent> <Leader>ol :FSRight<cr>
+    " Switch to the file and load it into the window on the right
+    nnoremap <silent> <Leader>ol :FSRight<cr>
 
-" Switch to the file and load it into a new window split on the right
-nnoremap <silent> <Leader>oL :FSSplitRight<cr>
+    " Switch to the file and load it into a new window split on the right
+    nnoremap <silent> <Leader>oL :FSSplitRight<cr>
 
-" Switch to the file and load it into the window on the left
-nnoremap <silent> <Leader>oh :FSLeft<cr>
+    " Switch to the file and load it into the window on the left
+    nnoremap <silent> <Leader>oh :FSLeft<cr>
 
-" Switch to the file and load it into a new window split on the left
-nnoremap <silent> <Leader>oH :FSSplitLeft<cr>
+    " Switch to the file and load it into a new window split on the left
+    nnoremap <silent> <Leader>oH :FSSplitLeft<cr>
 
-" Switch to the file and load it into the window above
-nnoremap <silent> <Leader>ok :FSAbove<cr>
+    " Switch to the file and load it into the window above
+    nnoremap <silent> <Leader>ok :FSAbove<cr>
 
-" Switch to the file and load it into a new window split above
-nnoremap <silent> <Leader>oK :FSSplitAbove<cr>
+    " Switch to the file and load it into a new window split above
+    nnoremap <silent> <Leader>oK :FSSplitAbove<cr>
 
-" Switch to the file and load it into the window below
-nnoremap <silent> <Leader>oj :FSBelow<cr>
+    " Switch to the file and load it into the window below
+    nnoremap <silent> <Leader>oj :FSBelow<cr>
 
-" Switch to the file and load it into a new window split below
-nnoremap <silent> <Leader>oJ :FSSplitBelow<cr>
+    " Switch to the file and load it into a new window split below
+    nnoremap <silent> <Leader>oJ :FSSplitBelow<cr>
 
-"" jshint validation
-"nnoremap <silent><F1> :JSHint<CR>
-"inoremap <silent><F1> <C-O>:JSHint<CR>
-"vnoremap <silent><F1> :JSHint<CR>
+    "" jshint validation
+    "nnoremap <silent><F1> :JSHint<CR>
+    "inoremap <silent><F1> <C-O>:JSHint<CR>
+    "vnoremap <silent><F1> :JSHint<CR>
 
-"" show next jshint error
-"nnoremap <silent><F2> :lnext<CR>
-"inoremap <silent><F2> <C-O>:lnext<CR>
-"vnoremap <silent><F2> :lnext<CR>
+    "" show next jshint error
+    "nnoremap <silent><F2> :lnext<CR>
+    "inoremap <silent><F2> <C-O>:lnext<CR>
+    "vnoremap <silent><F2> :lnext<CR>
 
-"" show previous jshint error
+    "" show previous jshint error
 "nnoremap <silent><F3> :lprevious<CR>
 "inoremap <silent><F3> <C-O>:lprevious<CR>
 "vnoremap <silent><F3> :lprevious<CR>
