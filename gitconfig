@@ -93,10 +93,10 @@
     history   = log --pretty=oneline
 
     # Move current work to a different branch
-    moveto    = stash && checkout $1 && stash pop
+    moveto    = "!sh -c \"git stash && checkout $1 && stash pop\" -"
 
     # Create new branch and push to repo host
-    newbranch = checkout -b $1 && push origin $1
+    newbranch = "!sh -c \"git checkout -b $1 && git push origin $1\" -"
 
     # Has the same effect as deleting the entire repo and re-cloning
     # Except it doesn't delete files in the .gitignore, to be safe
