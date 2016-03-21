@@ -505,6 +505,7 @@ let g:niji_dark_colours = [
 set t_Co=256
 colorscheme seoul256
 set background=dark
+hi Normal ctermbg=none
 
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<C-g>u\<Tab>"
 
