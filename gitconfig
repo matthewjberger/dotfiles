@@ -100,7 +100,7 @@
 
     # Has the same effect as deleting the entire repo and re-cloning
     # Except it doesn't delete files in the .gitignore, to be safe
-    nuke      = !git stash -u && git fetch && git reset --hard origin/master && git clean -x -d -f
+    nuke      = "!sh -c \"git stash -u && git fetch && git reset --hard origin/$1 && git clean -x -d -f\" -"
 
     # Quick commit to save progress
     save      = !git add -A && git commit -m 'SAVEPOINT'
