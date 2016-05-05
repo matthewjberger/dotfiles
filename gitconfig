@@ -83,7 +83,7 @@
     # Clone user repo
     cu        = "!sh -c \"git clone https://github.com/$1\" -"
 
-    # Clone user repo
+    # Clone user repo recursive
     cur       = "!sh -c \"git clone --recursive https://github.com/$1\" -"
 
     # Edit config with vim
