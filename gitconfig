@@ -128,6 +128,9 @@
     # --prune removes remote-tracking branches that no longer exist on the remote
     # This also ensures submodules are recursively updated
     up        = !git pull --rebase --prune $@ && git submodule update --init --recursive
+    
+    # Update submodules recursively. Point them to latest commit.
+    upsub     = !git submodule update --remote --merge
 
     # Undo commit and discard changes
     # Commits everything in working directory and does a hard reset to remove that commit
