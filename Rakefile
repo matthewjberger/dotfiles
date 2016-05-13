@@ -161,6 +161,7 @@ def install_common_packages
                            sudo apt-get install -qq build-essential cmake
                            sudo apt-get install -qq python-dev
                            sudo apt-get install -qq xpad
+                           sudo apt-get install -qq imagemagick
                           '
                  }
     when 'q'
@@ -255,8 +256,8 @@ def install_ruby_on_rails_rbenv
         puts "Installing Rbenv"
         system %Q{ bash -c '
                    cd
-                   git clone git://github.com/sstephenson/rbenv.git .rbenv
-                   git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+                   git clone https://github.com/sstephenson/rbenv.git .rbenv
+                   git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
                    exec $SHELL
 
                    git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash
