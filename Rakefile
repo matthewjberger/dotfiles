@@ -114,7 +114,7 @@ def install_oh_my_zsh
         case $stdin.gets.chomp
         when 'y'
             puts "Installing oh-my-zsh"
-            system %Q{sudo apt-get install zsh}
+            system %Q{sudo apt-get install -qq zsh}
             system %Q{git clone https://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh}
         when 'q'
             exit
@@ -154,13 +154,13 @@ def install_common_packages
                            sudo apt-get update
                            sudo apt-get upgrade
                            sudo apt-get autoremove
-                           sudo apt-get install -y tmux
-                           sudo apt-get install -y ack-grep
-                           sudo apt-get install -y silversearcher-ag
-                           sudo apt-get install -y exuberant-ctags
-                           sudo apt-get install -y build-essential cmake
-                           sudo apt-get install -y python-dev
-                           sudo apt-get install -y xpad
+                           sudo apt-get install -qq tmux
+                           sudo apt-get install -qq ack-grep
+                           sudo apt-get install -qq silversearcher-ag
+                           sudo apt-get install -qq exuberant-ctags
+                           sudo apt-get install -qq build-essential cmake
+                           sudo apt-get install -qq python-dev
+                           sudo apt-get install -qq xpad
                           '
                  }
     when 'q'
@@ -175,7 +175,7 @@ def install_spacemacs
     case $stdin.gets.chomp
     when 'y'
         puts "Installing Spacemacs..."
-        system %Q{sudo apt-get install -y emacs}
+        system %Q{sudo apt-get install -qq emacs}
         system %Q{git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d}
     when 'q'
         exit
@@ -189,7 +189,7 @@ def install_vim
     case $stdin.gets.chomp
     when 'y'
         puts "Installing Vim..."
-        system %Q{bash -c 'sudo apt-get install -y vim-nox
+        system %Q{bash -c 'sudo apt-get install -qq vim-nox
                            git submodule update --force --init --recursive
                            vim +PlugInstall +qa'}
     when 'q'
@@ -235,20 +235,20 @@ def install_ruby_on_rails_rbenv
     when 'y'
         puts "Installing Ruby Dependencies..."
         system %Q{ bash -c '
-                   sudo apt-get install -y git-core
-                   sudo apt-get install -y curl
-                   sudo apt-get install -y zlib1g-dev
-                   sudo apt-get install -y build-essential
-                   sudo apt-get install -y libssl-dev
-                   sudo apt-get install -y libreadline-dev
-                   sudo apt-get install -y libyaml-dev
-                   sudo apt-get install -y libsqlite3-dev
-                   sudo apt-get install -y sqlite3
-                   sudo apt-get install -y libxml2-dev
-                   sudo apt-get install -y libxslt1-dev
-                   sudo apt-get install -y libcurl4-openssl-dev
-                   sudo apt-get install -y python-software-properties
-                   sudo apt-get install -y libffi-dev
+                   sudo apt-get install -qq git-core
+                   sudo apt-get install -qq curl
+                   sudo apt-get install -qq zlib1g-dev
+                   sudo apt-get install -qq build-essential
+                   sudo apt-get install -qq libssl-dev
+                   sudo apt-get install -qq libreadline-dev
+                   sudo apt-get install -qq libyaml-dev
+                   sudo apt-get install -qq libsqlite3-dev
+                   sudo apt-get install -qq sqlite3
+                   sudo apt-get install -qq libxml2-dev
+                   sudo apt-get install -qq libxslt1-dev
+                   sudo apt-get install -qq libcurl4-openssl-dev
+                   sudo apt-get install -qq python-software-properties
+                   sudo apt-get install -qq libffi-dev
         '}
 
         # Path variables are already set in zshrc
@@ -276,9 +276,9 @@ def install_ruby_on_rails_rbenv
 
          puts "Installing MySQL"
          system %Q{ bash -c '
-                    sudo apt-get install -y mysql-server
-                    sudo apt-get install -y mysql-client
-                    sudo apt-get install -y libmysqlclient-dev
+                    sudo apt-get install -qq mysql-server
+                    sudo apt-get install -qq mysql-client
+                    sudo apt-get install -qq libmysqlclient-dev
          '}
 
          puts "Installing Postgresql"
@@ -286,8 +286,8 @@ def install_ruby_on_rails_rbenv
          system %Q{ bash -c '
                     wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo apt-key add -
                     sudo apt-get update
-                    sudo apt-get install -y postgresql-common
-                    sudo apt-get install -y postgresql-9.3 libpq-dev
+                    sudo apt-get install -qq postgresql-common
+                    sudo apt-get install -qq postgresql-9.3 libpq-dev
          '}
     when 'q'
         exit
@@ -304,8 +304,8 @@ def install_node_npm
         # so a seperate installation is not needed
         puts "Installing Node..."
         system %Q{bash -c 'curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
-                           sudo apt-get install -y nodejs
-                           sudo apt-get install -y build-essential
+                           sudo apt-get install -qq nodejs
+                           sudo apt-get install -qq build-essential
                            sudo ln -s /usr/bin/nodejs /usr/bin/node'}
     when 'q'
         exit
@@ -319,7 +319,7 @@ def install_go
     case $stdin.gets.chomp
     when 'y'
         puts "Installing Go..."
-        system %Q{sudo apt-get install -y golang}
+        system %Q{sudo apt-get install -qq golang}
         puts "Installing Go Package Manager (GPM)..."
         system %Q{ bash -c 'git clone https://github.com/pote/gvp.git
                             cd gvp
@@ -346,14 +346,14 @@ def install_sdl_opengl
     when 'y'
         puts "Installing SDL2 and OpenGL..."
         system %Q{ bash -c '
-                            sudo apt-get install -y libsdl2-dev
-                            sudo apt-get install -y libsdl2-image-dev
-                            sudo apt-get install -y libsdl2-ttf-dev
-                            sudo apt-get install -y libsdl2-mixer-dev
-                            sudo apt-get install -y libglew-dev
-                            sudo apt-get install -y libglm-dev
-                            sudo apt-get install -y libassimp-dev
-                            sudo apt-get install -y libbullet-dev'}
+                            sudo apt-get install -qq libsdl2-dev
+                            sudo apt-get install -qq libsdl2-image-dev
+                            sudo apt-get install -qq libsdl2-ttf-dev
+                            sudo apt-get install -qq libsdl2-mixer-dev
+                            sudo apt-get install -qq libglew-dev
+                            sudo apt-get install -qq libglm-dev
+                            sudo apt-get install -qq libassimp-dev
+                            sudo apt-get install -qq libbullet-dev'}
     when 'q'
         exit
     else
@@ -418,7 +418,7 @@ def install_sicp
     case $stdin.gets.chomp
     when 'y'
         system %Q{ bash -c '
-                   sudo apt-get install -y racket
+                   sudo apt-get install -qq racket
                    sudo racket -p neil/sicp
                    cp scmindent.rkt ~/bin/scmindent.rkt
                    sudo ln -s scmindent.rkt ~/bin/scmindent.rkt'}
