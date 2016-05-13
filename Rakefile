@@ -234,7 +234,7 @@ def install_ruby_on_rails_rbenv
     print "Install Rails? [ynq]"
     case $stdin.gets.chomp
     when 'y'
-        puts "Installing Ruby Dependencies..."
+        puts "Installing Ruby on Rails..."
         system %Q{ bash -c '
                    sudo apt-get install -qq git-core
                    sudo apt-get install -qq curl
@@ -250,11 +250,7 @@ def install_ruby_on_rails_rbenv
                    sudo apt-get install -qq libcurl4-openssl-dev
                    sudo apt-get install -qq python-software-properties
                    sudo apt-get install -qq libffi-dev
-        '}
 
-        # Path variables are already set in zshrc
-        puts "Installing Rbenv"
-        system %Q{ bash -c '
                    cd
                    git clone https://github.com/sstephenson/rbenv.git .rbenv
                    git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
@@ -266,29 +262,20 @@ def install_ruby_on_rails_rbenv
                    rbenv global 2.2.3
                    ruby -v
                    echo "gem: --no-ri --no-rdoc" > ~/.gemrc
-                   gem install bundler
-         '}
+                   sudo gem install bundler
 
-        puts "Installing Rails"
-        system %Q{ bash -c '
-                   gem install rails -v 4.2.4
+                   sudo gem install rails -v 4.2.4
                    rbenv rehash
-         '}
 
-         puts "Installing MySQL"
-         system %Q{ bash -c '
-                    sudo apt-get install -qq mysql-server
-                    sudo apt-get install -qq mysql-client
-                    sudo apt-get install -qq libmysqlclient-dev
-         '}
+                   sudo apt-get install -qq mysql-server
+                   sudo apt-get install -qq mysql-client
+                   sudo apt-get install -qq libmysqlclient-dev
+                   sudo sh -c "echo 'deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main' > /etc/apt/sources.list.d/pgdg.list"
 
-         puts "Installing Postgresql"
-         system %Q{ sudo sh -c "echo 'deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main' > /etc/apt/sources.list.d/pgdg.list" }
-         system %Q{ bash -c '
-                    wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo apt-key add -
-                    sudo apt-get update
-                    sudo apt-get install -qq postgresql-common
-                    sudo apt-get install -qq postgresql-9.3 libpq-dev
+                   wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo apt-key add -
+                   sudo apt-get update
+                   sudo apt-get install -qq postgresql-common
+                   sudo apt-get install -qq postgresql-9.3 libpq-dev
          '}
     when 'q'
         exit
