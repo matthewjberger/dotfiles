@@ -99,7 +99,7 @@
     history   = log --pretty=oneline
 
     # Move current work to a different branch
-    moveto    = "!sh -c \"git stash && checkout $1 && stash pop\" -"
+    moveto    = "!sh -c \"git stash && git checkout $1 && git stash pop\" -"
 
     # Create new branch and push to repo host
     newbranch = "!sh -c \"git checkout -b $1 && git push --set-upstream origin $1\" -"
