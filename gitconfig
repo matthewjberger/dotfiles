@@ -8,7 +8,7 @@
 [sendemail]
     smtpencryption = tls
     smtpserver     = smtp.gmail.com
-    smtpuser       = matthewjordanberger@gmail.com
+    smtpuser       = matthewberger@nevada.unr.edu
     smtpserverport = 587
 [credential]
     username       = matthewjberger
@@ -92,7 +92,7 @@
     # Show last commit
     last      = show --name-status
 
-	# Show all commits on all branches in a compact, colorized way
+    # Show all commits on all branches in a compact, colorized way
     histories = !git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
     # Show the commit history in a nice format
@@ -106,7 +106,7 @@
 
     # Has the same effect as deleting the entire repo and re-cloning
     # Except it doesn't delete files in the .gitignore, to be safe
-    nuke      = "!sh -c \"git checkout $1 && git stash -u && git fetch --all && git reset --hard origin/$1  && git clean -x -d -f\" -"
+    nuke      = "!sh -c \"git checkout $1 && git stash -u && git fetch --all && git reset --hard origin/$1  && git clean -x -d -f && git submodule init && git submodule update\" -"
 
     # Quick commit to save progress
     save      = !git add -A && git commit -m 'SAVEPOINT'
