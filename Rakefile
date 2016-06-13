@@ -6,7 +6,7 @@ desc "Install dot files into home directory"
 task :install do
 
    # Files to be ignored go here
-   files = Dir['*'] - %w[Rakefile README.md oh-my-zsh gpm gvp bin fonts scmindent.rkt]
+   files = Dir['*'] - %w[Rakefile README.md oh-my-zsh gpm gvp bin fonts]
 
    install_oh_my_zsh
    switch_to_zsh
@@ -24,7 +24,6 @@ task :install do
    install_ruby_on_rails_rbenv
    install_scala
    install_sdl_opengl
-   install_sicp
 
    # Vim's youcompleteme auto-completion plugin requires go-lang to be installed
    # in order to have code-completion for go programs, so it must come last
@@ -190,7 +189,8 @@ def install_vim
     case $stdin.gets.chomp
     when 'y'
         puts "Installing Vim..."
-        system %Q{bash -c 'sudo apt-get install -qq vim-nox
+        system %Q{bash -c '#sudo apt-get install -qq vim-nox vim-gtk
+                           #TODO: build vim from source here
                            git submodule update --force --init --recursive
                            vim +PlugInstall +qa'}
     when 'q'
@@ -318,6 +318,7 @@ def install_go
                             cd gpm
                             ./configure && sudo make install
                             cd ../
+                            source gvp
                             go get -u -v github.com/nsf/gocode
                             go get -u -v github.com/rogpeppe/godef
                             go get -u -v golang.org/x/tools/cmd/oracle'}
@@ -388,6 +389,7 @@ def install_terminal_config
         # Install solarized dark and patched powerline fonts
         system %Q{ bash -c 'git clone https://github.com/powerline/fonts fonts
                             cd fonts
+                            sudo apt-get install -qq dconf-cli
                             ./install.sh'
                             cd ../}
         system %Q{ bash -c 'git clone https://github.com/anthony25/gnome-terminal-colors-solarized
@@ -398,21 +400,5 @@ def install_terminal_config
         exit
     else
         puts "Skipping terminal configuration."
-    end
-end
-
-def install_sicp
-    print "Install racket interpreter and sicp package? [ynq]"
-    case $stdin.gets.chomp
-    when 'y'
-        system %Q{ bash -c '
-                   sudo apt-get install -qq racket
-                   sudo racket -p neil/sicp
-                   cp scmindent.rkt ~/bin/scmindent.rkt
-                   sudo ln -s scmindent.rkt ~/bin/scmindent.rkt'}
-    when 'q'
-        exit
-    else
-        puts "Skipping racket installation."
     end
 end
