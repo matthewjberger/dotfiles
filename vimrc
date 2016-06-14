@@ -76,6 +76,7 @@ set colorcolumn=80
 highlight ColorColumn ctermbg=darkgray
 match ErrorMsg '\%>80v.\+'
 colorscheme solarized
+set background=dark
 
 " Don't move on *
 nnoremap * *<C-O>:call search_pulse#Pulse()<CR>
