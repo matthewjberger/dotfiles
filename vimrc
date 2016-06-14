@@ -35,6 +35,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'valloric/youcompleteme', {'do': './install.py --clang-completer --gocode-completer --racer-completer'}
+Plug 'xolox/vim-misc' | Plug 'xolox/vim-easytags'
 Plug 'yonchu/accelerated-smooth-scroll'
 
 call plug#end()
@@ -55,6 +56,9 @@ nnoremap <leader>Ev :split $MYVIMRC <CR> :only<cr>
 nnoremap <leader>sv :source $MYVIMRC <CR>
 nnoremap <leader>ez :split ~/.zshrc<CR>
 
+" Use old regexp engine, vim 7.4+'s new regexp engine makes easytags laggy
+set regexpengine=0
+
 let NERDTreeIgnore=['\.o$', '\~$']
 
 " Make all sorts case insensitive
@@ -71,7 +75,7 @@ nnoremap <leader>Z ZZ " Save and quit file
 set colorcolumn=80
 highlight ColorColumn ctermbg=darkgray
 match ErrorMsg '\%>80v.\+'
-colorscheme seoul256
+colorscheme solarized
 
 " Don't move on *
 nnoremap * *<C-O>:call search_pulse#Pulse()<CR>
