@@ -40,20 +40,22 @@ values."
      ;;        shell-default-position 'bottom)
      ;; (shell :variables
      ;; better-defaults
-     ;; git
      ;; spell-checking
-     ;; version-control
      (auto-completion : variables
                       auto-completion-enable-snippets-in-popup t)
      emacs-lisp
      evil-commentary
+     git
+     github
      helm
      javascript
      markdown
      org
      rust
      syntax-checking
+     version-control
      vim-powerline
+     vinegar
      xkcd
      )
    ;; List of additional packages that will be installed without being
