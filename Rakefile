@@ -175,7 +175,9 @@ def install_spacemacs
     case $stdin.gets.chomp
     when 'y'
         puts "Installing Spacemacs..."
-        system %Q{sudo apt-get install -qq emacs}
+        system %Q{ bash -c 'sudo add-apt-repository ppa:ubuntu-elisp/ppa
+                            sudo apt-get update
+                            sudo apt-get install emacs-snapshot'}
         system %Q{git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d}
     when 'q'
         exit

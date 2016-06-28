@@ -213,7 +213,7 @@ values."
    ;; If non nil line numbers are turned on in all `prog-mode' and `text-mode'
    ;; derivatives. If set to `relative', also turns on relative line numbers.
    ;; (default nil)
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers t
    ;; If non-nil smartparens-strict-mode will be enabled in programming modes.
    ;; (default nil)
    dotspacemacs-smartparens-strict-mode nil
@@ -262,6 +262,7 @@ you should place your code here."
   (define-key evil-normal-state-map "H" "^")
   (define-key evil-normal-state-map "L" "$")
   (set-fill-column 80)
+  (setq linum-format "%4d \u2502")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
