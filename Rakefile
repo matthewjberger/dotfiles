@@ -358,8 +358,8 @@ def install_gibo
     when 'y'
         puts "Installing Gibo..."
         system %Q{ bash -c 'git clone https://github.com/simonwhitaker/gibo ~/bin/gibo
-                            chmod +x ~/bin/gibo
-                            ./bin/gibo/gibo -u'}
+                            #chmod +x ~/bin/gibo
+                            ~/bin/gibo/gibo -u'}
     when 'q'
         exit
     else
