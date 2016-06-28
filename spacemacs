@@ -263,6 +263,7 @@ you should place your code here."
   (define-key evil-normal-state-map "L" "$")
   (set-fill-column 80)
   (setq linum-format "%4d \u2502")
+  (setq vc-follow-symlinks t)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
