@@ -25,6 +25,8 @@ values."
      ;; ----------------------------------------------------------------
      (auto-completion : variables
                       auto-completion-enable-snippets-in-popup t)
+     (colors : variables
+             global-color-identifiers-mode t)
      emacs-lisp
      evil-commentary
      git

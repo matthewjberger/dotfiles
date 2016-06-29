@@ -8,3 +8,5 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # Enable autocompletion
 autoload -U compinit && compinit
+
+alias emacs="emacs -nw"
