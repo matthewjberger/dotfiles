@@ -34,11 +34,11 @@ values."
      javascript
      markdown
      org
+     ruby
      rust
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
-     ruby
      syntax-checking
      version-control
      vim-powerline
