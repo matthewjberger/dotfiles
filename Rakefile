@@ -153,7 +153,8 @@ def install_common_packages
                            sudo apt-get update
                            sudo apt-get upgrade
                            sudo apt-get autoremove
-                           sudo apt-get npm && sudo npm install -g diff-so-fancy
+                           sudo apt-get install -qq npm
+                           sudo npm install -g diff-so-fancy
                            sudo apt-get install -qq tmux
                            sudo apt-get install -qq ack-grep
                            sudo apt-get install -qq silversearcher-ag
