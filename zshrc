@@ -3,10 +3,13 @@ export ZSH_THEME="agnoster"
 plugins=(git zsh-completions)
 source $ZSH/oh-my-zsh.sh
 
-# Cargo bin
-export PATH="$HOME/.cargo/bin:$PATH"
+# Rust environment variables
+export CARGO_HOME="$HOME/.cargo"
+export CARGO_BIN="$CARGO_HOME/bin"
+export PATH="$CARGO_BIN:$PATH"
+export RUST_SRC_PATH="$HOME/rust/src"
 
 # Enable autocompletion
 autoload -U compinit && compinit
 
-alias emacs="emacs -nw"
+alias emacs='emacsclient -t -a ""'
