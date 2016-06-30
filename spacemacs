@@ -18,6 +18,7 @@ values."
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
+     ruby
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -25,8 +26,8 @@ values."
      ;; ----------------------------------------------------------------
      (auto-completion : variables
                       auto-completion-enable-snippets-in-popup t)
-     (colors : variables
-             global-color-identifiers-mode t)
+     ;; (colors : variables
+     ;;         global-color-identifiers-mode t)
      emacs-lisp
      evil-commentary
      git
@@ -39,6 +40,7 @@ values."
             shell-default-height 30
             shell-default-position 'bottom)
      syntax-checking
+     themes-megapack
      version-control
      vim-powerline
      vinegar
