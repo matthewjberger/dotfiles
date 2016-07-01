@@ -40,7 +40,8 @@ values."
             shell-default-height 30
             shell-default-position 'bottom)
      syntax-checking
-     version-control
+     (version-control : variables
+                      git-gutter+)
      vim-powerline
      vinegar
      xkcd
