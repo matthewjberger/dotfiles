@@ -41,7 +41,7 @@ values."
             shell-default-position 'bottom)
      syntax-checking
      (version-control : variables
-                      version-control-diff-tool 'diff-hl
+                      version-control-diff-tool 'git-gutter
                       version-control-global-margin t)
      vim-powerline
      vinegar
