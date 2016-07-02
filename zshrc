@@ -12,4 +12,4 @@ export RUST_SRC_PATH="$HOME/rust/src"
 # Enable autocompletion
 autoload -U compinit && compinit
 
-alias emacs='emacsclient -t -a ""'
+alias emacs='emacsclient -c -a ""'
