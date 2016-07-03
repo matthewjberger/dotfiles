@@ -36,6 +36,7 @@ values."
      org
      ruby
      rust
+     search-engine
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
