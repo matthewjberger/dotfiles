@@ -31,11 +31,14 @@ values."
      evil-commentary
      git
      github
+     gtags
      javascript
      markdown
      org
+     restclient
      ruby
      rust
+     semantic
      search-engine
      (shell :variables
             shell-default-height 30
