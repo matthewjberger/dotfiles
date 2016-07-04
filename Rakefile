@@ -314,16 +314,16 @@ def install_go
         puts "Installing Go..."
         system %Q{sudo apt-get install -qq golang}
         puts "Installing Go Package Manager (GPM)..."
-        system %Q{ bash -c 'git clone https://github.com/pote/gvp.git
-                            cd gvp
-                            ./configure
-                            sudo make install
-                            cd ../
-                            git clone https://github.com/pote/gpm.git
-                            cd gpm
-                            ./configure && sudo make install
-                            cd ../
-                            source gvp
+        system %Q{ bash -c '#git clone https://github.com/pote/gvp.git
+                            #cd gvp
+                            #./configure
+                            #sudo make install
+                            #cd ../
+                            #git clone https://github.com/pote/gpm.git
+                            #cd gpm
+                            #./configure && sudo make install
+                            #cd ../
+                            #source gvp
                             go get -u -v github.com/nsf/gocode
                             go get -u -v github.com/rogpeppe/godef
                             go get -u -v golang.org/x/tools/cmd/oracle'}

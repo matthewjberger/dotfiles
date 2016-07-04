@@ -27,8 +27,12 @@ values."
                       auto-completion-enable-snippets-in-popup t)
      ;; (colors : variables
      ;;         global-color-identifiers-mode t)
+     c-c++
+     cscope
      emacs-lisp
+     emoji
      evil-commentary
+     games
      git
      github
      gtags
