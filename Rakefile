@@ -94,8 +94,8 @@ def link_file(file)
         File.open(File.join(ENV['HOME'], ".#{file.sub(/\.erb$/, '')}"), 'w') do |new_file|
             new_file.write ERB.new(File.read(file)).result(binding)
         end
-    # Copy zshrc instead of linking
-    elsif file =~ /zshrc$/
+    # Copy zshrc and zshenv instead of linking
+    elsif file =~ /zshrc$/ || file =~ /zshenv$/
         puts "Copying ~/.#{file}"
         system %Q{cp "$PWD/#{file}" "$HOME/.#{file}"}
     # Otherwise symbolically link the file
