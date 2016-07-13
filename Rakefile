@@ -6,7 +6,7 @@ desc "Install dot files into home directory"
 task :install do
 
    # Files to be ignored go here
-   files = Dir['*'] - %w[Rakefile README.md oh-my-zsh gpm gvp bin fonts]
+   files = Dir['*'] - %w[Rakefile README.md oh-my-zsh gpm gvp bin powerline-fonts]
 
    install_oh_my_zsh
    switch_to_zsh
@@ -396,8 +396,8 @@ def install_terminal_config
     case $stdin.gets.chomp
     when 'y'
         # Install solarized dark and patched powerline fonts
-        system %Q{ bash -c 'git clone https://github.com/powerline/fonts fonts
-                            cd fonts
+        system %Q{ bash -c 'git clone https://github.com/powerline/fonts powerline-fonts
+                            cd powerline-fonts
                             sudo apt-get install -qq dconf-cli
                             ./install.sh'
                             cd ../}
