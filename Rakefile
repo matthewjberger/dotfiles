@@ -6,7 +6,7 @@ desc "Install dot files into home directory"
 task :install do
 
    # Files to be ignored go here
-   files = Dir['*'] - %w[Rakefile README.md oh-my-zsh gpm gvp bin powerline-fonts]
+   files = Dir['*'] - %w[Rakefile README.md oh-my-zsh gpm gvp bin]
 
    install_oh_my_zsh
    switch_to_zsh
@@ -24,10 +24,6 @@ task :install do
    install_ruby_on_rails_rbenv
    install_scala
    install_sdl_opengl
-
-   # Vim's youcompleteme auto-completion plugin requires go-lang to be installed
-   # in order to have code-completion for go programs, so it must come last
-   install_vim
 
    puts "Finished setting up environment!"
 end
@@ -145,28 +141,24 @@ def install_common_packages
     print "Install common packages? [ynq]"
     case $stdin.gets.chomp
     when 'y'
-        # Python-Dev is necessary here so that
-        # the youcompleteme plugin for vim will build properly
         puts "Installing common packages..."
-        system %Q{
-                  bash -c '
-                           sudo apt-get update
-                           sudo apt-get upgrade
-                           sudo apt-get autoremove
-                           sudo apt-get install -qq global
-                           sudo apt-get install -qq npm
-                           sudo npm install -g diff-so-fancy
-                           sudo npm install -g tern
-                           sudo apt-get install -qq tmux
-                           sudo apt-get install -qq ack-grep
-                           sudo apt-get install -qq silversearcher-ag
-                           sudo apt-get install -qq exuberant-ctags
-                           sudo apt-get install -qq build-essential cmake
-                           sudo apt-get install -qq python-dev
-                           sudo apt-get install -qq xpad
-                           sudo apt-get install -qq imagemagick
-                          '
-                 }
+        system %Q{ bash -c 'sudo apt-get update
+                            sudo apt-get upgrade
+                            sudo apt-get autoremove
+                            sudo apt-get install -qq fonts-hack-ttf
+                            sudo apt-get install -qq global
+                            sudo apt-get install -qq npm
+                            sudo npm install -g diff-so-fancy
+                            sudo npm install -g tern
+                            sudo apt-get install -qq tmux
+                            sudo apt-get install -qq ack-grep
+                            sudo apt-get install -qq silversearcher-ag
+                            sudo apt-get install -qq exuberant-ctags
+                            sudo apt-get install -qq build-essential cmake
+                            sudo apt-get install -qq python-dev
+                            sudo apt-get install -qq xpad
+                            sudo apt-get install -qq imagemagick
+                            sudo apt-get install -qq dconf-cli' }
     when 'q'
         exit
     else
@@ -187,22 +179,6 @@ def install_spacemacs
         exit
     else
         puts "Skipping spacemacs installation."
-    end
-end
-
-def install_vim
-    print "Install Vim? [ynq]"
-    case $stdin.gets.chomp
-    when 'y'
-        puts "Installing Vim..."
-        system %Q{bash -c '#sudo apt-get install -qq vim-nox vim-gtk
-                           #TODO: build vim from source here
-                           git submodule update --force --init --recursive
-                           vim +PlugInstall +qa'}
-    when 'q'
-        exit
-    else
-        puts "Skipping vim installation."
     end
 end
 
@@ -290,43 +266,14 @@ def install_ruby_on_rails_rbenv
     end
 end
 
-def install_node_npm
-    print "Install Node? [ynq]"
-    case $stdin.gets.chomp
-    when 'y'
-        # The nodejs package contains npm automatically
-        # so a seperate installation is not needed
-        puts "Installing Node..."
-        system %Q{bash -c 'curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
-                           sudo apt-get install -qq nodejs
-                           sudo apt-get install -qq build-essential
-                           sudo ln -s /usr/bin/nodejs /usr/bin/node'}
-    when 'q'
-        exit
-    else
-        puts "Skipping Node installation."
-    end
-end
-
 def install_go
     print "Install Go? [ynq]"
     case $stdin.gets.chomp
     when 'y'
         puts "Installing Go..."
         system %Q{sudo apt-get install -qq golang}
-        puts "Installing Go Package Manager (GPM)..."
-        system %Q{ bash -c '#git clone https://github.com/pote/gvp.git
-                            #cd gvp
-                            #./configure
-                            #sudo make install
-                            #cd ../
-                            #git clone https://github.com/pote/gpm.git
-                            #cd gpm
-                            #./configure && sudo make install
-                            #cd ../
-                            #source gvp
-                            go get -u -v github.com/nsf/gocode
-                            go get -u -v github.com/rogpeppe/godef
+        puts "Installing Go Support Packages..."
+        system %Q{ bash -c 'go get -u -v github.com/rogpeppe/godef
                             go get -u -v github.com/nsf/gocode
                             go get -u -v github.com/rogpeppe/godef
                             go get -u -v golang.org/x/tools/cmd/oracle
@@ -348,7 +295,6 @@ def install_sdl_opengl
                             sudo apt-get install -qq libsdl2-image-dev
                             sudo apt-get install -qq libsdl2-ttf-dev
                             sudo apt-get install -qq libsdl2-mixer-dev
-                            sudo apt-get install -qq libglew-dev
                             sudo apt-get install -qq libglm-dev
                             sudo apt-get install -qq libassimp-dev
                             sudo apt-get install -qq libbullet-dev'}
@@ -392,15 +338,10 @@ def install_scala
 end
 
 def install_terminal_config
-    print "Install powerline fonts and solarized terminal theme? [ynq]"
+    print "Install solarized terminal theme? [ynq]"
     case $stdin.gets.chomp
     when 'y'
         # Install solarized dark and patched powerline fonts
-        system %Q{ bash -c 'git clone https://github.com/powerline/fonts powerline-fonts
-                            cd powerline-fonts
-                            sudo apt-get install -qq dconf-cli
-                            ./install.sh'
-                            cd ../}
         system %Q{ bash -c 'git clone https://github.com/anthony25/gnome-terminal-colors-solarized
                             cd gnome-terminal-colors-solarized
                             ./install.sh'
