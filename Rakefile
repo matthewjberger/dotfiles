@@ -10,11 +10,13 @@ task :install do
 
    install_oh_my_zsh
    switch_to_zsh
+   update_and_upgrade
    install_common_packages
    install_dotfiles(files)
 
    # Install tools and languages
-   install_terminal_config
+   install_solarized_terminal_theme
+   install_dropbox
    install_spacemacs
    install_gibo
    install_go
@@ -136,16 +138,29 @@ def switch_to_zsh
     end
 end
 
+def update_and_upgrade
+   # Install dependencies
+    print "Update and Upgrade? [ynq]"
+    case $stdin.gets.chomp
+    when 'y'
+        puts "Updating and Upgrading..."
+        system %Q{ bash -c 'sudo apt-get update
+                            sudo apt-get upgrade
+                            sudo apt-get autoremove' }
+    when 'q'
+        exit
+    else
+        puts "Skipping common packages installation."
+    end
+end
+
 def install_common_packages
    # Install dependencies
     print "Install common packages? [ynq]"
     case $stdin.gets.chomp
     when 'y'
         puts "Installing common packages..."
-        system %Q{ bash -c 'sudo apt-get update
-                            sudo apt-get upgrade
-                            sudo apt-get autoremove
-                            sudo apt-get install -qq fonts-hack-ttf
+        system %Q{ bash -c 'sudo apt-get install -qq fonts-hack-ttf
                             sudo apt-get install -qq global
                             sudo apt-get install -qq npm
                             sudo npm install -g diff-so-fancy
@@ -337,18 +352,32 @@ def install_scala
     end
 end
 
-def install_terminal_config
+def install_solarized_terminal_theme
     print "Install solarized terminal theme? [ynq]"
     case $stdin.gets.chomp
     when 'y'
         # Install solarized dark and patched powerline fonts
         system %Q{ bash -c 'git clone https://github.com/anthony25/gnome-terminal-colors-solarized
                             cd gnome-terminal-colors-solarized
-                            ./install.sh'
-                            cd ../}
+                            ./install.sh
+                            cd ../'}
     when 'q'
         exit
     else
         puts "Skipping terminal configuration."
     end
+end
+
+def install_dropbox
+  print "Install Dropbox? [ynq]"
+  case $stdin.gets.chomp
+  when 'y'
+    # Install solarized dark and patched powerline fonts
+    system %Q{ cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf - }
+    system %Q{ (~/.dropbox-dist/dropboxd >/dev/null 2>/dev/null &) }
+  when 'q'
+    exit
+  else
+    puts "Skipping terminal configuration."
+  end
 end
