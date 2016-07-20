@@ -16,6 +16,7 @@ task :install do
 
    # Install tools and languages
    install_solarized_terminal_theme
+   install_zenburn_terminal_theme
    install_dropbox
    install_spacemacs
    install_gibo
@@ -356,7 +357,6 @@ def install_solarized_terminal_theme
     print "Install solarized terminal theme? [ynq]"
     case $stdin.gets.chomp
     when 'y'
-        # Install solarized dark and patched powerline fonts
         system %Q{ bash -c 'git clone https://github.com/anthony25/gnome-terminal-colors-solarized
                             cd gnome-terminal-colors-solarized
                             ./install.sh
@@ -364,9 +364,23 @@ def install_solarized_terminal_theme
     when 'q'
         exit
     else
-        puts "Skipping terminal configuration."
+        puts "Skipping solarized installation."
     end
 end
+
+def install_zenburn_terminal_theme
+  print "Install zenburn terminal theme? [ynq]"
+  case $stdin.gets.chomp
+  when 'y'
+    system %Q{ bash -c ' git clone https://github.com/anuragsoni/seoul256-gnome-terminal.git ~/.config/seoul256-gnome-terminal
+                         source ~/.config/seoul256-gnome-terminal/seoul256-dark.sh '}
+  when 'q'
+    exit
+  else
+    puts "Skipping zenburn installation."
+  end
+end
+
 
 def install_dropbox
   print "Install Dropbox? [ynq]"
