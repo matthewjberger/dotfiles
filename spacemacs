@@ -268,6 +268,7 @@ you should place your code here."
   (setq-default evil-escape-key-sequence "jk")
   (define-key evil-normal-state-map "H" "^")
   (define-key evil-normal-state-map "L" "$")
+  (define-key evil-normal-state-map "Q" 'delete-frame)
   (set-fill-column 80)
   (setq linum-format "%4d \u2502")
   (setq vc-follow-symlinks t)
