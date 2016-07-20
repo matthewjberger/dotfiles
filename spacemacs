@@ -272,6 +272,7 @@ you should place your code here."
   (set-fill-column 80)
   (setq linum-format "%4d \u2502")
   (setq vc-follow-symlinks t)
+  (add-hook 'hack-local-variables-hook (lambda () (setq truncate-lines t)))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
