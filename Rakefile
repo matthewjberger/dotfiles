@@ -5,16 +5,10 @@ desc "Install dot files into home directory"
 
 task :install do
 
-   # Files to be ignored go here
-   files = Dir['*'] - %w[Rakefile README.md oh-my-zsh bin]
-
    install_oh_my_zsh
    switch_to_zsh
    update_and_upgrade
    install_common_packages
-   install_dotfiles(files)
-
-   # Install tools and languages
    install_solarized_terminal_theme
    install_zenburn_terminal_theme
    install_dropbox
@@ -25,79 +19,6 @@ task :install do
    install_python_anaconda3
 
    puts "Finished setting up environment!"
-end
-
-def install_dotfiles(files)
-
-   # Setting this to true disables the overwrite prompt for the dotfiles installation.
-   # This can be set automatically from the first overwrite prompt by pressing 'a'
-   replace_all = false
-
-   # Cycle through all files in the directory
-   files.each do |file|
-
-       # Create a dotfile directory for directories in this folder
-       system %Q{mkdir -p "$HOME/.#{File.dirname(file)}"} if file =~ /\//
-
-       # If the file exists already
-       # (ignore .erb extension if present, still account for file)
-       if File.exist?(File.join(ENV['HOME'], ".#{file.sub(/\.erb$/, '')}"))
-           # Check if it is different
-           if File.identical? file, File.join(ENV['HOME'], ".#{file.sub(/\.erb$/, '')}")
-               # If not different, state that it is identical
-               puts "Identical ~/.#{file.sub(/\.erb$/, '')}"
-            elsif replace_all
-                # If overwrite prompts are disabled, automatically replace the file
-                replace_file(file)
-            else
-                # Otherwise prompt for overwriting the file
-                # The 'a' here stands for overwite all from now on
-                print "Overwrite ~/.#{file.sub(/\.erb$/, '')}? [ynaq] "
-                case $stdin.gets.chomp
-                when 'a'
-                    replace_all = true
-                    replace_file(file)
-                when 'y'
-                    replace_file(file)
-                when 'q'
-                    exit
-                else
-                    puts "Skipping ~/.#{file.sub(/\.erb$/, '')}"
-                end
-           end
-       else
-           # Otherwise if the file doesn't exist already
-           # Symbolically link the file
-           link_file(file)
-       end
-    end
-end
-
-def replace_file(file)
-    # Remove the dotfile directory for the specified file
-    system %Q{rm -rf "$HOME/.#{file.sub(/\.erb$/, '')}"}
-
-    # Symbolically link the file
-    link_file(file)
-end
-
-def link_file(file)
-    # If the file has a .erb extension
-    if file =~ /.erb$/
-        # Generate the file by executing the embedded ruby code
-        puts "Generating ~/.#{file.sub(/\.erb$/, '')}"
-        File.open(File.join(ENV['HOME'], ".#{file.sub(/\.erb$/, '')}"), 'w') do |new_file|
-            new_file.write ERB.new(File.read(file)).result(binding)
-        end
-    # Copy zshrc and zshenv instead of linking
-    elsif file =~ /zshrc$/ || file =~ /zshenv$/
-        puts "Copying ~/.#{file}"
-        system %Q{cp "$PWD/#{file}" "$HOME/.#{file}"}
-    # Otherwise symbolically link the file
-    else
-        puts "Linking ~/.#{file}"
-        system %Q{ln -s "$PWD/#{file}" "$HOME/.#{file}"}
-    end
 end
 
 def install_oh_my_zsh
