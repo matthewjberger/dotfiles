@@ -21,12 +21,8 @@ task :install do
    install_spacemacs
    install_gibo
    install_go
-   install_node_npm
    install_python_anaconda2
    install_python_anaconda3
-   install_ruby_on_rails_rbenv
-   install_scala
-   install_sdl_opengl
 
    puts "Finished setting up environment!"
 end
@@ -189,8 +185,11 @@ def install_spacemacs
         puts "Installing Spacemacs..."
         system %Q{ bash -c 'sudo add-apt-repository ppa:ubuntu-elisp/ppa
                             sudo apt-get update
-                            sudo apt-get install emacs-snapshot'}
-        system %Q{git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d}
+                            sudo apt-get install emacs-snapshot
+                            git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+                            pushd ~/.emacs.d
+                            git checkout develop
+                            popd'}
     when 'q'
         exit
     else
@@ -228,60 +227,6 @@ def install_python_anaconda3
     end
 end
 
-def install_ruby_on_rails_rbenv
-    print "Install Rails? [ynq]"
-    case $stdin.gets.chomp
-    when 'y'
-        puts "Installing Ruby on Rails..."
-        system %Q{ bash -c '
-                   sudo apt-get install -qq git-core
-                   sudo apt-get install -qq curl
-                   sudo apt-get install -qq zlib1g-dev
-                   sudo apt-get install -qq build-essential
-                   sudo apt-get install -qq libssl-dev
-                   sudo apt-get install -qq libreadline-dev
-                   sudo apt-get install -qq libyaml-dev
-                   sudo apt-get install -qq libsqlite3-dev
-                   sudo apt-get install -qq sqlite3
-                   sudo apt-get install -qq libxml2-dev
-                   sudo apt-get install -qq libxslt1-dev
-                   sudo apt-get install -qq libcurl4-openssl-dev
-                   sudo apt-get install -qq python-software-properties
-                   sudo apt-get install -qq libffi-dev
-
-                   cd
-                   git clone https://github.com/sstephenson/rbenv.git .rbenv
-                   git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-                   exec $SHELL
-
-                   git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash
-
-                   rbenv install 2.2.3
-                   rbenv global 2.2.3
-                   ruby -v
-                   echo "gem: --no-ri --no-rdoc" > ~/.gemrc
-                   sudo gem install bundler
-
-                   sudo gem install rails -v 4.2.4
-                   rbenv rehash
-
-                   sudo apt-get install -qq mysql-server
-                   sudo apt-get install -qq mysql-client
-                   sudo apt-get install -qq libmysqlclient-dev
-                   sudo sh -c "echo 'deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main' > /etc/apt/sources.list.d/pgdg.list"
-
-                   wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo apt-key add -
-                   sudo apt-get update
-                   sudo apt-get install -qq postgresql-common
-                   sudo apt-get install -qq postgresql-9.3 libpq-dev
-         '}
-    when 'q'
-        exit
-    else
-        puts "Skipping Ruby on Rails installation."
-    end
-end
-
 def install_go
     print "Install Go? [ynq]"
     case $stdin.gets.chomp
@@ -289,7 +234,9 @@ def install_go
         puts "Installing Go..."
         system %Q{sudo apt-get install -qq golang}
         puts "Installing Go Support Packages..."
-        system %Q{ bash -c 'go get -u -v github.com/rogpeppe/godef
+        system %Q{ bash -c 'export GOPATH=~/.go
+                            export PATH=$PATH:$GOPATH
+                            go get -u -v github.com/rogpeppe/godef
                             go get -u -v github.com/nsf/gocode
                             go get -u -v github.com/rogpeppe/godef
                             go get -u -v golang.org/x/tools/cmd/oracle
@@ -298,26 +245,6 @@ def install_go
         exit
     else
         puts "Skipping go installation."
-    end
-end
-
-def install_sdl_opengl
-    print "Install SDL2 and OpenGL? [ynq]"
-    case $stdin.gets.chomp
-    when 'y'
-        puts "Installing SDL2 and OpenGL..."
-        system %Q{ bash -c '
-                            sudo apt-get install -qq libsdl2-dev
-                            sudo apt-get install -qq libsdl2-image-dev
-                            sudo apt-get install -qq libsdl2-ttf-dev
-                            sudo apt-get install -qq libsdl2-mixer-dev
-                            sudo apt-get install -qq libglm-dev
-                            sudo apt-get install -qq libassimp-dev
-                            sudo apt-get install -qq libbullet-dev'}
-    when 'q'
-        exit
-    else
-        puts "Skipping SDL2 and OpenGL installation."
     end
 end
 
@@ -333,23 +260,6 @@ def install_gibo
         exit
     else
         puts "Skipping gibo installation."
-    end
-end
-
-def install_scala
-    print "Install Scala? [ynq]"
-    case $stdin.gets.chomp
-    when 'y'
-        puts "Installing Scala..."
-        system %Q{ bash -c 'sudo apt-get install scala
-                            echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
-                            sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 642AC823
-                            sudo apt-get update
-                            sudo apt-get install sbt'}
-    when 'q'
-        exit
-    else
-        puts "Skipping Scala installation."
     end
 end
 
