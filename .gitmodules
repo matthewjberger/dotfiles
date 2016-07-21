@@ -1,3 +1,6 @@
 [submodule "vim/autoload"]
 	path = vim/autoload
 	url = https://github.com/junegunn/vim-plug.git
+[submodule "dotbot"]
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot
