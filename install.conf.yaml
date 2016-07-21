@@ -17,6 +17,11 @@
   
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - [sudo apt-get install -y fonts-hack-ttf global npm tmux ack-grep silversearcher-ag exuberant-ctags build-essential cmake python3-dev xpad imagemagick dconf-cli]
-  - [npm install -g diff-so-fancy]
-  - [npm install -g tern]
+  # Fix any broken packages.
+  - sudo apt-get -f install
+  # Install common packages.
+  - 
+    command: sudo apt-get install -y fonts-hack-ttf global npm tmux ack-grep silversearcher-ag exuberant-ctags build-essential cmake python3-dev xpad imagemagick dconf-cli
+    stdout: true 
+  - [sudo npm install -g diff-so-fancy]
+  - [sudo npm install -g tern]
