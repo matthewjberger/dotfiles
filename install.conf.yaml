@@ -15,7 +15,7 @@
     ~/.zshenv: zshenv
     ~/.fzf: fzf/
   
-- apt:
+- apt-get:
   - fonts-hack-ttf
   - global
   - npm
