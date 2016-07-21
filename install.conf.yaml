@@ -12,6 +12,7 @@
     ~/.oh-my-zsh: oh-my-zsh/
     ~/.zsh: zsh/
     ~/.zshrc: zshrc
+    ~/.zshenv: zshenv
     ~/.fzf: fzf/
 
 - shell:
