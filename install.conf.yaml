@@ -14,6 +14,23 @@
     ~/.zshrc: zshrc
     ~/.zshenv: zshenv
     ~/.fzf: fzf/
+  
+- apt:
+  - fonts-hack-ttf
+  - global
+  - npm
+  - tmux
+  - ack-grep
+  - silversearcher-ag
+  - exuberant-ctags
+  - build-essential
+  - cmake
+  - python3-dev
+  - xpad
+  - imagemagick
+  - dconf-cli
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  - [npm install -g diff-so-fancy]
+  - [npm install -g tern]
