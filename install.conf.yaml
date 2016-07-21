@@ -9,6 +9,10 @@
     ~/.dotfiles: ''
     ~/.spacemacs: spacemacs
     ~/.gitconfig: gitconfig
+    ~/.oh-my-zsh: oh-my-zsh/
+    ~/.zsh: zsh/
+    ~/.zshrc: zshrc
+    ~/.fzf: fzf/
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
