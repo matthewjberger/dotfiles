@@ -21,7 +21,9 @@
   - sudo apt-get -f install
   # Install common packages.
   - 
-    command: sudo apt-get install -y fonts-hack-ttf global npm tmux ack-grep silversearcher-ag exuberant-ctags build-essential cmake python3-dev xpad imagemagick dconf-cli
+    command: sudo apt-get install -qq fonts-hack-ttf global npm tmux ack-grep silversearcher-ag exuberant-ctags build-essential cmake python3-dev xpad imagemagick dconf-cli
     stdout: true 
-  - [sudo npm install -g diff-so-fancy]
-  - [sudo npm install -g tern]
+  - sudo npm install -g diff-so-fancy
+  - sudo npm install -g tern
+  - sudo apt-get install -qq zsh
+  - sudo chsh -s `which zsh`
