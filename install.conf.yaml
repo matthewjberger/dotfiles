@@ -25,5 +25,6 @@
     stdout: true 
   - sudo npm install -g diff-so-fancy
   - sudo npm install -g tern
+  # Install and switch to zsh
   - sudo apt-get install -qq zsh
   - sudo chsh -s $(which zsh)
