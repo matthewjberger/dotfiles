@@ -5,6 +5,9 @@
 
 - clean: ['~']
 
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+
 - link:
     ~/.dotfiles: ''
     ~/.spacemacs: spacemacs
@@ -16,7 +19,6 @@
     ~/.fzf: fzf/
   
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
   # Fix any broken packages.
   - sudo apt-get -f install
   # Install common packages.
