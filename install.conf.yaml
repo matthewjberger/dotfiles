@@ -26,4 +26,4 @@
   - sudo npm install -g diff-so-fancy
   - sudo npm install -g tern
   - sudo apt-get install -qq zsh
-  - sudo chsh -s `which zsh`
+  - sudo chsh -s $(which zsh)
