@@ -8,7 +8,6 @@ task :install do
    install_oh_my_zsh
    switch_to_zsh
    update_and_upgrade
-   install_solarized_terminal_theme
    install_zenburn_terminal_theme
    install_dropbox
    install_spacemacs
@@ -153,21 +152,6 @@ def install_gibo
         exit
     else
         puts "Skipping gibo installation."
-    end
-end
-
-def install_solarized_terminal_theme
-    print "Install solarized terminal theme? [ynq]"
-    case $stdin.gets.chomp
-    when 'y'
-        system %Q{ bash -c 'git clone https://github.com/anthony25/gnome-terminal-colors-solarized
-                            cd gnome-terminal-colors-solarized
-                            ./install.sh
-                            cd ../'}
-    when 'q'
-        exit
-    else
-        puts "Skipping solarized installation."
     end
 end
 
