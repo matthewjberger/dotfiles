@@ -8,6 +8,21 @@
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
 
+- apt-get:
+  - fonts-hack-ttf
+  - global
+  - npm
+  - tmux
+  - ack-grep
+  - silversearcher-ag
+  - exuberant-ctags
+  - build-essential
+  - cmake
+  - python3-dev
+  - xpad
+  - imagemagick
+  - dconf-cli 
+
 - link:
     ~/.dotfiles: ''
     ~/.spacemacs: spacemacs
@@ -20,23 +35,9 @@
   
 - shell:
   # Fix any broken packages.
-  - sudo apt-get -f install
-  # Install common packages.
-  - sudo apt-get install -qq fonts-hack-ttf
-  - sudo apt-get install -qq global 
-  - sudo apt-get install -qq npm 
-  - sudo apt-get install -qq tmux 
-  - sudo apt-get install -qq ack-grep 
-  - sudo apt-get install -qq silversearcher-ag 
-  - sudo apt-get install -qq exuberant-ctags 
-  - sudo apt-get install -qq build-essential 
-  - sudo apt-get install -qq cmake 
-  - sudo apt-get install -qq python3-dev 
-  - sudo apt-get install -qq xpad 
-  - sudo apt-get install -qq imagemagick 
-  - sudo apt-get install -qq dconf-cli
-  - sudo npm install -g diff-so-fancy
-  - sudo npm install -g tern
+  - [sudo apt-get install -f, Fixing any broken packages.]
+  - [sudo npm install -g diff-so-fancy, Installing diff-so-fancy]
+  - [sudo npm install -g tern, Installing tern]
   # Install and switch to zsh
-  - sudo apt-get install -qq zsh
-  - sudo chsh -s $(which zsh)
+  - [sudo apt-get install -qq zsh, Installing zsh.]
+  - [sudo chsh -s $(which zsh), Changing shell to zsh.]
