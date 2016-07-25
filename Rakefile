@@ -8,7 +8,6 @@ task :install do
    install_oh_my_zsh
    switch_to_zsh
    update_and_upgrade
-   install_common_packages
    install_solarized_terminal_theme
    install_zenburn_terminal_theme
    install_dropbox
@@ -65,33 +64,6 @@ def update_and_upgrade
         system %Q{ bash -c 'sudo apt-get update
                             sudo apt-get upgrade
                             sudo apt-get autoremove' }
-    when 'q'
-        exit
-    else
-        puts "Skipping common packages installation."
-    end
-end
-
-def install_common_packages
-   # Install dependencies
-    print "Install common packages? [ynq]"
-    case $stdin.gets.chomp
-    when 'y'
-        puts "Installing common packages..."
-        system %Q{ bash -c 'sudo apt-get install -qq fonts-hack-ttf
-                            sudo apt-get install -qq global
-                            sudo apt-get install -qq npm
-                            sudo npm install -g diff-so-fancy
-                            sudo npm install -g tern
-                            sudo apt-get install -qq tmux
-                            sudo apt-get install -qq ack-grep
-                            sudo apt-get install -qq silversearcher-ag
-                            sudo apt-get install -qq exuberant-ctags
-                            sudo apt-get install -qq build-essential cmake
-                            sudo apt-get install -qq python-dev
-                            sudo apt-get install -qq xpad
-                            sudo apt-get install -qq imagemagick
-                            sudo apt-get install -qq dconf-cli' }
     when 'q'
         exit
     else

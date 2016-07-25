@@ -9,6 +9,7 @@
   - [git submodule update --init --recursive, Installing submodules]
 
 - apt-get:
+  - rake
   - fonts-hack-ttf
   - global
   - npm
@@ -38,6 +39,3 @@
   - [sudo apt-get install -f, Fixing any broken packages.]
   - [sudo npm install -g diff-so-fancy, Installing diff-so-fancy]
   - [sudo npm install -g tern, Installing tern]
-  # Install and switch to zsh
-  - [sudo apt-get install -qq zsh, Installing zsh.]
-  - [sudo chsh -s $(which zsh), Changing shell to zsh.]
