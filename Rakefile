@@ -5,7 +5,6 @@ desc "Install dot files into home directory"
 
 task :install do
 
-   install_oh_my_zsh
    switch_to_zsh
    update_and_upgrade
    install_zenburn_terminal_theme
@@ -17,24 +16,6 @@ task :install do
    install_python_anaconda3
 
    puts "Finished setting up environment!"
-end
-
-def install_oh_my_zsh
-    if File.exist?(File.join(ENV['HOME'], ".oh-my-zsh"))
-        puts "Found ~/.oh-my-zsh!"
-    else
-        print "Install oh-my-zsh? [ynq] "
-        case $stdin.gets.chomp
-        when 'y'
-            puts "Installing oh-my-zsh"
-            system %Q{sudo apt-get install -qq zsh}
-            system %Q{git clone https://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh}
-        when 'q'
-            exit
-        else
-            puts "Skipping oh-my-zsh installation. You will need to change ~/.zshrc."
-        end
-    end
 end
 
 def switch_to_zsh

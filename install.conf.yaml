@@ -9,6 +9,7 @@
   - [git submodule update --init --recursive, Installing submodules]
 
 - apt-get:
+  - zsh
   - rake
   - fonts-hack-ttf
   - global
@@ -27,6 +28,8 @@
 - link:
     ~/.dotfiles: ''
     ~/.spacemacs: spacemacs
+    ~/.vim: vim/
+    ~/.vimrc: vimrc
     ~/.gitconfig: gitconfig
     ~/.oh-my-zsh: oh-my-zsh/
     ~/.zsh: zsh/
