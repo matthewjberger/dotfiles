@@ -7,6 +7,3 @@
 [submodule "fzf"]
 	path = fzf
 	url = https://github.com/junegunn/fzf
-[submodule "dotbot-apt-get"]
-	path = dotbot-apt-get
-	url = https://github.com/matthewjberger/dotbot-apt-get

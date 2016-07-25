@@ -111,6 +111,9 @@
     # Except it doesn't delete files in the .gitignore, to be safe
     nuke      = "!sh -c \"git checkout $1 && git stash -u && git fetch --all && git reset --hard origin/$1  && git clean -df && git submodule update --init --recursive\" -"
 
+    # Deletes a submodule
+    rmsub     = "!sh -c \"git rm $1 && rm -rf .git/modules/$1\" -"
+
     # Quick commit to save progress
     save      = !git add -A && git commit -m 'SAVEPOINT'
 
