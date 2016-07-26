@@ -1,9 +1,20 @@
-export ZSH=$HOME/.oh-my-zsh
-export ZSH_THEME="agnoster"
-plugins=(git zsh-completions)
-source $ZSH/oh-my-zsh.sh
+# Allow local customizations in the ~/.zshrc_local_before file
+if [ -f ~/.zshrc_local_before ]; then
+    source ~/.zshrc_local_before
+fi
 
-# Enable autocompletion
-autoload -U compinit && compinit
+# Settings
+source ~/.zsh/settings.zsh
 
-alias emacs='emacsclient -c -a ""'
+# Set environment variables
+source ~/.zsh/environment.zsh
+
+# Aliases
+source ~/.zsh/aliases.zsh
+
+# Allow local customizations in the ~/.zshrc_local_after file
+if [ -f ~/.zshrc_local_after ]; then
+    source ~/.zshrc_local_after
+fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
