@@ -23,7 +23,7 @@
   - python3-dev
   - xpad
   - imagemagick
-  - dconf-cli 
+  - dconf-cli
 
 - link:
     ~/.dotfiles: ''
@@ -34,15 +34,16 @@
     ~/.oh-my-zsh: oh-my-zsh/
     ~/.zsh: zsh/
     ~/.zshrc: zshrc
+    ~/.zshenv: zshenv
     ~/.fzf: fzf/
-  
+
 - shell:
   # Fix any broken packages.
   - [sudo apt-get install -f, Fixing any broken packages.]
   - [sudo npm install -g diff-so-fancy, Installing diff-so-fancy]
   - [sudo npm install -g tern, Installing tern]
   # Run the bootstrapper
-  - 
+  -
     command: sudo rake install
     stdin: true
     stdout: true

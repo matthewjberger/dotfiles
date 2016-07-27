@@ -6,9 +6,6 @@ fi
 # Settings
 source ~/.zsh/settings.zsh
 
-# Set environment variables
-source ~/.zsh/environment.zsh
-
 # Aliases
 source ~/.zsh/aliases.zsh
 
