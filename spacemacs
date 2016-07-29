@@ -26,8 +26,7 @@ values."
      (auto-completion : variables
                       auto-completion-enable-snippets-in-popup t)
      better-defaults
-     (colors : variables
-             colors-enable-rainbow-identifiers t)
+     colors
      (c-c++ : variables                  ;; Layer instructions: http://spacemacs.org/layers/+lang/c-c++/README.html
             c-c++-enable-clang-support t ;; Install clang for this to work
             c-c++-default-mode-for-headers 'c++-mode)
@@ -58,7 +57,7 @@ values."
      (version-control : variables
                       version-control-diff-tool 'git-gutter
                       version-control-global-margin t)
-     vim-powerline
+     ;;vim-powerline
      vinegar
      yaml
      )
@@ -263,6 +262,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   (setq-default rust-enable-racer t)
   (setq flycheck-check-syntax-automatically '(mode-enabled save))
+  (setq colors-enable-nyan-cat-progress-bar t)
   )
 
 (defun dotspacemacs/user-config ()
