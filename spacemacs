@@ -25,34 +25,42 @@ values."
      ;; ----------------------------------------------------------------
      (auto-completion : variables
                       auto-completion-enable-snippets-in-popup t)
-     ;; (colors : variables
-     ;;         global-color-identifiers-mode t)
-     ;;c-c++
-     ;;cscope
-     ;;emacs-lisp
-     ;;emoji
-     ;;evil-commentary
-     ;;git
-     ;;github
-     ;;gtags
-     ;;javascript
-     ;;markdown
-     ;;org
-     ;;restclient
-     ;;ruby
-     ;;rust
-     ;;semantic
-     ;;search-engine
-     ;;(shell :variables
-     ;;       shell-default-height 30
-     ;;       shell-default-position 'bottom)
-     ;;syntax-checking
-     ;;(version-control : variables
-     ;;                 version-control-diff-tool 'git-gutter
-     ;;                 version-control-global-margin t)
-     ;;vim-powerline
-     ;;vinegar
-     ;;yaml
+     better-defaults
+     (colors : variables
+             colors-enable-rainbow-identifiers t)
+     (c-c++ : variables                  ;; Layer instructions: http://spacemacs.org/layers/+lang/c-c++/README.html
+            c-c++-enable-clang-support t ;; Install clang for this to work
+            c-c++-default-mode-for-headers 'c++-mode)
+     ;; cscope ;; Layer instructions: http://spacemacs.org/layers/cscope/README.html
+     emacs-lisp
+     emoji
+     evil-cleverparens
+     evil-snipe ;; Layer instructions: http://spacemacs.org/layers/+vim/evil-snipe/README.html
+     extra-langs ;; For Arduino and OpenScad support
+     git    ;; Layer instructions: http://spacemacs.org/layers/+source-control/git/README.html
+     github ;; Layer instructions: http://spacemacs.org/layers/+source-control/github/README.html
+     html
+     ibuffer
+     ipython-notebook
+     javascript
+     markdown
+     org
+     python
+     ruby
+     ruby-on-rails
+     rust
+     semantic
+     search-engine
+     (shell :variables
+            shell-default-height 30
+            shell-default-position 'bottom)
+     syntax-checking
+     (version-control : variables
+                      version-control-diff-tool 'git-gutter
+                      version-control-global-margin t)
+     vim-powerline
+     vinegar
+     yaml
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -272,6 +280,8 @@ you should place your code here."
   (setq linum-format "%4d \u2502")
   (setq vc-follow-symlinks t)
   (add-hook 'hack-local-variables-hook (lambda () (setq truncate-lines t)))
+
+  (spacemacs/toggle-evil-cleverparens-on)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
