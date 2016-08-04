@@ -7,3 +7,8 @@ export RUST_SRC_PATH="$HOME/rust/src"
 # Go environment variables
 export GOPATH="$HOME/.go"
 export PATH="$GOPATH:$PATH"
+
+# Anaconda python environment variables
+export PATH="$HOME/anaconda2/bin:$PATH"
+export PATH="$HOME/anaconda3/bin:$PATH"
+
