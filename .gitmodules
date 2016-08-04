@@ -4,9 +4,6 @@
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh
-[submodule "fzf"]
-	path = fzf
-	url = https://github.com/junegunn/fzf
 [submodule "dotbot-apt-get"]
 	path = dotbot-apt-get
 	url = https://github.com/matthewjberger/dotbot-apt-get
