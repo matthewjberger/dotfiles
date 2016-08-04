@@ -12,3 +12,5 @@ export PATH="$GOPATH:$PATH"
 export PATH="$HOME/anaconda2/bin:$PATH"
 export PATH="$HOME/anaconda3/bin:$PATH"
 
+# Curl Certificates
+export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
