@@ -75,7 +75,7 @@ nnoremap <leader>Z ZZ " Save and quit file
 set colorcolumn=80
 highlight ColorColumn ctermbg=darkgray
 match ErrorMsg '\%>80v.\+'
-colorscheme solarized
+colorscheme seoul256
 set background=dark
 
 " Don't move on *
