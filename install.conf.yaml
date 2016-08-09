@@ -22,6 +22,7 @@
   - cmake
   - python3-dev
   - xpad
+  - xclip
   - imagemagick
   - dconf-cli
 
