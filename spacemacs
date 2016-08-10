@@ -68,7 +68,10 @@ values."
      search-engine
      (shell :variables
             shell-default-height 30
-            shell-default-position 'bottom)
+            shell-default-position 'bottom
+            shell-default-shell 'eshell
+            shell-default-term-shell "/bin/zsh")
+     shell-scripts
      semantic
      syntax-checking
      (version-control :variables
@@ -303,6 +306,10 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+  (setq-default
+   linum-format "%4d \u2502"
+   linum-relative-format "%4s \u2502"
+   )
   )
 
 (defun dotspacemacs/user-config ()
@@ -323,8 +330,6 @@ you should place your code here."
 
   (setq-default
    diff-hl-side 'right
-   linum-format "%4d \u2502"
-   linum-relative-format "%4s \u2502"
    evil-escape-key-sequence "jk"
    rust-enable-racer t)
 
@@ -332,10 +337,16 @@ you should place your code here."
    vc-follow-symlinks t
    flycheck-check-syntax-automatically '(mode-enabled-save)
    avy-all-windows 'all-frames
-   shell-default-term-shell "/bin/zsh"
    )
+
   ;; Disable line wrapping on startup
   (add-hook 'hack-local-variables-hook (lambda()(setq truncate-lines t)))
+
+  ;; Toggle relative line numbers off when not in normal mode
+  ;; TODO: This makes the shell popup glitch. Check buffer type and disable when in shell buffer.
+  ;; (add-hook 'evil-insert-state-entry-hook (lambda()(linum-relative-off
+  ;;                                                    (setq linum-format "%4d \u2502"))))
+  ;; (add-hook 'evil-normal-state-entry-hook (lambda()(linum-relative-on)))
   )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
