@@ -72,7 +72,8 @@ values."
      semantic
      syntax-checking
      (version-control :variables
-                      version-control-diff-tool 'diff-hl)
+                      version-control-diff-tool 'diff-hl
+                      version-control-global-margin t)
      vim-powerline
      yaml
      )
@@ -195,7 +196,7 @@ values."
    dotspacemacs-display-default-layout t
    ;; If non nil then the last auto saved layouts are resume automatically upon
    ;; start. (default nil)
-   dotspacemacs-auto-resume-layouts t
+   dotspacemacs-auto-resume-layouts nil
    ;; Size (in MB) above which spacemacs will prompt to open the large file
    ;; literally to avoid performance issues. Opening a file literally means that
    ;; no major mode or minor modes are active. (default is 1)
@@ -261,7 +262,7 @@ values."
    ;; If non nil line numbers are turned on in all `prog-mode' and `text-mode'
    ;; derivatives. If set to `relative', also turns on relative line numbers.
    ;; (default nil)
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers 'relative
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -311,20 +312,28 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  (setq-default evil-escape-key-sequence "jk")
+
   (define-key evil-normal-state-map "H" "^")
   (define-key evil-normal-state-map "L" "$")
   (define-key evil-normal-state-map "Q" 'delete-frame)
   (define-key evil-normal-state-map "|" 'split-window-right-and-focus)
   (define-key evil-normal-state-map "-" 'split-window-below-and-focus)
-  (setq
+
+  (setq-default
+   diff-hl-side 'right
    linum-format "%4d \u2502"
+   linum-relative-format "%4s \u2502"
+   evil-escape-key-sequence "jk"
+   rust-enable-racer t)
+
+  (setq
    vc-follow-symlinks t
    flycheck-check-syntax-automatically '(mode-enabled-save)
    avy-all-windows 'all-frames
    shell-default-term-shell "/bin/zsh"
    )
-  (setq-default rust-enable-racer t)
+  ;; Disable line wrapping on startup
+  (add-hook 'hack-local-variables-hook (lambda()(setq truncate-lines t)))
   )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
