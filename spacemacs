@@ -313,6 +313,8 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
+  ;; Enable diff checking without having to save
+  (diff-hl-flydiff-mode)
   (define-key evil-normal-state-map "H" "^")
   (define-key evil-normal-state-map "L" "$")
   (define-key evil-normal-state-map "Q" 'delete-frame)
