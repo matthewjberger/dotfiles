@@ -10,6 +10,8 @@
 
 - apt-get:
   - zsh
+  - fasd
+  - markdown
   - rake
   - fonts-hack-ttf
   - global
