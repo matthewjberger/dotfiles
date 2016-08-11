@@ -59,7 +59,8 @@ values."
      javascript
      markdown
      helm
-     org
+     (org :variables
+          org-enable-github-support t)
      (python :variables
              python-test-runner '(nose pytest))
      ruby
