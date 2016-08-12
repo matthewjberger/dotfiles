@@ -7,5 +7,12 @@ HIST_STAMPS="dd/mm/yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins
 plugins=(git zsh-completions)
 
-source $ZSH/oh-my-zsh.sh
+# Source fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Added by travis gem
+[ -f /home/odin/.travis/travis.sh ] && source /home/odin/.travis/travis.sh
+
+eval "$(fasd --init auto)"
+
+source $ZSH/oh-my-zsh.sh
