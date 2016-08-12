@@ -10,3 +10,6 @@
 [submodule "vim/autoload"]
 	path = vim/autoload
 	url = https://github.com/junegunn/vim-plug
+[submodule "fzf"]
+	path = fzf
+	url = https://github.com/junegunn/fzf

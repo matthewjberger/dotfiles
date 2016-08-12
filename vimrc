@@ -12,7 +12,7 @@ Plug 'christoomey/vim-sort-motion'
 Plug 'dahu/vim-fanfingtastic'
 Plug 'ervandew/supertab'
 Plug 'inside/vim-search-pulse'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'kien/rainbow_parentheses.vim'

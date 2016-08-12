@@ -29,6 +29,7 @@
 
 - link:
     ~/.dotfiles: ''
+    ~/.fzf: fzf/
     ~/.spacemacs: spacemacs
     ~/.vim: vim/
     ~/.vimrc: vimrc
