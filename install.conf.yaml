@@ -32,12 +32,12 @@
     ~/.fzf: fzf/
     ~/.spacemacs: spacemacs
     ~/.vim: vim/
-    ~/.vimrc: vimrc
+    ~/.vimrc: vim/vimrc
     ~/.gitconfig: gitconfig
     ~/.oh-my-zsh: oh-my-zsh/
     ~/.zsh: zsh/
-    ~/.zshrc: zshrc
-    ~/.zshenv: zshenv
+    ~/.zshrc: zsh/zshrc
+    ~/.zshenv: zsh/zshenv
 
 - shell:
   # Fix any broken packages.
