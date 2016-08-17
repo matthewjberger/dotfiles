@@ -47,6 +47,7 @@
   - [npm install -g js-beautify, Installing js-beautify]
   - [npm install -g jshint, Installing jshint]
   - [npm install -g vmd, Installing vmd]
+  - [npm install -g gh-rtfm, Installing gh-rtfm]
   # Run the bootstrapper
   -
     command: rake install
