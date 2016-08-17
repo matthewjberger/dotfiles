@@ -56,7 +56,8 @@ values."
      (ibuffer :variables
               ibuffer-group-buffers-by nil)
      ipython-notebook
-     javascript
+     (javascript :variables
+                 javascript-disable-tern-port-files nil)
      markdown
      helm
      (org :variables

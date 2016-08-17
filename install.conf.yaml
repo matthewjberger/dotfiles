@@ -44,6 +44,8 @@
   - [apt-get install -f, Fixing any broken packages.]
   - [npm install -g diff-so-fancy, Installing diff-so-fancy]
   - [npm install -g tern, Installing tern]
+  - [npm install -g js-beautify, Installing js-beautify]
+  - [npm install -g jshint, Installing jshint]
   # Run the bootstrapper
   -
     command: rake install
