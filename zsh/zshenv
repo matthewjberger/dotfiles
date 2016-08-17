@@ -1,8 +1,11 @@
+# Custom bin folder
+export PATH="$HOME/.dotfiles/bin:$PATH"
+
 # Rust environment variables
+export RUST_SRC_PATH="$HOME/.dotfiles/rust/src"
 export CARGO_HOME="$HOME/.cargo"
 export CARGO_BIN="$CARGO_HOME/bin"
 export PATH="$CARGO_BIN:$PATH"
-export RUST_SRC_PATH="$HOME/.dotfiles/rust/src"
 
 # Go environment variables
 export GOPATH="$HOME/.go"
