@@ -42,7 +42,7 @@
     changed        = yellow bold
     untracked      = red bold
 [difftool]
-    tool           = vimdiff
+    tool           = difftool
 [github]
     user           = matthewjberger
     token          = token
@@ -148,3 +148,5 @@
   oldHighlight = red bold 52
   newNormal = green bold
   newHighlight = green bold 22
+[url "https://github.com/"]
+	insteadOf = git://github.com/

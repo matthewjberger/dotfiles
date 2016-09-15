@@ -49,6 +49,8 @@
   - [npm install -g jshint, Installing jshint]
   - [npm install -g vmd, Installing vmd]
   - [npm install -g gh-rtfm, Installing gh-rtfm]
+  - [luarocks install luacheck, Installing luacheck]
+  - [luarocks install lualanes, Installing lualanes]
   # Run the bootstrapper
   -
     command: rake install
