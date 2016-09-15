@@ -26,6 +26,7 @@
   - xclip
   - imagemagick
   - dconf-cli
+  - luarocks
 
 - link:
     ~/.dotfiles: ''
