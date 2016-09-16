@@ -316,6 +316,9 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (setq-default
    linum-format "%4d \u2502"
    linum-relative-format "%4s \u2502"
+   c-default-style "bsd"
+   c-basic-offset 4
+   tab-width 4
    )
   )
 
