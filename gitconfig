@@ -62,6 +62,12 @@
     # Modify previous commit
     amend     = commit -a --amend
 
+    # Clean files not under version control
+    tidy     = clean -xdf
+
+    # Dry run of git tidy
+    tidydry  = clean -xdn
+
     # Checkout file
     co        = checkout
 
