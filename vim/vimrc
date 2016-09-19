@@ -10,6 +10,8 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
 Plug 'christoomey/vim-sort-motion'
 Plug 'dahu/vim-fanfingtastic'
+Plug 'derekwyatt/vim-fswitch'
+Plug 'derekwyatt/vim-protodef'
 Plug 'ervandew/supertab'
 Plug 'inside/vim-search-pulse'
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -409,6 +411,25 @@ nnoremap <leader>Fv :Unite file_rec/async -default-action=vsplit<CR>
 
 "   Buffer switching
 nnoremap <leader>ss :Unite -quick-match -auto-preview buffer<cr>
+
+" Switch to the file and load it into the current window
+nmap <silent> <Leader>of :FSHere<cr>
+" Switch to the file and load it into the window on the right
+nmap <silent> <Leader>ol :FSRight<cr>
+" Switch to the file and load it into a new window split on the right
+nmap <silent> <Leader>oL :FSSplitRight<cr>
+" Switch to the file and load it into the window on the left
+nmap <silent> <Leader>oh :FSLeft<cr>
+" Switch to the file and load it into a new window split on the left
+nmap <silent> <Leader>oH :FSSplitLeft<cr>
+" Switch to the file and load it into the window above
+nmap <silent> <Leader>ok :FSAbove<cr>
+" Switch to the file and load it into a new window split above
+nmap <silent> <Leader>oK :FSSplitAbove<cr>
+" Switch to the file and load it into the window below
+nmap <silent> <Leader>oj :FSBelow<cr>
+" Switch to the file and load it into a new window split below
+nmap <silent> <Leader>oJ :FSSplitBelow<cr>
 
 " }}}
 
