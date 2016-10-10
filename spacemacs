@@ -37,7 +37,9 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      (auto-completion :variables
-                      autocomplete-enable-snippets-in-popup t)
+                      autocomplete-enable-snippets-in-popup t
+                      autocomplete-enable-sort-by-usage t)
+     asm
      better-defaults
      (colors :variables
              colors-enable-nyan-cat-progress-bar t)
@@ -52,6 +54,7 @@ values."
      games
      git
      github
+     helm
      html
      (ibuffer :variables
               ibuffer-group-buffers-by nil)
@@ -64,7 +67,6 @@ values."
      lua
      (markdown :variables
                markdown-live-preview-engine 'vmd)
-     helm
      (org :variables
           org-enable-github-support t)
      (python :variables
@@ -73,11 +75,11 @@ values."
      ruby-on-rails
      rust
      search-engine
+     shaders
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom
-            shell-default-shell 'eshell
-            shell-default-term-shell "/bin/zsh")
+            shell-default-shell 'eshell)
      shell-scripts
      semantic
      syntax-checking
@@ -91,7 +93,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '( cargo )
+   dotspacemacs-additional-packages '( cargo writeroom-mode )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -280,7 +282,7 @@ values."
    ;; (default nil)
    dotspacemacs-smartparens-strict-mode t
    ;; If non-nil pressing the closing parenthesis `)' key in insert mode passes
-   ;; over any automatically added closing parenthesis, bracket, quote, etc…
+   ;; over any automatically added closing parenthesis, bracket, quote, etc
    ;; This can be temporary disabled by pressing `C-q' before `)'. (default nil)
    dotspacemacs-smart-closing-parenthesis t
    ;; Select a scope to highlight delimiters. Possible values are `any',
@@ -293,7 +295,7 @@ values."
    ;; List of search tool executable names. Spacemacs uses the first installed
    ;; tool of the list. Supported tools are `ag', `pt', `ack' and `grep'.
    ;; (default '("ag" "pt" "ack" "grep"))
-   dotspacemacs-search-tools '("ag" "pt" "ack" "grep")
+   dotspacemacs-search-tools '("pt" "ag" "ack" "grep")
    ;; The default package repository used if no explicit repository has been
    ;; specified with an installed package.
    ;; Not used for now. (default nil)
@@ -313,6 +315,20 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+
+  ;;
+  ;;  This makes Emacs ignore the "-e (make-frame-visible)"
+  ;;  that it gets passed when started by emacsclientw.
+  ;;
+  (add-to-list 'command-switch-alist '("(make-frame-visible)" .
+                                       (lambda (s))))
+
+  ;;
+  ;;  This starts the Emacs server when .emacs gets loaded
+  ;;
+  (require 'server)
+  (if (not (server-running-p)) (server-start))
+
   (setq-default
    linum-format "%4d \u2502"
    linum-relative-format "%4s \u2502"
@@ -330,11 +346,22 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
+  ;;
+  ;;  This changes C-x C-c to just hide Emacs until the next
+  ;;  time you use it.  We rebind C-M-c to be the command to
+  ;;  really kill Emacs.
+  ;;
+  (defun hide-frame ()
+    "Exit server buffers and hide the main Emacs window"
+    (interactive)
+    (server-edit)
+    (make-frame-invisible nil t))
+
   ;; Enable diff checking without having to save
   (diff-hl-flydiff-mode)
   (define-key evil-normal-state-map "H" "^")
   (define-key evil-normal-state-map "L" "$")
-  (define-key evil-normal-state-map "Q" 'delete-frame)
+  (define-key evil-normal-state-map "Q" 'hide-frame)
   (define-key evil-normal-state-map "|" 'split-window-right-and-focus)
   (define-key evil-normal-state-map "-" 'split-window-below-and-focus)
 
@@ -345,7 +372,7 @@ you should place your code here."
 
   (setq
    vc-follow-symlinks t
-   flycheck-check-syntax-automatically '(mode-enabled save idle-change)
+   flycheck-check-syntax-automatically '(save mode-enabled idle-change)
    avy-all-windows 'all-frames
    )
 
@@ -360,6 +387,7 @@ you should place your code here."
   ;; (add-hook 'evil-insert-state-entry-hook (lambda()(linum-relative-off
   ;;                                                    (setq linum-format "%4d \u2502"))))
   ;; (add-hook 'evil-normal-state-entry-hook (lambda()(linum-relative-on)))
-  )
+)
+
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
