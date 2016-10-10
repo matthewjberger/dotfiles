@@ -347,9 +347,8 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
   ;;
-  ;;  This changes C-x C-c to just hide Emacs until the next
-  ;;  time you use it.  We rebind C-M-c to be the command to
-  ;;  really kill Emacs.
+  ;;  This changes Q to just hide Emacs until the next
+  ;;  time you use it. 
   ;;
   (defun hide-frame ()
     "Exit server buffers and hide the main Emacs window"
