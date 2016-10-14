@@ -3,54 +3,56 @@
       create: true
       force: true
 
-- clean: ['~']
+- clean: ['~', '~/.config']
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
 
 - apt-get:
-  - zsh
-  - markdown
-  - rake
-  - fonts-hack-ttf
-  - global
-  - npm
-  - tmux
   - ack-grep
-  - silversearcher-ag
-  - exuberant-ctags
   - build-essential
   - cmake
-  - python3-dev
-  - xpad
-  - xclip
-  - imagemagick
   - dconf-cli
+  - exuberant-ctags
+  - fonts-hack-ttf
+  - global
+  - imagemagick
   - luarocks
+  - markdown
+  - npm
+  - python3-dev
+  - rake
+  - silversearcher-ag
+  - tmux
+  - xclip
+  - xpad
+  - zsh
 
 - link:
     ~/.dotfiles: ''
+    ~/.emacs.d: emacs.d
     ~/.fzf: fzf/
+    ~/.gitconfig: gitconfig
+    ~/.gitignore_global: gitignore_global
+    ~/.oh-my-zsh: oh-my-zsh/
     ~/.spacemacs: spacemacs
     ~/.vim: vim/
     ~/.vimrc: vim/vimrc
-    ~/.gitconfig: gitconfig
-    ~/.oh-my-zsh: oh-my-zsh/
     ~/.zsh: zsh/
-    ~/.zshrc: zsh/zshrc
     ~/.zshenv: zsh/zshenv
+    ~/.zshrc: zsh/zshrc
 
 - shell:
   # Fix any broken packages.
   - [apt-get install -f, Fixing any broken packages.]
-  - [npm install -g diff-so-fancy, Installing diff-so-fancy]
-  - [npm install -g tern, Installing tern]
-  - [npm install -g js-beautify, Installing js-beautify]
-  - [npm install -g jshint, Installing jshint]
-  - [npm install -g vmd, Installing vmd]
-  - [npm install -g gh-rtfm, Installing gh-rtfm]
   - [luarocks install luacheck, Installing luacheck]
   - [luarocks install lualanes, Installing lualanes]
+  - [npm install -g diff-so-fancy, Installing diff-so-fancy]
+  - [npm install -g gh-rtfm, Installing gh-rtfm]
+  - [npm install -g js-beautify, Installing js-beautify]
+  - [npm install -g jshint, Installing jshint]
+  - [npm install -g tern, Installing tern]
+  - [npm install -g vmd, Installing vmd]
   # Run the bootstrapper
   -
     command: rake install
