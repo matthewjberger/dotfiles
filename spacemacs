@@ -316,19 +316,6 @@ executes.
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
 
-  ;;
-  ;;  This makes Emacs ignore the "-e (make-frame-visible)"
-  ;;  that it gets passed when started by emacsclientw.
-  ;;
-  (add-to-list 'command-switch-alist '("(make-frame-visible)" .
-                                       (lambda (s))))
-
-  ;;
-  ;;  This starts the Emacs server when .emacs gets loaded
-  ;;
-  (require 'server)
-  (if (not (server-running-p)) (server-start))
-
   (setq-default
    linum-format "%4d \u2502"
    linum-relative-format "%4s \u2502"
@@ -346,21 +333,11 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
-  ;;
-  ;;  This changes Q to just hide Emacs until the next
-  ;;  time you use it. 
-  ;;
-  (defun hide-frame ()
-    "Exit server buffers and hide the main Emacs window"
-    (interactive)
-    (server-edit)
-    (make-frame-invisible nil t))
-
   ;; Enable diff checking without having to save
   (diff-hl-flydiff-mode)
   (define-key evil-normal-state-map "H" "^")
   (define-key evil-normal-state-map "L" "$")
-  (define-key evil-normal-state-map "Q" 'hide-frame)
+  (define-key evil-normal-state-map "Q" 'delete-frame)
   (define-key evil-normal-state-map "|" 'split-window-right-and-focus)
   (define-key evil-normal-state-map "-" 'split-window-below-and-focus)
 
@@ -390,3 +367,17 @@ you should place your code here."
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (yapfify yaml-mode xterm-color x86-lookup ws-butler writeroom-mode visual-fill-column wolfram-mode window-numbering which-key web-mode web-beautify volatile-highlights vmd-mode vi-tilde-fringe uuidgen use-package typit mmt toml-mode toc-org thrift tagedit stickyfunc-enhance stan-mode srefactor spacemacs-theme spaceline smeargle slim-mode shell-pop scss-mode scad-mode sass-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe restart-emacs rbenv rainbow-mode rainbow-identifiers rainbow-delimiters racer qml-mode pyvenv pytest pyenv-mode py-isort pug-mode projectile-rails rake inflections powerline popwin pip-requirements persp-mode pcre2el spinner pacmacs ox-gfm orgit org-projectile org-present org org-pomodoro alert log4e gntp org-plus-contrib org-download org-bullets open-junk-file neotree nasm-mode mwim multi-term move-text mmm-mode matlab-mode markdown-toc markdown-mode magit-gitflow magit-gh-pulls macrostep lua-mode lorem-ipsum livid-mode skewer-mode simple-httpd live-py-mode linum-relative link-hint less-css-mode julia-mode json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc info+ indent-guide ido-vertical-mode ibuffer-projectile hydra hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation help-fns+ helm-themes zenburn-theme quelpa helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag haml-mode google-translate golden-ratio gnuplot glsl-mode github-search github-clone github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md flycheck-rust flycheck-pos-tip flx-ido fish-mode fill-column-indicator feature-mode fasd fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help engine-mode emoji-cheat-sheet-plus emmet-mode elisp-slime-nav ein dumb-jump disaster diminish diff-hl define-word cython-mode company-web company-tern company-statistics company-shell company-emoji company-c-headers company-auctex company-anaconda column-enforce-mode color-identifiers-mode coffee-mode cmake-mode clean-aindent-mode clang-format chruby cargo bundler bind-key auto-yasnippet auto-highlight-symbol auto-compile arduino-mode aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell 2048-game))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

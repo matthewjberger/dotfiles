@@ -43,7 +43,7 @@
   # Fix any broken packages.
   - [apt-get install -f, Fixing any broken packages.]
   - [luarocks install luacheck, Installing luacheck]
-  - [luarocks install lualanes, Installing lualanes]
+  - [luarocks install lanes, Installing lualanes]
   - [npm install -g diff-so-fancy, Installing diff-so-fancy]
   - [npm install -g gh-rtfm, Installing gh-rtfm]
   - [npm install -g js-beautify, Installing js-beautify]
