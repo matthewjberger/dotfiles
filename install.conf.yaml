@@ -5,9 +5,6 @@
 
 - clean: ['~', '~/.config']
 
-- shell:
-  - [git submodule update --init --recursive, Installing submodules]
-
 - apt-get:
   - ack-grep
   - build-essential
