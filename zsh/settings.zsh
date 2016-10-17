@@ -5,7 +5,7 @@ ZSH_THEME="agnoster"
 HIST_STAMPS="dd/mm/yyyy"
 
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins
-plugins=(git zsh-completions)
+plugins=(git zsh-completions fasd colored-man-pages)
 
 # Source fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
