@@ -47,7 +47,7 @@
   - [luarocks install luacheck, Installing luacheck]
   - [luarocks install lanes, Installing lualanes]
   # Symlink node
-  - [ln -s /usr/bin/nodejs /usr/bin/node, Symlinking nodejs]
+  - [ln -sf /usr/bin/nodejs /usr/bin/node, Symlinking nodejs]
   # NPM packages
   - [npm install -g diff-so-fancy, Installing diff-so-fancy]
   - [npm install -g gh-rtfm, Installing gh-rtfm]
