@@ -156,3 +156,5 @@
   newHighlight = green bold 22
 [url "https://github.com/"]
 	insteadOf = git://github.com/
+[help]
+	autocorrect = 1
