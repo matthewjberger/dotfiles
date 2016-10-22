@@ -5,7 +5,6 @@ desc "Install dot files into home directory"
 
 task :install do
 
-   switch_to_zsh
    update_and_upgrade
    install_zenburn_terminal_theme
    install_dropbox
@@ -16,23 +15,6 @@ task :install do
    install_python_anaconda3
 
    puts "Finished setting up environment!"
-end
-
-def switch_to_zsh
-    if ENV["SHELL"] =~ /zsh/
-        puts "using zsh"
-    else
-        print "switch to zsh? (recommended) [ynq] "
-        case $stdin.gets.chomp
-        when 'y'
-            puts "Switching to zsh..."
-            system %Q{chsh -s $(which zsh)}
-        when 'q'
-            exit
-        else
-            puts "Skipping zsh."
-        end
-    end
 end
 
 def update_and_upgrade
