@@ -8,6 +8,7 @@
 - apt-get:
   - ack-grep
   - build-essential
+  - clang
   - cmake
   - dconf-cli
   - exuberant-ctags
@@ -22,6 +23,7 @@
   - rake
   - silversearcher-ag
   - tmux
+  - vim-nox
   - xclip
   - xpad
   - zsh

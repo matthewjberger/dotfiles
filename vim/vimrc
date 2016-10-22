@@ -36,7 +36,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
-Plug 'valloric/youcompleteme', {'do': './install.py --clang-completer --gocode-completer --racer-completer'}
+" Plug 'valloric/youcompleteme', {'do': './install.py --clang-completer --gocode-completer --racer-completer'}
 Plug 'xolox/vim-misc' | Plug 'xolox/vim-easytags'
 Plug 'yonchu/accelerated-smooth-scroll'
 
