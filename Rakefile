@@ -5,51 +5,14 @@ desc "Install dot files into home directory"
 
 task :install do
 
-   update_and_upgrade
    install_zenburn_terminal_theme
    install_dropbox
-   install_spacemacs
    install_gibo
    install_go
    install_python_anaconda2
    install_python_anaconda3
 
    puts "Finished setting up environment!"
-end
-
-def update_and_upgrade
-   # Install dependencies
-    print "Update and Upgrade? [ynq]"
-    case $stdin.gets.chomp
-    when 'y'
-        puts "Updating and Upgrading..."
-        system %Q{ bash -c 'sudo apt-get update
-                            sudo apt-get upgrade
-                            sudo apt-get autoremove' }
-    when 'q'
-        exit
-    else
-        puts "Skipping common packages installation."
-    end
-end
-
-def install_spacemacs
-    print "Install Spacemacs? [ynq]"
-    case $stdin.gets.chomp
-    when 'y'
-        puts "Installing Spacemacs..."
-        system %Q{ bash -c 'sudo add-apt-repository ppa:ubuntu-elisp/ppa
-                            sudo apt-get update
-                            sudo apt-get install emacs-snapshot
-                            git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-                            pushd ~/.emacs.d
-                            git checkout develop
-                            popd'}
-    when 'q'
-        exit
-    else
-        puts "Skipping spacemacs installation."
-    end
 end
 
 def install_python_anaconda2
