@@ -11,7 +11,9 @@
   - clang
   - cmake
   - dconf-cli
+  - [emacs-snapshot, ubuntu-elisp/ppa]
   - exuberant-ctags
+  - [fasd, aacebedo/fasd]
   - fonts-hack-ttf
   - global
   - imagemagick
@@ -59,6 +61,8 @@
   - [npm install -g vmd, Installing vmd]
   # Install zsh-syntax-highlighting
   - git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+  # Install Vim Plugins
+  - echo -ne '\n' | vim +PlugInstall +qa
   # Run the bootstrapper
   -
     command: rake install
