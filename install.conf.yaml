@@ -52,6 +52,8 @@
   - [luarocks install lanes, Installing lualanes]
   # Symlink node
   - [ln -sf /usr/bin/nodejs /usr/bin/node, Symlinking nodejs]
+  # Create fasd init cache
+  - mkdir oh-my-zsh/cache/fasd-init-cache
   # NPM packages
   - [npm install -g diff-so-fancy, Installing diff-so-fancy]
   - [npm install -g gh-rtfm, Installing gh-rtfm]
