@@ -1,6 +1,3 @@
-# Begin an emacs frame, starting the server if not running
-alias emacsf='emacsclient -c -a ""'
-
 # Stop the emacs server
 alias killemacs='emacsclient -e "(kill-emacs)"'
 
