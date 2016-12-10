@@ -21,6 +21,8 @@
   - markdown
   - nodejs
   - npm
+  - [graphics-drivers, oibaf]
+  - ppa-purge
   - python3-dev
   - rake
   - silversearcher-ag
