@@ -354,6 +354,14 @@ you should place your code here."
 
   ;; Disable line wrapping on startup
   (add-hook 'hack-local-variables-hook (lambda()(setq truncate-lines t)))
+  
+  (setq gdb-many-windows t)
+  (global-set-key [f5] 'gud-cont)
+  (global-set-key [f7] 'gud-tbreak)
+  (global-set-key [S-f11] 'gud-finish)
+  (global-set-key [f9] 'gud-break)
+  (global-set-key [f10] 'gud-next)
+  (global-set-key [f11] 'gud-step)
 
   ;; Toggle relative line numbers off when not in normal mode
   ;; TODO: This makes the shell popup glitch. Check buffer type and disable when in shell buffer.
