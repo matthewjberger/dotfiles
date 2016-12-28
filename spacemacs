@@ -382,6 +382,10 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  
+  ;; Enable evil-cleverparens and use it when editing elisp
+  (spacemacs/toggle-evil-cleverparens-on)
+  (add-hook 'emacs-lisp-mode-hook #'evil-cleverparens-mode)
 
   (add-hook 'prog-mode-hook 'turn-on-evil-mc-mode)
   (add-hook 'text-mode-hook 'turn-on-evil-mc-mode)
