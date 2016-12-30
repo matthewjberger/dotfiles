@@ -59,7 +59,7 @@ values."
      extra-langs
      fasd
      games
-     geolocation
+     ;; geolocation
      git
      github
      haskell
