@@ -62,6 +62,7 @@ values."
      geolocation
      git
      github
+     haskell
      helm
      html
      (ibuffer :variables
@@ -77,6 +78,7 @@ values."
      (markdown :variables
                markdown-live-preview-engine 'vmd)
      ;; mu4e
+     ocaml
      (org :variables
           org-enable-github-support t)
      pandoc
