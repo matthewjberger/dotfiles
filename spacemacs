@@ -406,7 +406,7 @@ you should place your code here."
    vc-follow-symlinks t
    flycheck-check-syntax-automatically '(save mode-enabled idle-change)
    avy-all-windows 'all-frames
-   )
+   gdb-many-windows t)
 
  ;; Perform full-document LaTeX previews
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
@@ -414,7 +414,6 @@ you should place your code here."
   ;; Disable line wrapping on startup
   (add-hook 'hack-local-variables-hook (lambda()(setq truncate-lines t)))
 
-  (setq gdb-many-windows t)
   (global-set-key [f5] 'gud-cont)
   (global-set-key [f7] 'gud-tbreak)
   (global-set-key [S-f11] 'gud-finish)
