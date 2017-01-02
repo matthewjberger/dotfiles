@@ -110,7 +110,10 @@ values."
      vim-empty-lines
      vim-powerline
      vinegar
-     ;; wakatime
+     ;; (wakatime :variables
+     ;;      wakatime-api-key "insert-api-key-here"
+     ;;      wakatime-cli-path "path-to-wakatime-cli")
+
      windows-scripts  
      xkcd
      yaml
