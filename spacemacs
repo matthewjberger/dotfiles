@@ -82,12 +82,12 @@ values."
      (org :variables
           org-enable-github-support t)
      pandoc
-     pdf-tools
+     ;; pdf-tools
      plantuml
      prodigy
      (python :variables
              python-test-runner '(nose pytest))
-     rebox
+     ;; rebox
      restclient
      ruby
      ruby-on-rails
