@@ -55,7 +55,7 @@ values."
      emoji
      erc
      evil-cleverparens
-     evil-commentary
+     ;; evil-commentary
      extra-langs
      fasd
      games
@@ -81,7 +81,7 @@ values."
      ocaml
      (org :variables
           org-enable-github-support t)
-     pandoc
+     ;; pandoc
      ;; pdf-tools
      plantuml
      prodigy
