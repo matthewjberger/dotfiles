@@ -110,10 +110,15 @@ values."
      vim-empty-lines
      vim-powerline
      vinegar
+     ;; Make a ~/.wakatime.cfg file and place the following text in it:
+     ;;
+     ;; [settings]
+     ;; api_key = your-api-key
+     ;;
+     ;; Then enable the following three lines and set the paths properly:
      ;; (wakatime :variables
-     ;;      wakatime-api-key "insert-api-key-here"
-     ;;      wakatime-cli-path "path-to-wakatime-cli")
-
+     ;;          wakatime-cli-path "path/to/wakatime-script.py"
+     ;;          wakatime-python-bin "path/to/python")
      windows-scripts  
      xkcd
      yaml
@@ -272,7 +277,7 @@ values."
    ;; in all non-asynchronous sources. If set to `source', preserve individual
    ;; source settings. Else, disable fuzzy matching in all sources.
    ;; (default 'always)
-   dotspacemacs-helm-use-fuzzy 'always
+   dotspacemacs-helm-use-fuzzy 'source
    ;; If non-nil the paste micro-state is enabled. When enabled pressing `p`
    ;; several times cycle between the kill ring content. (default nil)
    dotspacemacs-enable-paste-transient-state nil
