@@ -381,6 +381,9 @@ before packages are loaded. If you are unsure, you should try in setting them in
    c-basic-offset 4
    tab-width 4
    )
+  
+  ;; Enable rainbow-mode by default
+  (add-hook 'prog-mode-hook 'rainbow-mode)
 
   ;; Use evil-search instead of isearch.
   ;; Consequently this also enables the gn text object with evil-next-match.
