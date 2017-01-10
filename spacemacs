@@ -87,7 +87,8 @@ values."
      prodigy
      (python :variables
              python-test-runner '(nose pytest))
-     rebox
+     (rebox :variables
+            rebox-enable-in-text-mode t)
      restclient
      ruby
      ruby-on-rails
