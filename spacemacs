@@ -202,7 +202,6 @@ values."
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(monokai
                          zenburn
-                         gruvbox
                          sanityinc-tomorrow-night
                          solarized-dark
                          spacemacs-dark)
