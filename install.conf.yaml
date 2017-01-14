@@ -6,7 +6,6 @@
 - clean: ['~', '~/.config']
 
 - apt-get:
-  - ack-grep
   - build-essential
   - clang
   - cmake
