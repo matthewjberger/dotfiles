@@ -22,6 +22,7 @@
   - npm
   - [graphics-drivers, oibaf]
   - ppa-purge
+  - python-gpgme
   - python3-dev
   - rake
   - silversearcher-ag
