@@ -37,13 +37,13 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      (auto-completion :variables
-                      autocomplete-enable-snippets-in-popup t
-                      autocomplete-enable-sort-by-usage t)
+            autocomplete-enable-snippets-in-popup t
+            autocomplete-enable-sort-by-usage t)
      autohotkey
      asm
      better-defaults
      (colors :variables
-             colors-enable-nyan-cat-progress-bar t)
+            colors-enable-nyan-cat-progress-bar t)
      command-log
      (c-c++ :variables
             c-c++-enable-clang-support t
@@ -57,7 +57,7 @@ values."
      evil-cleverparens
      ;; evil-commentary
      extra-langs
-     fasd
+     ;; fasd
      games
      ;; geolocation
      git
@@ -66,7 +66,7 @@ values."
      helm
      html
      (ibuffer :variables
-              ibuffer-group-buffers-by nil)
+            ibuffer-group-buffers-by nil)
      imenu-list
      ipython-notebook
      (javascript :variables
@@ -86,7 +86,7 @@ values."
      plantuml
      prodigy
      (python :variables
-             python-test-runner '(nose pytest))
+            python-test-runner '(nose pytest))
      (rebox :variables
             rebox-enable-in-text-mode t)
      restclient
@@ -106,8 +106,8 @@ values."
      typography
      vagrant
      (version-control :variables
-                      version-control-diff-tool 'diff-hl
-                      version-control-global-margin t)
+            version-control-diff-tool 'diff-hl
+            version-control-global-margin t)
      vim-empty-lines
      vim-powerline
      vinegar
@@ -118,9 +118,9 @@ values."
      ;;
      ;; Then enable the following three lines and set the paths properly:
      ;; (wakatime :variables
-     ;;          wakatime-cli-path "path/to/wakatime-script.py"
-     ;;          wakatime-python-bin "path/to/python")
-     windows-scripts  
+     ;;       wakatime-cli-path "C:/Users/Berger_Ma/AppData/Local/Continuum/Anaconda3/Scripts/wakatime-script.py"
+     ;;       wakatime-python-bin "C:/Users/Berger_Ma/AppData/Local/Continuum/Anaconda3/python.exe")
+     windows-scripts
      xkcd
      yaml
      )
@@ -128,7 +128,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '( writeroom-mode rust-playground tiny )
+   dotspacemacs-additional-packages '( rust-playground tiny writeroom-mode )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -210,7 +210,7 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Hack"
-                               :size 16
+                               :size 18
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -374,20 +374,20 @@ executes.
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
 
- (setq-default
+  (setq-default
    linum-format "%4d \u2502"
    linum-relative-format "%4s \u2502"
    c-default-style "bsd"
    c-basic-offset 4
    tab-width 4
    )
-  
-  ;; Enable rainbow-mode by default
-  (add-hook 'prog-mode-hook 'rainbow-mode)
 
   ;; Use evil-search instead of isearch.
   ;; Consequently this also enables the gn text object with evil-next-match.
   (setq evil-search-module (quote evil-search))
+
+  ;; Enable rainbow-mode by default   
+  (add-hook 'prog-mode-hook 'rainbow-mode)
   )
 
 (defun dotspacemacs/user-config ()
@@ -397,18 +397,19 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  
+
   ;; Enable evil-cleverparens and use it when editing elisp
   (spacemacs/toggle-evil-cleverparens-on)
   (add-hook 'emacs-lisp-mode-hook #'evil-cleverparens-mode)
 
+  ;; Enable multiple cursors in programming and text modes
   (add-hook 'prog-mode-hook 'turn-on-evil-mc-mode)
   (add-hook 'text-mode-hook 'turn-on-evil-mc-mode)
 
   ;; Enable diff checking without having to save
   (diff-hl-flydiff-mode)
-  (define-key evil-normal-state-map "H" "^")
-  (define-key evil-normal-state-map "L" "$")
+  (add-hook 'prog-mode-hook (lambda()(define-key evil-normal-state-map "H" "^")))
+  (add-hook 'prog-mode-hook (lambda()(define-key evil-normal-state-map "L" "$")))
 
   (setq-default
    diff-hl-side 'right
@@ -421,18 +422,33 @@ you should place your code here."
    avy-all-windows 'all-frames
    gdb-many-windows t)
 
- ;; Perform full-document LaTeX previews
+  ;; Perform full-document LaTeX previews
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
 
   ;; Disable line wrapping on startup
   (add-hook 'hack-local-variables-hook (lambda()(setq truncate-lines t)))
 
+  ;; Use auto-fill-mode when in org-mode
+  (add-hook 'org-mode-hook 'auto-fill-mode)
+  (setq
+   ;; Set maximum indentation for description lists
+   org-list-description-max-indent 5
+
+   ;; Prevent demoting heading also shifting text inside sections
+   org-adapt-indentation nil)
+
+  ;; Configure some keybindings for gud navigation
   (global-set-key [f5] 'gud-cont)
   (global-set-key [f7] 'gud-tbreak)
   (global-set-key [S-f11] 'gud-finish)
   (global-set-key [f9] 'gud-break)
   (global-set-key [f10] 'gud-next)
   (global-set-key [f11] 'gud-step)
+
+  ;; Prevent emacs from recentering the buffer automatically
+  (setq scroll-step 1)
+  (setq scroll-conservatively 10000)
+  (setq auto-window-vscroll nil)
 
   ;; Toggle relative line numbers off when not in normal mode
   ;; TODO: This makes the shell popup glitch. Check buffer type and disable when in shell buffer.
