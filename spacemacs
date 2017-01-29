@@ -450,6 +450,8 @@ you should place your code here."
   (setq scroll-conservatively 10000)
   (setq auto-window-vscroll nil)
 
+  (put 'helm-make-build-dir 'safe-local-variable 'stringp)
+  
   ;; Toggle relative line numbers off when not in normal mode
   ;; TODO: This makes the shell popup glitch. Check buffer type and disable when in shell buffer.
   ;; (add-hook 'evil-insert-state-entry-hook (lambda()(linum-relative-off
