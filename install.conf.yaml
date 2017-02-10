@@ -10,13 +10,18 @@
   - clang
   - cmake
   - dconf-cli
+  - doxygen
   - [emacs-snapshot, ubuntu-elisp/ppa]
   - exuberant-ctags
   - [fasd, aacebedo/fasd]
   - fonts-hack-ttf
+  - g++
+  - gdb
   - global
   - imagemagick
   - luarocks
+  - libgl1-mesa-dev
+  - libglu1-mesa-dev
   - markdown
   - nodejs
   - npm
