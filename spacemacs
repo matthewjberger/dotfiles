@@ -39,78 +39,78 @@ values."
      (auto-completion :variables
             autocomplete-enable-snippets-in-popup t
             autocomplete-enable-sort-by-usage t)
-     autohotkey
-     asm
-     better-defaults
+     ;; autohotkey
+     ;; asm
+     ;; better-defaults
      (colors :variables
             colors-enable-nyan-cat-progress-bar t)
-     command-log
+     ;; command-log
      (c-c++ :variables
             c-c++-enable-clang-support t
             c-c++-default-mode-for-headers 'c++-mode)
-     dash
+     ;; dash
      docker
-     elfeed
+     ;; elfeed
      emacs-lisp
-     emoji
-     erc
+     ;; emoji
+     ;; erc
      evil-cleverparens
      ;; evil-commentary
-     extra-langs
+     ;; extra-langs
      ;; fasd
-     games
+     ;; games
      ;; geolocation
-     git
-     github
-     haskell
+     ;; git
+     ;; github
+     ;; haskell
      helm
-     html
-     (ibuffer :variables
-            ibuffer-group-buffers-by nil)
-     imenu-list
-     ipython-notebook
-     (javascript :variables
-                 javascript-disable-tern-port-files nil)
-     (latex :variables
-            latex-enable-auto-fill t
-            latex-enable-folding t)
-     lua
+     ;; html
+     ;; (ibuffer :variables
+     ;;        ibuffer-group-buffers-by nil)
+     ;; imenu-list
+     ;; ipython-notebook
+     ;; (javascript :variables
+     ;;             javascript-disable-tern-port-files nil)
+     ;; (latex :variables
+     ;;        latex-enable-auto-fill t
+     ;;        latex-enable-folding t)
+     ;; lua
      (markdown :variables
                markdown-live-preview-engine 'vmd)
      ;; mu4e
-     ocaml
+     ;; ocaml
      (org :variables
           org-enable-github-support t)
      ;; pandoc
      ;; pdf-tools
-     plantuml
-     prodigy
-     (python :variables
-            python-test-runner '(nose pytest))
-     (rebox :variables
-            rebox-enable-in-text-mode t)
-     restclient
-     ruby
-     ruby-on-rails
+     ;; plantuml
+     ;; prodigy
+     ;; (python :variables
+     ;;        python-test-runner '(nose pytest))
+     ;; (rebox :variables
+     ;;        rebox-enable-in-text-mode t)
+     ;; restclient
+     ;; ruby
+     ;; ruby-on-rails
      rust
-     search-engine
+     ;; search-engine
      shaders
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom
             shell-default-shell 'eshell)
-     shell-scripts
+     ;; shell-scripts
      semantic
      syntax-checking
-     theming
-     typography
+     ;; theming
+     ;; typography
      vagrant
      (version-control :variables
             version-control-diff-tool 'diff-hl
             version-control-global-margin t)
-     vim-empty-lines
+     ;; vim-empty-lines
      vim-powerline
-     vinegar
+     ;; vinegar
      ;; Make a ~/.wakatime.cfg file and place the following text in it:
      ;;
      ;; [settings]
@@ -120,8 +120,8 @@ values."
      ;; (wakatime :variables
      ;;       wakatime-cli-path "C:/Users/Berger_Ma/AppData/Local/Continuum/Anaconda3/Scripts/wakatime-script.py"
      ;;       wakatime-python-bin "C:/Users/Berger_Ma/AppData/Local/Continuum/Anaconda3/python.exe")
-     windows-scripts
-     xkcd
+     ;; windows-scripts
+     ;; xkcd
      yaml
      )
    ;; List of additional packages that will be installed without being
