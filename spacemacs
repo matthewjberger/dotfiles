@@ -42,14 +42,15 @@ values."
      ;; autohotkey
      ;; asm
      ;; better-defaults
-     (colors :variables
-            colors-enable-nyan-cat-progress-bar t)
+     colors
+     ;;(colors :variables
+     ;;      colors-enable-nyan-cat-progress-bar t)
      ;; command-log
      (c-c++ :variables
             c-c++-enable-clang-support t
             c-c++-default-mode-for-headers 'c++-mode)
      ;; dash
-     docker
+     ;; docker
      ;; elfeed
      emacs-lisp
      ;; emoji
@@ -63,7 +64,8 @@ values."
      ;; git
      ;; github
      ;; haskell
-     helm
+     ;; helm
+     ivy
      ;; html
      ;; (ibuffer :variables
      ;;        ibuffer-group-buffers-by nil)
@@ -104,7 +106,7 @@ values."
      syntax-checking
      ;; theming
      ;; typography
-     vagrant
+     ;; vagrant
      (version-control :variables
             version-control-diff-tool 'diff-hl
             version-control-global-margin t)
@@ -450,7 +452,7 @@ you should place your code here."
   (setq scroll-conservatively 10000)
   (setq auto-window-vscroll nil)
 
-  (put 'helm-make-build-dir 'safe-local-variable 'stringp)
+  ;;(put 'helm-make-build-dir 'safe-local-variable 'stringp)
   
   ;; Toggle relative line numbers off when not in normal mode
   ;; TODO: This makes the shell popup glitch. Check buffer type and disable when in shell buffer.
