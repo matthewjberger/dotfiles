@@ -12,14 +12,14 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "box-cutter/ubuntu1604-desktop"
+  config.vm.box = "boxcutter/ubuntu1610-desktop"
 
 
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  # config.vm.synced_folder "../data", "/vagrant_data"
+  config.vm.synced_folder ".", "/home/vagrant/Code/dotfiles"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -42,12 +42,8 @@ Vagrant.configure("2") do |config|
     vb.customize ["modifyvm", :id, "--accelerate3d", "on"]
   end
 
-  # This will install xfce, as well as build and install the ogre 3D library from source.
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update -y
     apt-get upgrade -y
-    git clone https://github.com/matthewjberger/dotfiles
-    cd dotfiles
-    sudo bash ./install
   SHELL
 end
