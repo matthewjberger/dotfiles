@@ -43,8 +43,8 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision "shell", inline: <<-SHELL
-    apt-get update -y
-    apt-get upgrade -y
-    sh -c "echo -e 'LANG=en_US.UTF-8\nLC_ALL=en_US.UTF-8' > /etc/default/locale"
+  	update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
   SHELL
+
+  config.vm.provision :reload
 end
