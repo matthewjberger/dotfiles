@@ -32,7 +32,7 @@
   - rake
   - silversearcher-ag
   - tmux
-  - vim-nox
+  - [vim, jonathonf/vim]
   - xclip
   - xpad
   - zsh
