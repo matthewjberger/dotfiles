@@ -18,8 +18,11 @@
   - g++
   - gdb
   - global
+  - guake
+  - guake-indicator
   - imagemagick
   - luarocks
+  - libappindicator1
   - libgl1-mesa-dev
   - libglu1-mesa-dev
   - markdown
