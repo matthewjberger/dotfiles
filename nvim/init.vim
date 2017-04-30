@@ -67,22 +67,22 @@ call plug#begin('~/.config/nvim/plugged')
 call plug#end()
 
 " Plugins
-source plugins/airline.vim
-source plugins/deoplete.vim
-source plugins/emoji.vim
-source plugins/fzf.vim
-source plugins/git.vim
-source plugins/goyo.vim
-source plugins/hardtime.vim
-source plugins/language-client.vim
-source plugins/multiple-cursors.vim
-source plugins/neomake.vim
-source plugins/nerdtree.vim
-source plugins/slash.vim
-source plugins/sort_motion.vim
+runtime plugins/airline.vim
+runtime plugins/deoplete.vim
+runtime plugins/emoji.vim
+runtime plugins/fzf.vim
+runtime plugins/git.vim
+runtime plugins/goyo.vim
+runtime plugins/hardtime.vim
+runtime plugins/language-client.vim
+runtime plugins/multiple-cursors.vim
+runtime plugins/neomake.vim
+runtime plugins/nerdtree.vim
+runtime plugins/slash.vim
+runtime plugins/sort_motion.vim
 
 " Custom options
-source options.vim
-source settings.vim
-source keybindings.vim
-source style.vim
+runtime options.vim
+runtime settings.vim
+runtime keybindings.vim
+runtime style.vim
