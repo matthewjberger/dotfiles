@@ -1,2 +1,2 @@
-:Guifont Hack:h13
+Guifont Hack:h13
 highlight Comment cterm=italic gui=italic
