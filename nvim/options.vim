@@ -1,8 +1,10 @@
-" Always show the status line
-set laststatus=2
+" Options
 
-" Use a twoline tail status line
-set cmdheight=2
+" Show line numbers
+set number
+
+" Lower the cmdline
+set cmdheight=1
 
 " Limit width to 80
 set textwidth=80
@@ -49,16 +51,13 @@ au CursorHold * checktime
 set hidden
 
 " Redraw only when we need to
-"set lazyredraw
+set lazyredraw
 
 " Disable swap files
 set noswapfile
 
 " Use file names as title of terminal while editing
 set title
-
-" Show invisible characters
-set list
 
 " Hide mouse when typing
 set mousehide
@@ -74,3 +73,4 @@ set gdefault
 
 " Make cursor a flat bar in insert mode
 :let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+

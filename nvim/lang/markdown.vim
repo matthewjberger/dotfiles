@@ -14,3 +14,4 @@ autocmd FileType markdown setlocal tw=100
 au FileType markdown nmap <Leader>mti :silent! GenTocGFM<cr>
 
 au FileType markdown nmap ,ti :silent! GenTocGFM<cr>
+

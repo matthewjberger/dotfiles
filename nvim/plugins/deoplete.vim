@@ -23,3 +23,4 @@ inoremap <silent><expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<
 au VimEnter * call deoplete#custom#set('_', 'matchers', ['matcher_fuzzy'])
 au VimEnter * call deoplete#custom#set('_', 'converters', ['converter_remove_paren'])
 au VimEnter * call deoplete#custom#set('_', 'disabled_syntaxes', ['Comment', 'String'])
+

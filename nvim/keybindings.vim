@@ -1,3 +1,5 @@
+" Keybindings
+
 " Set leader
 let mapleader = "\<space>"
 
@@ -19,7 +21,8 @@ nnoremap g, g,zz:call search_pulse#Pulse()<cr>
 nnoremap <c-o> <c-o>zz:call search_pulse#Pulse()<cr>
 
 nnoremap <leader>fed :split $MYVIMRC<cr> :only<cr>
-nnoremap <leader>feR :source $MYVIMRC<cr> :PlugInstall<cr>
+nnoremap <leader>fer :source $MYVIMRC<cr>
+nnoremap <leader>feR :source $MYVIMRC<cr> :PlugClean<cr> :PlugInstall<cr>
 nnoremap <leader>fs :w<cr>
 nnoremap <leader>fS :wa<cr>
 nnoremap <leader>sl y:execute @@<cr>
@@ -124,3 +127,5 @@ nnoremap gV `[v`]
 " Cycle through completion entries
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
+" Flash the yank motion
+map y <Plug>(operator-flashy)

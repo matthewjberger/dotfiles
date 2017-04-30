@@ -6,3 +6,4 @@ let g:NERDTreeHijackNetrw=0
 autocmd FileType nerdtree setlocal nolist
 
 let NERDTreeIgnore = ['\.pyc$', '\.o$', '\~$', '\.rbc$']
+

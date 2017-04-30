@@ -3,11 +3,10 @@
 " Set cwd to buffer dir
 autocmd BufEnter * silent! lcd %:p:h
 
-autocmd BufWritePost * mkview
-autocmd FileReadPost * silent! loadview
-
+" Enter insert mode after opening a terminal
 au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 
+" Return to the same line of a file after closing and reopening
 augroup line_return
 	au!
 	au BufReadPost *
@@ -16,6 +15,8 @@ augroup line_return
 				\ endif
 augroup END
 
+" Disabled for now because it conflicts with Goyo.vim
+" Toggle relativenumber in insert mode and regular line numbers in normal mode
 "autocmd InsertEnter * silent! :set norelativenumber
 "autocmd InsertLeave,BufNewFile,VimEnter * silent! :set relativenumber
 
@@ -29,9 +30,5 @@ autocmd FileAppendPre  * :call TrimWhiteSpace()
 autocmd FilterWritePre * :call TrimWhiteSpace()
 autocmd BufWritePre    * :call TrimWhiteSpace()
 
-" Save when losing focus
-" au FocusLost * :wa<cr>
-
 " Resize splits when the window is resized
 au VimResized * :wincmd =
-
