@@ -25,6 +25,7 @@ nnoremap <leader>fer :source $MYVIMRC<cr>
 nnoremap <leader>feR :source $MYVIMRC<cr> :PlugClean<cr> :PlugInstall<cr>
 nnoremap <leader>fs :w<cr>
 nnoremap <leader>fS :wa<cr>
+nnoremap <leader>u :UndotreeToggle<cr>
 nnoremap <leader>sl y:execute @@<cr>
 vnoremap <leader>sl ^vg_y:execute @@<cr>
 nnoremap <leader>qq :qa!<cr>
