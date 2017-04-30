@@ -1,3 +1,12 @@
+" Always show the status line
+set laststatus=2
+
+" Use a twoline tail status line
+set cmdheight=2
+
+" Limit width to 80
+set textwidth=80
+
 " Horizontal splits open below
 set splitbelow
 
@@ -48,4 +57,20 @@ set noswapfile
 " Use file names as title of terminal while editing
 set title
 
+" Show invisible characters
+set list
 
+" Hide mouse when typing
+set mousehide
+
+" No alarms and no surprises
+set noerrorbells visualbell t_vb=
+
+" Yank and paste with the system clipboard
+set clipboard=unnamed
+
+" Apply substitutions globally by default
+set gdefault
+
+" Make cursor a flat bar in insert mode
+:let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1

@@ -26,7 +26,7 @@ nnoremap <leader>sl y:execute @@<cr>
 vnoremap <leader>sl ^vg_y:execute @@<cr>
 nnoremap <leader>qq :qa!<cr>
 nnoremap <leader>ft :NERDTreeToggle<cr>
-nnoremap <leader>ff :NERDTreeFIND<cr>
+nnoremap <leader>ff :NERDTreeFind<cr>
 nnoremap <leader>bd :bdelete<cr>
 nnoremap <leader>bb :Denite buffer<cr>
 nnoremap <leader>bn :bn<cr>
