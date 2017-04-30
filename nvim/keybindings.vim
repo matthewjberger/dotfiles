@@ -30,9 +30,9 @@ nnoremap <leader>sl y:execute @@<cr>
 vnoremap <leader>sl ^vg_y:execute @@<cr>
 nnoremap <leader>qq :qa!<cr>
 nnoremap <leader>ft :NERDTreeToggle<cr>
-nnoremap <leader>ff :NERDTreeFind<cr>
+nnoremap <leader>fF :NERDTreeFind<cr>
 nnoremap <leader>bd :bdelete<cr>
-nnoremap <leader>bb :Denite buffer<cr>
+nnoremap <leader>bb :Buffers<cr>
 nnoremap <leader>bn :bn<cr>
 nnoremap <leader>bp :bp<cr>
 nnoremap <leader>wd :q<cr>
@@ -43,7 +43,7 @@ nnoremap <leader>tn :set number!<cr>
 nnoremap <leader>tw :set wrap!<cr>
 nnoremap <leader>tl :Limelight!!<cr>
 nnoremap <Leader>tg :Goyo<cr>
-nnoremap <leader>pf :Denite file_rec<cr>
+nnoremap <leader>ff :Files<cr>
 nnoremap <leader>hdw :help <C-r><C-w><cr>
 nnoremap <silent> <leader>sc :nohlsearch<cr>:call clearmatches()<cr>
 " Open a quickfix window for the last search

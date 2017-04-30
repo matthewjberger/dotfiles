@@ -20,7 +20,8 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'junegunn/limelight.vim'
 	Plug 'junegunn/goyo.vim'
 	Plug 'junegunn/rainbow_parentheses.vim'
-	Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } | Plug 'junegunn/fzf.vim'
+	Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+		Plug 'junegunn/fzf.vim'
 	Plug 'junegunn/seoul256.vim'
 	Plug 'junegunn/vim-emoji'
 	Plug 'junegunn/vim-easy-align'
@@ -41,7 +42,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 		Plug 'Xuyuanp/nerdtree-git-plugin'
 	Plug 'sheerun/vim-polyglot'
-	Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+	"Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 		Plug 'zchee/deoplete-zsh'
 		Plug 'Shougo/neco-vim', { 'for': 'vim' }

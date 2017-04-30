@@ -17,7 +17,7 @@ inoremap <expr><C-n> pumvisible() ? "\<C-n>" :
 
 
 " no new line after hitting enter
-inoremap <silent><expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>"
+"inoremap <silent><expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>"
 
 " Use partial fuzzy matches like YouCompleteMe
 au VimEnter * call deoplete#custom#set('_', 'matchers', ['matcher_fuzzy'])
