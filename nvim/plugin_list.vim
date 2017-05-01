@@ -42,8 +42,10 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 		Plug 'Xuyuanp/nerdtree-git-plugin'
 	Plug 'sheerun/vim-polyglot'
-	"Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+	Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+		Plug 'sebastianmarkow/deoplete-rust'
+		Plug 'tweekmonster/deoplete-clang2'
 		Plug 'zchee/deoplete-zsh'
 		Plug 'Shougo/neco-vim', { 'for': 'vim' }
 		Plug 'Shougo/neco-syntax', { 'for': 'vim' }
@@ -52,6 +54,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'Shougo/neosnippet-snippets'
 	Plug 'takac/vim-hardtime'
 	Plug 'terryma/vim-multiple-cursors'
+	Plug 'timonv/vim-cargo'
 	Plug 'tomasr/molokai'
 	Plug 'tommcdo/vim-lion'
 	Plug 'tpope/vim-endwise'
@@ -59,6 +62,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 	Plug 'tpope/vim-repeat'
 	Plug 'tpope/vim-surround'
+	Plug 'tpope/vim-unimpaired'
 	Plug 'yonchu/accelerated-smooth-scroll'
 	Plug 'vim-airline/vim-airline'
 		Plug 'vim-airline/vim-airline-themes'

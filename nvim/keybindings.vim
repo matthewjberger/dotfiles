@@ -47,7 +47,10 @@ nnoremap <leader>ff :Files<cr>
 nnoremap <leader>hdw :help <C-r><C-w><cr>
 nnoremap <silent> <leader>sc :nohlsearch<cr>:call clearmatches()<cr>
 " Open a quickfix window for the last search
-nnoremap <silent> <leader>en :execute 'vimgrep /'.@/.'/g %'<cr>:copen<cr>
+nnoremap <silent> <leader>ss :execute 'vimgrep /'.@/.'/g %'<cr>:copen<cr>
+nnoremap <silent> <leader>en :lopen<cr> :lnext<cr>
+nnoremap <silent> <leader>ep :lopen<cr> :lprevious<cr>
+nnoremap <silent> <leader>ec :lclose<cr>
 nnoremap <silent> <leader>ls :mksession!<cr>
 nnoremap <silent> <leader>'  :split<cr> :terminal<cr> <esc><cr>
 nnoremap <leader>th :HardTimeToggle<cr>:echo 'Toggled hardtime'<cr>
@@ -130,3 +133,4 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 " Flash the yank motion
 map y <Plug>(operator-flashy)
+

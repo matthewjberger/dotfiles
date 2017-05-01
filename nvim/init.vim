@@ -16,6 +16,7 @@ runtime plugin_list.vim
 " Plugin Settings
 runtime plugins/airline.vim
 runtime plugins/deoplete.vim
+runtime plugins/deoplete-rust.vim
 runtime plugins/emoji.vim
 runtime plugins/fzf.vim
 runtime plugins/git.vim
@@ -30,7 +31,12 @@ runtime plugins/rainbow.vim
 runtime plugins/slash.vim
 runtime plugins/sort_motion.vim
 
-" Custom options
+" Language Settings
+runtime lang/markdown.vim
+runtime lang/rust.vim
+runtime lang/vimscript.vim
+
+" Custom Settings
 runtime options.vim
 runtime settings.vim
 runtime keybindings.vim
