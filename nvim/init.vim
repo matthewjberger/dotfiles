@@ -16,7 +16,7 @@ runtime plugin_list.vim
 " Plugin Settings
 runtime plugins/airline.vim
 runtime plugins/deoplete.vim
-runtime plugins/deoplete-rust.vim
+"runtime plugins/deoplete-rust.vim
 runtime plugins/emoji.vim
 runtime plugins/fzf.vim
 runtime plugins/git.vim
