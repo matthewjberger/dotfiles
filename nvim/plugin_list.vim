@@ -44,7 +44,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'sheerun/vim-polyglot'
 	Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-		Plug 'sebastianmarkow/deoplete-rust'
+		"Plug 'sebastianmarkow/deoplete-rust'
 		Plug 'tweekmonster/deoplete-clang2'
 		Plug 'zchee/deoplete-zsh'
 		Plug 'Shougo/neco-vim', { 'for': 'vim' }
