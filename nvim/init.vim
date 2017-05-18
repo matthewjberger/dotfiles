@@ -41,4 +41,3 @@ runtime options.vim
 runtime settings.vim
 runtime keybindings.vim
 runtime style.vim
-
