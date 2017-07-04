@@ -8,8 +8,8 @@ export CARGO_BIN="$CARGO_HOME/bin"
 export PATH="$CARGO_BIN:$PATH"
 
 # Go environment variables
-export GOPATH="$HOME/.go"
-export PATH="$GOPATH:$PATH"
+export GOPATH="$HOME/go"
+export PATH="$PATH:/usr/local/go/bin"
 
 # Anaconda python environment variables
 export PATH="$HOME/anaconda2/bin:$PATH"
