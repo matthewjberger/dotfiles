@@ -2,6 +2,7 @@
 
 # Bring Arch up to date
 sudo pacman -Syuw --noconfirm
+sudo pacman -S --noconfirm archlinux-keyring
 sudo rm /etc/ssl/certs/ca-certiicates.certiicates
 sudo pacman -Su --noconfirm
 
