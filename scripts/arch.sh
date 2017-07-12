@@ -3,12 +3,12 @@
 # Bring Arch up to date
 sudo pacman -Syuw --noconfirm
 sudo pacman -S --noconfirm archlinux-keyring
-sudo rm /etc/ssl/certs/ca-certiicates.certiicates
+sudo rm /etc/ssl/certs/ca-certificates.crt
 sudo pacman -Su --noconfirm
 
 # Install packages
 sudo pacman -S --noconfirm \
-xorg-server xorg-xinit i3 feh \
+xorg-server xorg-xinit i3 feh dos2unix \
 dmenu conky mesa mesa-demos \
 git termite zsh xorg-twm python3 \
 cmake bash zsh ttf-hack emacs neovim
