@@ -1,3 +1,7 @@
 vim/bundle
 bin/*
 .vagrant/
+nvim/plugged
+nvim/autoload
+emacs.d
+
