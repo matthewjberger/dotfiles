@@ -11,6 +11,7 @@
     ~/.gitignore_global: gitignore_global
     ~/.spacemacs: spacemacs
     ~/.config/nvim: nvim/
+    ~/.config/neofetch/config: neofetch
     ~/.config/i3/config: i3wm
     ~/.config/termite/config: termite
     ~/.xinitrc: xinitrc
