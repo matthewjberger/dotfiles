@@ -7,11 +7,8 @@
 
 - link:
     ~/.dotfiles: ''
-    ~/.emacs.d: emacs.d
-    ~/.fzf: fzf/
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
-    ~/.oh-my-zsh: oh-my-zsh/
     ~/.spacemacs: spacemacs
     ~/.zsh: zsh/
     ~/.zshenv: zsh/zshenv
