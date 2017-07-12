@@ -5,11 +5,12 @@ sudo pacman -Syuw --noconfirm
 sudo pacman -S --noconfirm archlinux-keyring
 sudo rm /etc/ssl/certs/ca-certificates.crt
 sudo pacman -Su --noconfirm
+sudo pacman -S --noconfirm ca-certificates ca-certificates-utils
 
 # Install packages
 sudo pacman -S --noconfirm \
 xorg-server xorg-xinit i3 feh dos2unix \
-dmenu conky mesa mesa-demos \
+xrandr lxrandr dmenu conky mesa mesa-demos \
 git termite zsh xorg-twm python3 \
 cmake bash zsh ttf-hack emacs neovim
 
