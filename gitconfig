@@ -4,7 +4,7 @@
 [core]
     editor         = vim
     whitespace     = fix,-indent-with-non-tab,trailing-space,cr-at-eol
-  excludesfile   = ~/.gitignore
+    excludesfile   = ~/.gitignore
 [sendemail]
     smtpencryption = tls
     smtpserver     = smtp.gmail.com
@@ -150,10 +150,10 @@
     wipe      = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
 
 [color "diff-highlight"]
-  oldNormal = red bold
-  oldHighlight = red bold 52
-  newNormal = green bold
-  newHighlight = green bold 22
+    oldNormal = red bold
+    oldHighlight = red bold 52
+    newNormal = green bold
+    newHighlight = green bold 22
 [url "https://github.com/"]
 	insteadOf = git://github.com/
 [help]

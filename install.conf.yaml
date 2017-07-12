@@ -5,41 +5,6 @@
 
 - clean: ['~', '~/.config']
 
-- apt-get:
-  - build-essential
-  - clang
-  - cmake
-  - dconf-cli
-  - doxygen
-  - [emacs-snapshot, ubuntu-elisp/ppa]
-  - exuberant-ctags
-  - [fasd, aacebedo/fasd]
-  - fonts-hack-ttf
-  - g++
-  - gdb
-  - global
-  - guake
-  - guake-indicator
-  - imagemagick
-  - luarocks
-  - libappindicator1
-  - libgl1-mesa-dev
-  - libglu1-mesa-dev
-  - markdown
-  - nodejs
-  - npm
-  - [graphics-drivers, oibaf]
-  - ppa-purge
-  - python-gpgme
-  - python3-dev
-  - rake
-  - silversearcher-ag
-  - tmux
-  - [vim, jonathonf/vim]
-  - xclip
-  - xpad
-  - zsh
-
 - link:
     ~/.dotfiles: ''
     ~/.emacs.d: emacs.d
@@ -48,30 +13,6 @@
     ~/.gitignore_global: gitignore_global
     ~/.oh-my-zsh: oh-my-zsh/
     ~/.spacemacs: spacemacs
-    ~/.vim: vim/
-    ~/.vimrc: vim/vimrc
     ~/.zsh: zsh/
     ~/.zshenv: zsh/zshenv
     ~/.zshrc: zsh/zshrc
-
-- shell:
-  # Fix any broken packages.
-  - [apt-get install -f, Fixing any broken packages.]
-  # Luarocks packages
-  - [luarocks install luacheck, Installing luacheck]
-  - [luarocks install lanes, Installing lualanes]
-  # Symlink node
-  - [ln -sf /usr/bin/nodejs /usr/bin/node, Symlinking nodejs]
-  # Create fasd init cache
-  - mkdir oh-my-zsh/cache/fasd-init-cache
-  # NPM packages
-  - [npm install -g diff-so-fancy, Installing diff-so-fancy]
-  - [npm install -g gh-rtfm, Installing gh-rtfm]
-  - [npm install -g js-beautify, Installing js-beautify]
-  - [npm install -g jshint, Installing jshint]
-  - [npm install -g tern, Installing tern]
-  - [npm install -g vmd, Installing vmd]
-  # Install zsh-syntax-highlighting
-  - git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting || true
-  # Install Vim Plugins
-  - echo | vim +PlugInstall +qa
