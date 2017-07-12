@@ -158,5 +158,8 @@ bar {
         status_command i3status
 }
 
+# Conky
+exec --no-startup-id conky -c ~/.dotfiles/conkyrc
+
 # Set a wallpaper with feh
 exec --no-startup-id feh --bg-scale ~/.dotfiles/wallpapers/arch_linux_1.png

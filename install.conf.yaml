@@ -10,6 +10,7 @@
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.spacemacs: spacemacs
+    ~/.conkyrc: conkyrc
     ~/.config/nvim: nvim/
     ~/.config/neofetch/config: neofetch
     ~/.config/i3/config: i3wm
