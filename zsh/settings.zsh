@@ -13,6 +13,10 @@ plugins=(colored-man-pages fasd git history-substring-search zsh-completions zsh
 # Added by travis gem
 [ -f /home/odin/.travis/travis.sh ] && source /home/odin/.travis/travis.sh
 
+# Initialize fasd
 eval "$(fasd --init auto)"
+
+# Display system info
+neofetch
 
 source $ZSH/oh-my-zsh.sh
