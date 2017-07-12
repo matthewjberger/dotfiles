@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "boxcutter/ubuntu1610-desktop"
+  config.vm.box = "dreamscapes/archlinux"
 
 
   # Share an additional folder to the guest VM. The first argument is
@@ -42,9 +42,4 @@ Vagrant.configure("2") do |config|
     vb.customize ["modifyvm", :id, "--accelerate3d", "on"]
   end
 
-  config.vm.provision "shell", inline: <<-SHELL
-  	update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
-  SHELL
-
-  config.vm.provision :reload
 end
