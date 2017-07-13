@@ -11,8 +11,8 @@ sudo pacman -S --noconfirm ca-certificates ca-certificates-utils
 sudo pacman -S --noconfirm \
 xorg-server xorg-xinit i3 feh dos2unix \
 xrandr lxrandr dmenu conky mesa mesa-demos \
-git termite zsh xorg-twm python3 \
-cmake bash zsh ttf-hack emacs neovim
+fasd git termite zsh xorg-twm python3 \
+i3blocks cmake bash zsh ttf-hack emacs neovim
 
 # Install yaourt
 git clone https://aur.archlinux.org/package-query.git
@@ -29,3 +29,5 @@ rm -rf yaourt
 # Install AUR packages
 yaourt -S --noconfirm google-chrome
 yaourt -S --noconfirm neofetch
+yaourt -S --noconfirm python2-neovim
+yaourt -S --noconfirm python-neovim
