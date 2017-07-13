@@ -1,9 +1,6 @@
 # Install Rust
 curl https://sh.rustup.rs -sSf | sh
 
-# Refresh environment variables
-exec $SHELL
-
 # Install tools
 cargo install racer
 cargo install rustsym
