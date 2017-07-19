@@ -1,3 +1,6 @@
+# Use termite for i3
+export TERMINAL=termite
+
 # Custom bin folder
 export PATH="$HOME/.dotfiles/bin:$PATH"
 
