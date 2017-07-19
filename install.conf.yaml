@@ -19,4 +19,4 @@
     ~/.zsh: zsh/
     ~/.zshenv: zsh/zshenv
     ~/.zshrc: zsh/zshrc
-    ~/.zprofile: zsh/zprofile
+    ~/.zlogin: zsh/zlogin
