@@ -1,6 +1,6 @@
 " Markdown
 
-let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'golang']
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
 
 " For TOC
 let g:vmt_auto_update_on_save = 1

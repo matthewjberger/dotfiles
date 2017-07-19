@@ -1,6 +1,8 @@
 # Install Rust
 curl https://sh.rustup.rs -sSf | sh
 
+source $HOME/.cargo/bin
+
 # Install tools
 cargo install racer
 cargo install rustsym
