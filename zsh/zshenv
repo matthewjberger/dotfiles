@@ -1,6 +1,9 @@
 # Use termite for i3
 export TERMINAL=termite
 
+# Specify editor
+export EDITOR=nvim
+
 # Custom bin folder
 export PATH="$HOME/.dotfiles/bin:$PATH"
 
