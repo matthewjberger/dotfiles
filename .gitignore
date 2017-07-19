@@ -1,7 +1,7 @@
-vim/bundle
 bin/*
 .vagrant/
 nvim/plugged
 nvim/autoload
+nvim/.netrwhist
 emacs.d
 
