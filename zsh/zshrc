@@ -13,7 +13,7 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-source aliases.zsh
+source ~/.dotfiles/zsh/aliases.zsh
 
 neofetch
 
