@@ -1,7 +1,7 @@
 # Install Rust
 curl https://sh.rustup.rs -sSf | sh
 
-source $HOME/.cargo/bin
+source $HOME/.cargo/env
 
 # Install tools
 cargo install racer
