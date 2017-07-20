@@ -357,7 +357,8 @@ before packages are loaded."
 
   (setq-default
    evil-escape-key-sequence "jk"
-   diff-hl-side 'right)
+   diff-hl-side 'right
+   vc-follow-symlinks t)
 
   (add-hook 'prog-mode-hook (lambda()(define-key evil-normal-state-map "H" "^")))
   (add-hook 'prog-mode-hook (lambda()(define-key evil-normal-state-map "L" "$")))
