@@ -155,6 +155,9 @@ bar {
         status_command i3blocks
 }
 
+# Make termite windows partially transparent
+exec --no-startup-id compton -CGb --opacity-rule '92:class_i="termite"'
+
 # Conky
 exec --no-startup-id conky -c ~/.dotfiles/conkyrc
 
