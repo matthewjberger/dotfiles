@@ -13,7 +13,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'equalsraf/neovim-gui-shim'
 	Plug 'frankier/neovim-colors-solarized-truecolor-only'
 	Plug 'inside/vim-search-pulse'
-	Plug 'jalcine/cmake.vim'
+	" Plug 'jalcine/cmake.vim'
 	Plug 'janko-m/vim-test'
 	Plug 'jceb/vim-orgmode'
 	Plug 'jiangmiao/auto-pairs'
