@@ -14,8 +14,7 @@
     ~/.config/nvim: nvim/
     ~/.config/neofetch/config: neofetch
     ~/.config/termite/config: termite
-    ~/.fehbg: fehbg
-    ~/.spectrwm.conf: spectrwm
+    ~/.config/i3/config: i3wm
     ~/.xinitrc: xinitrc
     ~/.zsh: zsh/
     ~/.zshenv: zsh/zshenv

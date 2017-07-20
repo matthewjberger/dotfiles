@@ -1,3 +1,2 @@
-~/.fehbg &
-exec spectrwm
+exec i3
 
