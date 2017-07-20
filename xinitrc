@@ -1,2 +1,3 @@
+~/.fehbg &
 exec spectrwm
 
