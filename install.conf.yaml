@@ -15,6 +15,7 @@
     ~/.config/neofetch/config: neofetch
     ~/.config/i3/config: i3wm
     ~/.config/termite/config: termite
+    ~/.fehbg: fehbg
     ~/.xinitrc: xinitrc
     ~/.zsh: zsh/
     ~/.zshenv: zsh/zshenv

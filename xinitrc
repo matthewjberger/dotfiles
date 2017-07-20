@@ -1,2 +1,2 @@
-exec i3
+exec spectrwm
 
