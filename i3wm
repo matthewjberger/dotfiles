@@ -162,7 +162,7 @@ exec --no-startup-id compton -CGb --opacity-rule '92:class_i="termite"'
 exec --no-startup-id conky -c ~/.dotfiles/conkyrc
 
 # Set a wallpaper with feh
-exec --no-startup-id feh --bg-scale ~/.dotfiles/wallpapers/arch_linux_1.png
+exec --no-startup-id feh --bg-center ~/.dotfiles/wallpapers/arch_linux_1.png
 
 # Disable window borders
 for_window [class="^.*"] border pixel 0
