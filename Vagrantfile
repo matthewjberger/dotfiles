@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "dreamscapes/archlinux"
+	config.vm.box = "mloskot/manjaro-i3-17.0-minimal"
 
 
   # Share an additional folder to the guest VM. The first argument is
