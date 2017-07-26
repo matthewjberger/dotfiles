@@ -15,6 +15,8 @@ rustup component add rust-doc
 # Install the Rust Language Server
 rustup self update
 rustup update nightly
+rustup component add rust-doc
+rustup component add rust-src
 rustup component add rls --toolchain nightly
 rustup component add rust-analysis --toolchain nightly
 rustup component add rust-src --toolchain nightly
