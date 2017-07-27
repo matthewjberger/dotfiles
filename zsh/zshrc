@@ -15,5 +15,3 @@ source $ZSH/oh-my-zsh.sh
 
 source ~/.dotfiles/zsh/aliases.zsh
 
-neofetch
-
