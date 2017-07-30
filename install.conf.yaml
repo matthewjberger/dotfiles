@@ -15,6 +15,7 @@
     ~/.config/termite/config: termite
     ~/.lein/profiles.clj: lein-profiles.clj
     ~/.i3/config: i3wm
+    ~/.i3blocks.conf: i3blocks
     ~/.zsh: zsh/
     ~/.zshenv: zsh/zshenv
     ~/.zshrc: zsh/zshrc
