@@ -5,21 +5,6 @@ command=/usr/lib/i3blocks/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
-[cpu_usage]
-#label= CPU
-label= CPU
-interval=10
-min_width=CPU: 100.00%
-align=center
-
-[cpu]
-interval=8
-
-[memory]
-label=  RAM
-separator=false
-interval=30
-
 # Could be used to show available memory, used memory, and total memory
 # by changing the awk command to display $2, $3, or $4 respectively
 #[disk-home]
@@ -30,6 +15,18 @@ interval=30
 [disk]
 label=
 interval=30
+
+[memory]
+label=  RAM
+separator=false
+interval=30
+
+[cpu_usage]
+#label= CPU
+label= CPU
+interval=10
+min_width=CPU: 100.00%
+align=center
 
 # Show the name of the wireless network
 [wireless]
