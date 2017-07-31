@@ -9,7 +9,7 @@ HYPHEN_INSENSITIVE="true"
 # Display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(emacs git github)
+plugins=(archlinux colorize colored-man-pages command-not-found emacs git github history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.dotfiles/zsh/aliases.zsh
