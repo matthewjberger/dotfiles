@@ -16,3 +16,6 @@ alias la='ls -A'
 
 # List entries by columns with a classification indicator
 alias l='ls -CF'
+
+# Use github's 'hub' tool instead of the git cli
+alias git='hub'
