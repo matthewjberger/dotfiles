@@ -74,32 +74,20 @@
     # Add and commit all changes
     comma     = !git add -A && git commit -m
 
-    # Clone self repo
-    cs        = "!sh -c \"git clone https://github.com/matthewjberger/$1\" -"
-
-    # Clone self repo recursive
-    csr       = "!sh -c \"git clone --recursive https://github.com/matthewjberger/$1\" -"
-
-    # Clone user repo
-    cu        = "!sh -c \"git clone https://github.com/$1\" -"
-
-    # Clone user repo recursive
-    cur       = "!sh -c \"git clone --recursive https://github.com/$1\" -"
-
     # Use diff so fancy for diffs
     dsf = "!f() { [ -z \"$GIT_PREFIX\" ] || cd \"$GIT_PREFIX\" && git diff --color \"$@\" | diff-so-fancy | less --tabs=4 -RFX; }; f"
 
-    # Edit config with vim
+    # Edit config with $EDITOR
     ec        = config --global -e
 
     # Show last commit
     last      = show --name-status
 
     # Show all commits on all branches in a compact, colorized way
-    histories = !git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    hist = !git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
     # Show the commit history in a nice format
-    history   = log --pretty=oneline
+    histn   = log --pretty=oneline
 
     # Move current work to a different branch
     moveto    = "!sh -c \"git stash && git checkout $1 && git stash pop\" -"
