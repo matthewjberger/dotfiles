@@ -146,3 +146,5 @@
 	insteadOf = git://github.com/
 [help]
 	autocorrect = 1
+[hub]
+	protocol = https
