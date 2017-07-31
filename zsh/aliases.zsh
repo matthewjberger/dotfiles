@@ -18,4 +18,4 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # Use github's 'hub' tool instead of the git cli
-alias git='hub'
+eval "$(hub alias -s)"
