@@ -1,4 +1,3 @@
-bin/*
 .vagrant/
 nvim/plugged
 nvim/autoload

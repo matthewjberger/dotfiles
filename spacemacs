@@ -39,6 +39,9 @@ This function should only modify configuration layer settings."
      (clojure :variables
               clojure-enable-fancify-symbols t)
      colors
+     (c-c++ :variables
+            c-c++-default-mode-for-headers 'c++-mode
+            c-c++-enable-clang-support t)
      emacs-lisp
      fasd
      git
@@ -46,6 +49,7 @@ This function should only modify configuration layer settings."
      helm
      markdown
      ;; org
+     python
      rust
      (shell :variables
             shell-default-height 30
@@ -364,6 +368,8 @@ before packages are loaded."
 
   (add-hook 'prog-mode-hook (lambda()(define-key evil-normal-state-map "H" "^")))
   (add-hook 'prog-mode-hook (lambda()(define-key evil-normal-state-map "L" "$")))
+
+  (put 'helm-make-build-dir 'safe-local-variable 'stringp)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

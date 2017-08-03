@@ -19,3 +19,7 @@ alias l='ls -CF'
 
 # Use github's 'hub' tool instead of the git cli
 eval "$(hub alias -s)"
+
+# Generate a clang complete file
+alias generate_clang_complete=CXX="cc_args.py g++" cmake .. && make
+
