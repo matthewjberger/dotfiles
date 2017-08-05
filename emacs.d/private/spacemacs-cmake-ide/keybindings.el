@@ -1,32 +1,32 @@
 (dolist (mode '(c-mode c++-mode))
   (evil-leader/set-key-for-mode mode
-    "m g ." 'rtags-find-symbol-at-point
-    "m g ," 'rtags-find-references-at-point
-    "m g v" 'rtags-find-virtuals-at-point
-    "m g V" 'rtags-print-enum-value-at-point
-    "m g /" 'rtags-find-all-references-at-point
-    "m g Y" 'rtags-cycle-overlays-on-screen
-    "m g >" 'rtags-find-symbol
-    "m g <" 'rtags-find-references
-    "m g [" 'rtags-location-stack-back
-    "m g ]" 'rtags-location-stack-forward
-    "m g D" 'rtags-diagnostics
-    "m g G" 'rtags-guess-function-at-point
-    "m g p" 'rtags-set-current-project
-    "m g P" 'rtags-print-dependencies
-    "m g e" 'rtags-reparse-file
-    "m g E" 'rtags-preprocess-file
-    "m g R" 'rtags-rename-symbol
-    "m g M" 'rtags-symbol-info
-    "m g S" 'rtags-display-summary
-    "m g O" 'rtags-goto-offset
-    "m g ;" 'rtags-find-file
-    "m g F" 'rtags-fixit
-    "m g L" 'rtags-copy-and-print-current-location
-    "m g X" 'rtags-fix-fixit-at-point
-    "m g B" 'rtags-show-rtags-buffer
-    "m g I" 'rtags-imenu
-    "m g T" 'rtags-taglist
-    "m g h" 'rtags-print-class-hierarchy
-    "m g a" 'rtags-print-source-arguments))
+    "g ." 'rtags-find-symbol-at-point
+    "g ," 'rtags-find-references-at-point
+    "g v" 'rtags-find-virtuals-at-point
+    "g V" 'rtags-print-enum-value-at-point
+    "g /" 'rtags-find-all-references-at-point
+    "g Y" 'rtags-cycle-overlays-on-screen
+    "g >" 'rtags-find-symbol
+    "g <" 'rtags-find-references
+    "g [" 'rtags-location-stack-back
+    "g ]" 'rtags-location-stack-forward
+    "g D" 'rtags-diagnostics
+    "g G" 'rtags-guess-function-at-point
+    "g p" 'rtags-set-current-project
+    "g P" 'rtags-print-dependencies
+    "g e" 'rtags-reparse-file
+    "g E" 'rtags-preprocess-file
+    "g R" 'rtags-rename-symbol
+    "g M" 'rtags-symbol-info
+    "g S" 'rtags-display-summary
+    "g O" 'rtags-goto-offset
+    "g ;" 'rtags-find-file
+    "g F" 'rtags-fixit
+    "g L" 'rtags-copy-and-print-current-location
+    "g X" 'rtags-fix-fixit-at-point
+    "g B" 'rtags-show-rtags-buffer
+    "g I" 'rtags-imenu
+    "g T" 'rtags-taglist
+    "g h" 'rtags-print-class-hierarchy
+    "g a" 'rtags-print-source-arguments))
 
