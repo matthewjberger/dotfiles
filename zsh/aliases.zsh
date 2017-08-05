@@ -21,5 +21,5 @@ alias l='ls -CF'
 eval "$(hub alias -s)"
 
 # Generate a clang complete file
-alias generate_clang_complete=CXX="cc_args.py g++" cmake .. && make
+alias generate_clang_complete='CXX="cc_args.py g++" cmake .. && make'
 
