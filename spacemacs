@@ -38,6 +38,7 @@ This function should only modify configuration layer settings."
      auto-completion
      (clojure :variables
               clojure-enable-fancify-symbols t)
+     cmake-ide
      colors
      emacs-lisp
      fasd
@@ -51,7 +52,6 @@ This function should only modify configuration layer settings."
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
-     spacemacs-cmake-ide
      syntax-checking
      (version-control :variables
                       version-control-diff-tool 'diff-hl
