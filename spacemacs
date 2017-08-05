@@ -39,9 +39,6 @@ This function should only modify configuration layer settings."
      (clojure :variables
               clojure-enable-fancify-symbols t)
      colors
-     (c-c++ :variables
-            c-c++-default-mode-for-headers 'c++-mode
-            c-c++-enable-clang-support t)
      emacs-lisp
      fasd
      git
@@ -54,6 +51,7 @@ This function should only modify configuration layer settings."
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
+     spacemacs-cmake-ide
      syntax-checking
      (version-control :variables
                       version-control-diff-tool 'diff-hl
@@ -346,6 +344,7 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
+  (push "/usr/local/share/emacs/site-lisp/rtags" load-path)
   )
 
 (defun dotspacemacs/user-config ()
