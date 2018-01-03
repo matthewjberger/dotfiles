@@ -1,5 +1,8 @@
 " Rust
 
+" Automatically run rustfmt on save
+let g:autofmt_autosave = 1
+
 " Cargo bindings
 autocmd FileType Rust nnoremap <buffer> <leader>cb :CargoBuild
 autocmd FileType Rust nnoremap <buffer> <leader>cc :CargoClean

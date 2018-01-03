@@ -37,21 +37,23 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'mzlogin/vim-markdown-toc', { 'for': 'markdown' }
 	Plug 'nathanaelkane/vim-indent-guides'
 	Plug 'neomake/neomake'
+	Plug 'roxma/nvim-completion-manager'
+	Plug 'roxma/python-support.nvim'
 	Plug 'rust-lang/rust.vim'
 	Plug 'scrooloose/nerdcommenter'
 	Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 		Plug 'Xuyuanp/nerdtree-git-plugin'
 	Plug 'sheerun/vim-polyglot'
-	Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
-	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+	"Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+	"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 		"Plug 'sebastianmarkow/deoplete-rust'
-		Plug 'tweekmonster/deoplete-clang2'
-		Plug 'zchee/deoplete-zsh'
-		Plug 'Shougo/neco-vim', { 'for': 'vim' }
-		Plug 'Shougo/neco-syntax', { 'for': 'vim' }
+		"Plug 'tweekmonster/deoplete-clang2'
+		"Plug 'zchee/deoplete-zsh'
+		"Plug 'Shougo/neco-vim', { 'for': 'vim' }
+		"Plug 'Shougo/neco-syntax', { 'for': 'vim' }
 	Plug 'Shougo/echodoc.vim'
-	Plug 'Shougo/neosnippet'
-	Plug 'Shougo/neosnippet-snippets'
+	"Plug 'Shougo/neosnippet'
+	"Plug 'Shougo/neosnippet-snippets'
 	Plug 'takac/vim-hardtime'
 	Plug 'terryma/vim-multiple-cursors'
 	Plug 'timonv/vim-cargo'
