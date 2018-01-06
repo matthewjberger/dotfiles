@@ -15,3 +15,6 @@ rustup update
 rustup component add rls-preview
 rustup component add rust-analysis
 rustup component add rust-src
+
+# Install Clippy
+cargo +nightly install clippy # Run with 'rustup run nightly cargo clippy'
