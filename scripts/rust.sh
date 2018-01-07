@@ -17,4 +17,5 @@ rustup component add rust-analysis
 rustup component add rust-src
 
 # Install Clippy
+rustup toolchain install nightly
 cargo +nightly install clippy # Run with 'rustup run nightly cargo clippy'
