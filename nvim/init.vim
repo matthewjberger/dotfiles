@@ -27,6 +27,7 @@ runtime plugins/language-client.vim
 runtime plugins/multiple-cursors.vim
 runtime plugins/neomake.vim
 runtime plugins/nerdtree.vim
+runtime plugins/python-support.vim
 runtime plugins/rainbow.vim
 runtime plugins/slash.vim
 runtime plugins/sort_motion.vim
