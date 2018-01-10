@@ -7,9 +7,7 @@ let g:LanguageClient_serverCommands = {
     \ 'go': ['go-langserver'] }
 
 " Automatically start language servers.
-let g:LanguageClient_autoStart = 0
-
-nnoremap <leader>lcs :LanguageClientStart<CR>
+let g:LanguageClient_autoStart = 1
 
 nnoremap <silent> <leader>lh :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> <leader>lgd :call LanguageClient_textDocument_definition()<CR>
