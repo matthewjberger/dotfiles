@@ -11,13 +11,6 @@
     ~/.gitignore_global: gitignore_global
     ~/.spacemacs: spacemacs
     ~/.config/nvim: nvim/
-    ~/.config/neofetch/config: neofetch
-    ~/.config/termite/config: termite
-    ~/.lein/profiles.clj: lein-profiles.clj
-    ~/.i3/config: i3wm
-    ~/.i3blocks.conf: i3blocks
-    ~/.emacs.d/private: emacs.d/private/
-    ~/.Xmodmap: Xmodmap
     ~/.zsh: zsh/
     ~/.zshenv: zsh/zshenv
     ~/.zshrc: zsh/zshrc
