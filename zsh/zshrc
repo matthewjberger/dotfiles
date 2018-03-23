@@ -14,3 +14,4 @@ plugins=(archlinux colorize colored-man-pages command-not-found emacs git github
 source $ZSH/oh-my-zsh.sh
 source ~/.dotfiles/zsh/aliases.zsh
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

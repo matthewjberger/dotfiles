@@ -71,6 +71,3 @@ set clipboard=unnamed
 " Apply substitutions globally by default
 set gdefault
 
-" Make cursor a flat bar in insert mode
-:let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-

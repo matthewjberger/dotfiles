@@ -15,3 +15,6 @@ export PATH="$CARGO_BIN:$PATH"
 # Go environment variables
 export GOPATH="$HOME/go"
 export PATH="$PATH:/usr/local/go/bin"
+
+# Add ruby path to bin
+export PATH="$HOME/.gem/ruby/2.5.0/bin:$PATH"

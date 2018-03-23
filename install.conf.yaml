@@ -9,8 +9,11 @@
     ~/.dotfiles: ''
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
+    ~/.i3/config: i3wm
+    ~/.i3blocks.conf: i3blocks
     ~/.spacemacs: spacemacs
     ~/.config/nvim: nvim/
+    ~/.config/termite/config: termite
     ~/.zsh: zsh/
     ~/.zshenv: zsh/zshenv
     ~/.zshrc: zsh/zshrc
