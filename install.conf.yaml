@@ -10,7 +10,7 @@
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.i3/config: i3wm
-    ~/.i3blocks.conf: i3blocks
+    ~/.i3status/config: i3status
     ~/.spacemacs: spacemacs
     ~/.config/nvim: nvim/
     ~/.config/termite/config: termite
