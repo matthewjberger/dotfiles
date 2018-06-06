@@ -1,6 +1,6 @@
 set-wallpaper() {
 	wal -n -i "$@"
-	nitrogen --set-zoom-fill "$(< "${HOME}/.cache/wal/wal")"
+	nitrogen --save --set-zoom-fill "$(< "${HOME}/.cache/wal/wal")"
 }
 
 set-random-wallpaper() {
