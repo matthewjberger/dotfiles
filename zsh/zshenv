@@ -18,3 +18,6 @@ export PATH="$PATH:/usr/local/go/bin"
 
 # Add ruby path to bin
 export PATH="$HOME/.gem/ruby/2.5.0/bin:$PATH"
+
+# Don't load the ranger rc twice
+export RANGER_LOAD_DEFAULT_RC=true

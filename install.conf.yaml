@@ -16,6 +16,7 @@
     ~/.config/termite/config: termite
     ~/.config/polybar/launch.sh: polybar/launch.sh
     ~/.config/polybar/config: polybar/config
+    ~/.config/ranger/rc.conf: ranger
     ~/.xinitrc: xinitrc
     ~/.zsh: zsh/
     ~/.zshenv: zsh/zshenv
