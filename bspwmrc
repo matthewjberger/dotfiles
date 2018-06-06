@@ -19,6 +19,13 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
-nitrogen --restore
-compton -b
+# Source the pywal colors
+. "${HOME}/.cache/wal/colors.sh"
+bspc config normal_border_color "$color1"
+bspc config active_border_color "$color2"
+bspc config focused_border_color "$color15"
+bspc config presel_border_color "$color1"
+
+nitrogen --restore &
+compton -b &
 $HOME/.config/polybar/launch.sh
