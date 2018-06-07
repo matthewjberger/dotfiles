@@ -18,7 +18,8 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
-[bar/example]
+[bar/main]
+enable-ipc = true
 bottom = true
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
@@ -48,7 +49,7 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm
-modules-center = 
+modules-center =
 modules-right = filesystem xbacklight volume xkeyboard memory cpu battery temperature date powermenu
 
 tray-position = right
@@ -206,7 +207,7 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = 
+interface =
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -228,7 +229,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = 
+interface =
 interval = 3.0
 
 format-connected-underline = #55aa55
