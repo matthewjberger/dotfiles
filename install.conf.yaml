@@ -19,6 +19,8 @@
     ~/.config/polybar/config: polybar/config
     ~/.config/ranger/rc.conf: ranger
     ~/.config/compton.conf: compton
+    ~/.tmux.conf: tmux/.tmux.conf
+    ~/.tmux.conf.local: tmux/.tmux.conf.local
     ~/.xprofile: xprofile
     ~/.xinitrc: xinitrc
     ~/.zsh: zsh/

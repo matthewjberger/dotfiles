@@ -10,3 +10,6 @@
 [submodule "emacs.d"]
 	path = emacs.d
 	url = https://github.com/syl20bnr/spacemacs
+[submodule "tmux"]
+	path = tmux
+	url = https://github.com/gpakosz/.tmux
