@@ -12,6 +12,7 @@
     ~/.spacemacs: spacemacs
     ~/.config/nvim: nvim/
     ~/.config/bspwm/bspwmrc: bspwmrc
+    ~/.config/dunst/dunstrc: dunstrc
     ~/.config/sxhkd/sxhkdrc: sxhkdrc
     ~/.config/termite/config: termite
     ~/.config/polybar/launch.sh: polybar/launch.sh
