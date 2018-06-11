@@ -4,6 +4,10 @@ These are my personal dotfiles for Unix, intended for use with Manjaro's I3 comm
 
 ## Installation Instructions
 
-    git clone https://github.com/matthewjberger/DotFiles dotfiles && cd dotfiles && bash ./install
+```bash
+git clone https://github.com/matthewjberger/DotFiles dotfiles
+cd dotfiles
+sudo ./install
+```
 
 

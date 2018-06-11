@@ -18,9 +18,11 @@
     ~/.config/polybar/config: polybar/config
     ~/.config/ranger/rc.conf: ranger
     ~/.config/compton.conf: compton
+    ~/.xprofile: xprofile
     ~/.xinitrc: xinitrc
     ~/.zsh: zsh/
     ~/.zshenv: zsh/zshenv
     ~/.zshrc: zsh/zshrc
     ~/.zlogin: zsh/zlogin
+    /etc/oblogout.conf: oblogout
 
