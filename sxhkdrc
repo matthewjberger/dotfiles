@@ -2,13 +2,37 @@
 # wm independent hotkeys
 #
 
+# Toggle mute
+XF86AudioMute
+	pulseaudio-ctl mute
+
+# Toggle mic mute
+XF86AudioMicMute
+	pulseaudio-ctl mute-input
+
+# Change volume
+XF86Audio{Raise,Lower}Volume
+	pulseaudio-ctl {up,down} 2
+
+# Change volume
+alt + {j,k}
+	pulseaudio-ctl {down,up} 2
+
+# Launch web browser
+alt + w
+	firefox -P default
+
 # terminal emulator
 alt + Return
 	termite
 
 # program launcher
-alt + @space
+alt + space
 	rofi -show run
+
+# window switcher
+alt + Tab
+	rofi -show window
 
 # make sxhkd reload its configuration files:
 alt + Escape
