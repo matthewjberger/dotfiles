@@ -2,6 +2,10 @@
 # wm independent hotkeys
 #
 
+# Open logout manager
+alt + shift + s
+	oblogout
+
 # Toggle mute
 XF86AudioMute
 	pulseaudio-ctl mute
