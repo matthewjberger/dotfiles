@@ -22,6 +22,10 @@ alt + {j,k}
 alt + w
 	firefox -P default
 
+# Launch emacs
+alt + e
+	emacsclient -c
+
 # terminal emulator
 alt + Return
 	termite

@@ -2,7 +2,8 @@
 export TERMINAL=termite
 
 # Specify editor
-export EDITOR=nvim
+export EDITOR=emacs
+export ALTERNATE_EDITOR=""
 
 # Custom bin folder
 export PATH="$HOME/.dotfiles/bin:$PATH"

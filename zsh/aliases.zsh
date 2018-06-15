@@ -1,6 +1,13 @@
 # Start a rust repl
 alias rrepl="rustup run nightly-2016-08-01 ~/.cargo/bin/rusti"
 
+# Show aliases
+alias aliases='cat ~/.dotfiles/zsh/aliases.zsh'
+
+# Emacs
+alias e='emacsclient -c'
+alias et='emacsclient -t'
+
 # Stop the emacs server
 alias killemacs='emacsclient -e "(kill-emacs)"'
 
