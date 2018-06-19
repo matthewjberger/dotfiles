@@ -6,6 +6,11 @@
 alt + shift + s
 	oblogout
 
+
+# Reload polybar
+alt + shift + p
+	polybar-msg cmd restart
+
 # Toggle mute
 XF86AudioMute
 	pulseaudio-ctl mute
@@ -151,3 +156,4 @@ alt + ctrl + shift + {h,j,k,l}
 # move a floating window
 alt + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
