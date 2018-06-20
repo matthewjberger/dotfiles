@@ -10,15 +10,16 @@
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.spacemacs: spacemacs
-    ~/.config/nvim: nvim/
     ~/.config/bspwm/bspwmrc: bspwmrc
+    ~/.config/compton.conf: compton
     ~/.config/dunst/dunstrc: dunstrc
-    ~/.config/sxhkd/sxhkdrc: sxhkdrc
-    ~/.config/termite/config: termite
+    ~/.config/nvim: nvim/
     ~/.config/polybar/launch.sh: polybar/launch.sh
     ~/.config/polybar/config: polybar/config
     ~/.config/ranger/rc.conf: ranger
-    ~/.config/compton.conf: compton
+    ~/.config/rofi/config: rofi
+    ~/.config/sxhkd/sxhkdrc: sxhkdrc
+    ~/.config/termite/config: termite
     ~/.tmux.conf: tmux/.tmux.conf
     ~/.tmux.conf.local: tmux/.tmux.conf.local
     ~/.xprofile: xprofile
