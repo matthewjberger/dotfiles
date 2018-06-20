@@ -10,6 +10,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'christoomey/vim-sort-motion'
 	Plug 'christoomey/vim-tmux-navigator'
 	Plug 'dahu/vim-fanfingtastic'
+	Plug 'dylanaraps/wal.vim'
 	Plug 'equalsraf/neovim-gui-shim'
 	Plug 'frankier/neovim-colors-solarized-truecolor-only'
 	Plug 'inside/vim-search-pulse'
