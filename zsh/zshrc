@@ -1,21 +1,15 @@
-export ZSH=$HOME/.oh-my-zsh
+source /usr/share/zsh/share/antigen.zsh
 
-ZSH_THEME="agnoster"
-
-# Use hyphen-insensitive completion.
-# Case sensitive completion must be off. _ and - will be interchangeable.
-HYPHEN_INSENSITIVE="true"
-
-# Display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
-
-plugins=(archlinux zsh-autosuggestions colorize colored-man-pages command-not-found history-substring-search)
-
-source $ZSH/oh-my-zsh.sh
-
-# Load non oh-my-zsh plugins
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+antigen use oh-my-zsh
+antigen bundle colorize
+antigen bundle colored-man-pages
+antigen bundle command-not-found
+antigen bundle history-substring-search
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
+antigen theme agnoster
+antigen apply
 
 source ~/.dotfiles/zsh/aliases.zsh
 
