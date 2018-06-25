@@ -28,5 +28,4 @@
     ~/.zshenv: zsh/zshenv
     ~/.zshrc: zsh/zshrc
     ~/.zlogin: zsh/zlogin
-    /etc/oblogout.conf: oblogout
 
