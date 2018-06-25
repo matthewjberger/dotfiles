@@ -9,9 +9,14 @@ HYPHEN_INSENSITIVE="true"
 # Display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(archlinux zsh-syntax-highlighting zsh-autosuggestions colorize colored-man-pages command-not-found history-substring-search)
+plugins=(archlinux zsh-autosuggestions colorize colored-man-pages command-not-found history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
+
+# Load non oh-my-zsh plugins
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 source ~/.dotfiles/zsh/aliases.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
