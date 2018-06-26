@@ -7,7 +7,7 @@ These are my personal dotfiles for Unix, intended for use with Manjaro's I3 comm
 ```bash
 git clone https://github.com/matthewjberger/DotFiles dotfiles
 cd dotfiles
-./install
+sudo ./install
 ```
 
 
