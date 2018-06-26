@@ -12,7 +12,7 @@ margin-top = 0
 margin-bottom = 0
 
 [colors]
-background = #222
+background = #cc000000
 background-alt = #444
 foreground = #dfdfdf
 foreground-alt = #555
