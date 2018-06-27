@@ -11,6 +11,26 @@ alt + shift + s
 alt + shift + p
 	polybar-msg cmd restart
 
+# Play button
+XF86AudioPlay
+	playerctl -p spotify play
+
+# Pause button
+XF86AudioPause
+	playerctl -p spotify pause
+
+# Stop button
+XF86AudioStop
+	playerctl -p spotify stop
+
+# Next button
+XF86AudioNext
+	playerctl -p spotify next
+
+# Previous button
+XF86AudioPrevious
+	playerctl -p spotify previous
+
 # Toggle mute
 XF86AudioMute
 	pulseaudio-ctl mute
