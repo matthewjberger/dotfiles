@@ -47,7 +47,7 @@ font-0 = "FuraMono Nerd Font":pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = "Wuncon Siji"
 
-modules-left = bspwm
+modules-left = bspwm player-mpris-simple
 modules-center = date
 modules-right = filesystem xbacklight volume xkeyboard memory cpu battery temperature powermenu
 
@@ -338,7 +338,6 @@ label-close-foreground = ${colors.secondary}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
-
 menu-0-0 = logout
 menu-0-0-exec = bspc quit
 
@@ -347,6 +346,14 @@ menu-0-1-exec = systemctl reboot
 
 menu-0-2 = shutdown
 menu-0-2-exec = systemctl poweroff
+
+[module/player-mpris-simple]
+type = custom/script
+exec = ~/.config/polybar/player-mpris-simple.sh
+interval = 3
+click-left = playerctl previous
+click-right = playerctl next
+click-middle = playerctl play-pause
 
 [settings]
 screenchange-reload = true

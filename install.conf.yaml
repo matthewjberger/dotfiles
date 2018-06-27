@@ -14,8 +14,7 @@
     ~/.config/compton.conf: compton
     ~/.config/dunst/dunstrc: dunstrc
     ~/.config/nvim: nvim/
-    ~/.config/polybar/launch.sh: polybar/launch.sh
-    ~/.config/polybar/config: polybar/config
+    ~/.config/polybar: polybar/
     ~/.config/ranger/rc.conf: ranger
     ~/.config/rofi/config: rofi
     ~/.config/sxhkd/sxhkdrc: sxhkdrc
