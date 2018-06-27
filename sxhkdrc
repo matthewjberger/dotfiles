@@ -28,7 +28,7 @@ XF86AudioNext
 	playerctl -p spotify next
 
 # Previous button
-XF86AudioPrevious
+XF86AudioPrev
 	playerctl -p spotify previous
 
 # Toggle mute
