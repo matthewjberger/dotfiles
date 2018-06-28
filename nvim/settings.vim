@@ -15,16 +15,14 @@ augroup line_return
 				\ endif
 augroup END
 
-" Disabled for now because it conflicts with Goyo.vim
 " Toggle relativenumber in insert mode and regular line numbers in normal mode
-"autocmd InsertEnter * silent! :set norelativenumber
-"autocmd InsertLeave,BufNewFile,VimEnter * silent! :set relativenumber
+autocmd InsertEnter * silent! :set norelativenumber
+autocmd InsertLeave,BufNewFile,VimEnter * silent! :set relativenumber
 
 " Removes trailing spaces
 function! TrimWhiteSpace()
 	%s/\s\+$//e
 endfunction
-
 autocmd FileWritePre   * :call TrimWhiteSpace()
 autocmd FileAppendPre  * :call TrimWhiteSpace()
 autocmd FilterWritePre * :call TrimWhiteSpace()
@@ -32,3 +30,10 @@ autocmd BufWritePre    * :call TrimWhiteSpace()
 
 " Resize splits when the window is resized
 au VimResized * :wincmd =
+
+" Set grep program to ripgrep if available and set the format
+if executable('rg')
+	set grepprg=rg\ --no-heading\ --vimgrep
+	set grepformat=%f:%l:%c:%m
+endif
+

@@ -1,5 +1,11 @@
 " Options
 
+" Use zsh
+set shell=/bin/zsh
+
+" Set the working directory to wherever the open file lives
+set autochdir
+
 " Show line numbers
 set number
 
@@ -71,3 +77,25 @@ set clipboard=unnamed
 " Apply substitutions globally by default
 set gdefault
 
+" Show file options above the command line
+set wildmenu
+
+" Ignore certain file types and directories from fuzzy finding
+set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png,*.pdf,*.psd
+set wildignore+=node_modules/*
+
+" Search as search term is typed out incrementally
+set incsearch
+
+" Make searches case insensitive
+set ignorecase
+
+" Override ignorecase option if search contains uppercase characters
+set smartcase
+
+" Wrapping options
+set formatoptions=tc " Wrap text and comments using textwidth
+set formatoptions+=r " Continue comments when pressing ENTER in insert mode
+set formatoptions+=q " Enable formatting of comments with qg
+set formatoptions+=n " Detect lists for formatting
+set formatoptions+=b " Auto-wrap in insert mode, and do not wrap old long lines

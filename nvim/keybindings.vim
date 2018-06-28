@@ -20,6 +20,8 @@ nnoremap g; g;zz:call search_pulse#Pulse()<cr>
 nnoremap g, g,zz:call search_pulse#Pulse()<cr>
 nnoremap <c-o> <c-o>zz:call search_pulse#Pulse()<cr>
 
+nnoremap gF :vertical wincmd f<cr>
+
 nnoremap <leader>fed :split $MYVIMRC<cr> :only<cr>
 nnoremap <leader>fer :source $MYVIMRC<cr>
 nnoremap <leader>feR :source $MYVIMRC<cr> :PlugClean<cr> :PlugInstall<cr>
@@ -134,3 +136,46 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 " Flash the yank motion
 map y <Plug>(operator-flashy)
 
+" Tab to select completions
+inoremap <expr><TAB> (pumvisible()?(empty(v:completed_item)?"\<C-n>":"\<C-y>"):"\<Tab>")
+
+" Don't hijack enter key during completion selection
+inoremap <expr><CR> (pumvisible()?(empty(v:completed_item)?"\<CR>\<CR>":"\<C-y>"):"\<CR>")
+
+" Center search results
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
+nnoremap <silent> * *zz
+nnoremap <silent> # #zz
+nnoremap <silent> g* g*zz
+
+" Very magic by default
+nnoremap ? ?\v
+nnoremap / /\v
+cnoremap %s/ %sm/
+
+" ; as :
+nnoremap ; :
+
+" Paste clipboard into buffer
+nnoremap <leader>bp :read !xsel --clipboard --output<cr>
+
+" Copy entire buffer into clibpoard
+nnoremap <leader>by :w !xsel -ib<cr><cr>
+
+" Leaders for rg search
+noremap <leader>S :Rg<cr>
+
+command! -bang -nargs=* Rg
+	\ call fzf#vim#grep(
+	\	'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
+	\	<bang>0 ? fzf#vim#with_preview('up:60%')
+	\			: fzf#vim#with_preview('right:50%:hidden', '?'),
+	\	<bang>0)
+
+" Open new file adjacent to current file
+nnoremap <leader>E :e <C-R>=expand("%:p:h") . "/" <CR>
+
+" Left and right can switch buffers
+nnoremap <left> :bp<CR>
+nnoremap <right> :bn<CR>

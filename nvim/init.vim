@@ -14,23 +14,21 @@ endif
 runtime plugin_list.vim
 
 " Plugin Settings
-runtime plugins/airline.vim
-"runtime plugins/deoplete.vim
+runtime plugins/ale.vim
+runtime plugins/deoplete.vim
 "runtime plugins/deoplete-rust.vim
-runtime plugins/emoji.vim
+"runtime plugins/emoji.vim
 runtime plugins/fzf.vim
 runtime plugins/git.vim
-runtime plugins/goyo.vim
-runtime plugins/hardtime.vim
-runtime plugins/indent-guides.vim
+"runtime plugins/goyo.vim
+"runtime plugins/indent-guides.vim
 runtime plugins/language-client.vim
-runtime plugins/multiple-cursors.vim
-runtime plugins/neomake.vim
+"runtime plugins/multiple-cursors.vim
 runtime plugins/nerdtree.vim
-runtime plugins/python-support.vim
-runtime plugins/rainbow.vim
-runtime plugins/slash.vim
+"runtime plugins/rainbow.vim
+"runtime plugins/slash.vim
 runtime plugins/sort_motion.vim
+runtime plugins/rooter.vim
 
 " Language Settings
 runtime lang/markdown.vim
