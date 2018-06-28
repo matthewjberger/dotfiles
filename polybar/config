@@ -348,6 +348,7 @@ menu-0-2-exec = systemctl poweroff
 [module/player-mpris-simple]
 type = custom/script
 exec = ~/.config/polybar/player-mpris-simple.sh
+format-underline = ${colors.primary}
 interval = 3
 click-left = playerctl previous
 click-right = playerctl next
