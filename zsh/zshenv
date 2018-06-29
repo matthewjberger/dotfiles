@@ -2,7 +2,7 @@
 export TERMINAL=termite
 
 # Specify editor
-export EDITOR=emacs
+export EDITOR=nvim
 export ALTERNATE_EDITOR=""
 
 # Custom bin folder
