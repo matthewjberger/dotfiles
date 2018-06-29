@@ -1,6 +1,6 @@
 # Matthew Berger's Dotfiles
 
-These are my personal dotfiles for Unix, intended for use with Manjaro's I3 community edition.
+These are my personal dotfiles for Arch Linux.
 
 ## Installation Instructions
 
@@ -10,4 +10,10 @@ cd dotfiles
 sudo ./install
 ```
 
+## Bootstrapper
 
+[A script for setting up this environment from the Arch ISO command line can be found here.](https://github.com/matthewjberger/arch-install)
+
+## Screenshots
+
+![Arch Desktop](/screenshots/screenshot.png?raw=true "Arch Desktop")
