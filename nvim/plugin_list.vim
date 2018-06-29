@@ -66,6 +66,26 @@ call plug#begin('~/.config/nvim/plugged')
 	" FileTree navigator
 	Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
+	" Junegunn plugins
+	Plug 'junegunn/limelight.vim'
+	Plug 'junegunn/goyo.vim'
+	Plug 'junegunn/rainbow_parentheses.vim'
+	Plug 'junegunn/vim-emoji'
+	Plug 'junegunn/vim-easy-align'
+	Plug 'junegunn/vim-peekaboo'
+	Plug 'junegunn/vim-slash'
+
+	" Highlight yanked region
+	Plug 'kana/vim-operator-user'
+	Plug 'haya14busa/vim-operator-flashy'
+
+	" Snippets
+	Plug 'SirVer/ultisnips'
+	Plug 'honza/vim-snippets'
+
+	" Add tagbar
+	Plug 'majutsushi/tagbar'
+
 	" Load dev icons
 	Plug 'ryanoasis/vim-devicons'
 
@@ -74,15 +94,8 @@ call plug#begin('~/.config/nvim/plugged')
 	"Plug 'janko-m/vim-test'
 	"Plug 'jceb/vim-orgmode'
 	"Plug 'jiangmiao/auto-pairs'
-	"Plug 'junegunn/limelight.vim'
-	"Plug 'junegunn/goyo.vim'
-	"Plug 'junegunn/rainbow_parentheses.vim'
-	"Plug 'junegunn/vim-emoji'
-	"Plug 'junegunn/vim-easy-align'
-	"Plug 'junegunn/vim-peekaboo'
-	"Plug 'junegunn/vim-slash'
+
 	"Plug 'kassio/neoterm'
-	"Plug 'majutsushi/tagbar'
 	"Plug 'mbbill/undotree'
 	"Plug 'michaeljsmith/vim-indent-object'
 	"Plug 'mzlogin/vim-markdown-toc', { 'for': 'markdown' }

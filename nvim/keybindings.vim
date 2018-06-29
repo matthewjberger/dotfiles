@@ -55,7 +55,10 @@ nnoremap <silent> <leader>ep :lopen<cr> :lprevious<cr>
 nnoremap <silent> <leader>ec :lclose<cr>
 nnoremap <silent> <leader>ls :mksession!<cr>
 nnoremap <silent> <leader>'  :split<cr> :terminal<cr> <esc><cr>
-nnoremap <leader>th :HardTimeToggle<cr>:echo 'Toggled hardtime'<cr>
+
+" vim-operator-flashy
+map y <Plug>(operator-flashy)
+nmap y <Plug>(operator-flashy)$
 
 " Yank entire buffer to clipboard
 nnoremap <leader>bY gg"*yGgg"+yG
@@ -154,9 +157,6 @@ nnoremap ? ?\v
 nnoremap / /\v
 cnoremap %s/ %sm/
 
-" ; as :
-nnoremap ; :
-
 " Paste clipboard into buffer
 nnoremap <leader>bp :read !xsel --clipboard --output<cr>
 
@@ -179,3 +179,6 @@ nnoremap <leader>E :e <C-R>=expand("%:p:h") . "/" <CR>
 " Left and right can switch buffers
 nnoremap <left> :bp<CR>
 nnoremap <right> :bn<CR>
+
+" Toggle Tagbar
+nmap <F8> :TagbarToggle<cr>

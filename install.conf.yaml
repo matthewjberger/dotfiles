@@ -19,6 +19,7 @@
     ~/.config/rofi/config: rofi
     ~/.config/sxhkd/sxhkdrc: sxhkdrc
     ~/.config/termite/config: termite
+    ~/.ctags: ctags
     ~/.tmux.conf: tmux/.tmux.conf
     ~/.tmux.conf.local: tmux/.tmux.conf.local
     ~/.xprofile: xprofile

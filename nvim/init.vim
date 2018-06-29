@@ -26,9 +26,10 @@ runtime plugins/language-client.vim
 "runtime plugins/multiple-cursors.vim
 runtime plugins/nerdtree.vim
 "runtime plugins/rainbow.vim
+runtime plugins/rooter.vim
 "runtime plugins/slash.vim
 runtime plugins/sort_motion.vim
-runtime plugins/rooter.vim
+runtime plugins/tagbar.vim
 
 " Language Settings
 runtime lang/markdown.vim
