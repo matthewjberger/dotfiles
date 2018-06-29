@@ -48,6 +48,8 @@ call plug#begin('~/.config/nvim/plugged')
 	" Tim Pope plugins
 	Plug 'tpope/vim-commentary' " Commenting plugin
 	Plug 'tpope/vim-surround'   " Change surrounding characters
+	Plug 'tpope/vim-fugitive'   " Git plugin
+	Plug 'tpope/vim-repeat'     " Allow plugins to repeat commands
 
 	" Navigate files easily
 	Plug 'lokaltog/vim-easymotion'
@@ -63,9 +65,6 @@ call plug#begin('~/.config/nvim/plugged')
 
 	" FileTree navigator
 	Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-
-	" Navigate between vim and tmux panes easily
-	Plug 'christoomey/vim-tmux-navigator'
 
 	" Load dev icons
 	Plug 'ryanoasis/vim-devicons'
@@ -105,9 +104,7 @@ call plug#begin('~/.config/nvim/plugged')
 	"Plug 'timonv/vim-cargo'
 	"Plug 'tommcdo/vim-lion'
 	"Plug 'tpope/vim-endwise'
-	"Plug 'tpope/vim-fugitive'
 	"Plug 'tpope/vim-markdown', { 'for': 'markdown' }
-	"Plug 'tpope/vim-repeat'
 	"Plug 'tpope/vim-unimpaired'
 	"" Load the devicons plugin last
 call plug#end()
