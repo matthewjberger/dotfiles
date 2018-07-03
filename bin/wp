@@ -57,7 +57,7 @@ if [ "$1" != "" ]; then
 			;;
 
 		save)
-			[ -f $wallpaper_dir/$wallpaper_name ] && cp --backup=numbered $wallpaper_dir/$wallpaper_dir $local_wallpaper_dir
+			[ -f $wallpaper_dir/$wallpaper_name ] && cp --verbose --backup=numbered $wallpaper_dir/$wallpaper_name $local_wallpaper_dir
 			exit
 			;;
 
