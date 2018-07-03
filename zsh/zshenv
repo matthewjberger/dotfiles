@@ -1,4 +1,4 @@
-# Use termite for i3
+# Use termite as the terminal
 export TERMINAL=termite
 
 # Specify editor
@@ -9,16 +9,7 @@ export ALTERNATE_EDITOR=""
 export PATH="$HOME/.dotfiles/bin:$PATH"
 
 # Rust environment variables
-export CARGO_HOME="$HOME/.cargo"
-export CARGO_BIN="$CARGO_HOME/bin"
-export PATH="$CARGO_BIN:$PATH"
-
-# Go environment variables
-export GOPATH="$HOME/go"
-export PATH="$PATH:/usr/local/go/bin"
-
-# Add ruby path to bin
-export PATH="$HOME/.gem/ruby/2.5.0/bin:$PATH"
+source $HOME/.cargo/env
 
 # Don't load the ranger rc twice
 export RANGER_LOAD_DEFAULT_RC=true

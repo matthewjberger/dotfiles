@@ -1,0 +1,93 @@
+#!/bin/bash
+
+wallpaper_dir=$HOME/unsplash
+wallpaper_name=wallpaper.jpg
+mkdir -p $wallpaper_dir
+resolution=1920x1080
+
+function usage()
+{
+	echo "Usage:"
+	echo ""
+	echo "\t-h | --help						   Show this help text."
+	echo "\t-r | --resolution				   The resolution of the images to download, 1920x1080 by default. (only applicable for unsplash commands)"
+	echo "\tset [path]						   Set the wallpaper to an image at the specified path."
+	echo "\tdotfiles						   Set the wallpaper to a random saved image in the ~/.dotfiles/wallpapers directory."
+	echo "\tunsplash						   Set the wallpaper to a random wallpaper from unsplash at the resolution specified by the -r switch"
+	echo "\tsearch [keyword1,keyword2,...,...] Set the wallpaper to a random wallpaper from unsplash with the given search terms at the resolution specified by the -r switch."
+	echo "\tsave                               Saves the current unsplash wallpaper to the $HOME/.dotfiles/wallpapers directory."
+}
+
+while [ "$1" != "" ]; do
+	PARAM=`echo $1 | awk -F= '{print $1}'`
+	VALUE=`echo $1 | awk -F= '{print $2}'`
+	case $PARAM in
+		-h | --help)
+			usage
+			exit
+			;;
+
+		-r | --resolution)
+			resolution=$VALUE
+			;;
+
+		set)
+			set-wallpaper $VALUE
+			;;
+
+		dotfiles)
+			set-random-wallpaper
+			exit
+			;;
+
+		unsplash)
+			set-random-unsplash-wallpaper
+			exit
+			;;
+
+		search)
+			set-unsplash-wallpaper-search $VALUE
+			exit
+			;;
+
+		save)
+			save-unsplash-wallpaper
+			exit
+			;;
+
+		*)
+			echo "Unknown parameter \"$PARAM\""
+			usage
+			exit 1
+			;;
+	esac
+	shift
+done
+
+echo "No options specified."
+usage
+
+set-wallpaper() {
+	wal -i "$@"
+	. ~/.dotfiles/bspwmrc > /dev/null
+}
+
+set-random-wallpaper() {
+	wallpaper=$(ls $HOME/.dotfiles/wallpapers | shuf -n 1)
+	set-wallpaper "$HOME/.dotfiles/wallpapers/$wallpaper"
+	. ~/.dotfiles/bspwmrc > /dev/null
+}
+
+set-unsplash-wallpaper-search() {
+	wget "https://source.unsplash.com/$resolution/?$@" -O $wallpaper_dir/$wallpaper_name
+	set-wallpaper $wallpaper_dir/$wallpaper_name
+}
+
+set-random-unsplash-wallpaper() {
+	wget "https://source.unsplash.com/random/$resolution" -O $wallpaper_dir/$wallpaper_name
+	set-wallpaper $wallpaper_dir/$wallpaper_name
+}
+
+save-unsplash-wallpaper() {
+	[ -f $HOME/unsplash/wallpaper.jpg ] && cp --backup=numbered $HOME/unsplash/wallpaper.jpg $HOME/.dotfiles/wallpapers
+}

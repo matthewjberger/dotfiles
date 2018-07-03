@@ -15,7 +15,5 @@ source ~/.dotfiles/zsh/aliases.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source ~/.dotfiles/scripts/wallpaper-commands.sh
-
 # Import colorscheme from 'wal' asychronously
 (cat ~/.cache/wal/sequences &)
