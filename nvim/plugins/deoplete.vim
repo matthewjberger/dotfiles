@@ -1,23 +1,19 @@
 " Deoplete
 
-set completeopt-=preview " get rid of vim complete window. Never used it, don't need it.
-
+" Enable deoplete at startup
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#ignore_sources = {}
-let g:deoplete#ignore_sources._ = ['member', 'tag', 'neosnippet']
+
+" Disable the candidates in Comment/String syntaxes
+call deoplete#custom#source('_', 'disabled_syntaxes', ['Comment', 'String'])
+
+" No delay before completion
 let g:deoplete#auto_complete_delay = 0
 
-inoremap <expr><C-n> pumvisible() ? "\<C-n>" :
-		\ <SID>check_back_space() ? "\<TAB>" :
-		\ deoplete#mappings#manual_complete()
-		function! s:check_back_space() abort "{{{
-      let col = col('.') - 1
-      return !col || getline('.')[col - 1]  =~ '\s'
-		endfunction"}}}
+" Tab Completion
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
-
-" no new line after hitting enter
-"inoremap <silent><expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>"
+" No new line after hitting enter
+inoremap <silent><expr><CR> pumvisible() ? deoplete#mappings#close_popup() : "\<CR>"
 
 " Use partial fuzzy matches like YouCompleteMe
 au VimEnter * call deoplete#custom#source('_', 'matchers', ['matcher_fuzzy'])

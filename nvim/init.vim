@@ -23,6 +23,7 @@ runtime plugins/git.vim
 "runtime plugins/goyo.vim
 "runtime plugins/indent-guides.vim
 runtime plugins/language-client.vim
+runtime plugins/lightline.vim
 "runtime plugins/multiple-cursors.vim
 runtime plugins/nerdtree.vim
 "runtime plugins/rainbow.vim

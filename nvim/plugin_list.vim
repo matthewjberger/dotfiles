@@ -13,6 +13,13 @@ call plug#begin('~/.config/nvim/plugged')
 	" Async completions
 	Plug 'Shougo/deoplete.nvim', { 'do': 'UpdateRemotePlugins' }
 
+	" United interfaces
+	Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+
+	" Emoji
+	Plug 'junegunn/vim-emoji'
+	Plug 'pocari/vim-denite-emoji'
+
 	" Linting
 	Plug 'w0rp/ale'
 
@@ -103,7 +110,6 @@ call plug#begin('~/.config/nvim/plugged')
 	"Plug 'roxma/nvim-completion-manager'
 	"Plug 'roxma/python-support.nvim'
 	"Plug 'sheerun/vim-polyglot'
-	""Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 		""Plug 'sebastianmarkow/deoplete-rust'
 		""Plug 'tweekmonster/deoplete-clang2'
 		""Plug 'zchee/deoplete-zsh'
