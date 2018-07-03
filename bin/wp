@@ -2,56 +2,62 @@
 
 wallpaper_dir=$HOME/unsplash
 wallpaper_name=wallpaper.jpg
-mkdir -p $wallpaper_dir
 resolution=1920x1080
+local_wallpaper_dir=$HOME/.dotfiles/wallpapers
+mkdir -p $wallpaper_dir
 
-function usage()
-{
-	echo "Usage:"
-	echo ""
-	echo "\t-h | --help						   Show this help text."
-	echo "\t-r | --resolution				   The resolution of the images to download, 1920x1080 by default. (only applicable for unsplash commands)"
-	echo "\tset [path]						   Set the wallpaper to an image at the specified path."
-	echo "\tdotfiles						   Set the wallpaper to a random saved image in the ~/.dotfiles/wallpapers directory."
-	echo "\tunsplash						   Set the wallpaper to a random wallpaper from unsplash at the resolution specified by the -r switch"
-	echo "\tsearch [keyword1,keyword2,...,...] Set the wallpaper to a random wallpaper from unsplash with the given search terms at the resolution specified by the -r switch."
-	echo "\tsave                               Saves the current unsplash wallpaper to the $HOME/.dotfiles/wallpapers directory."
+set-wallpaper() {
+	wal -i "$@"
+	. $HOME/.dotfiles/bspwmrc > /dev/null
 }
 
-while [ "$1" != "" ]; do
-	PARAM=`echo $1 | awk -F= '{print $1}'`
-	VALUE=`echo $1 | awk -F= '{print $2}'`
+usage()
+{
+	echo "Matthew Berger's Wallpaper Utility"
+	echo "Usage:"
+	echo "	-h | --help                        Show this help text."
+	echo "	set [path]                         Set the wallpaper to an image at the specified path."
+	echo "	dotfiles                           Set the wallpaper to a random saved image in the ~/.dotfiles/wallpapers directory."
+	echo "	unsplash                           Set the wallpaper to a random wallpaper from unsplash."
+	echo "	search [keyword1,keyword2,...,...] Set the wallpaper to a random wallpaper from unsplash found using given search terms."
+	echo "	save                               Saves the current unsplash wallpaper to the $HOME/.dotfiles/wallpapers directory."
+}
+
+if [ "$1" != "" ]; then
+	PARAM=$1
+	VALUE=$2
 	case $PARAM in
 		-h | --help)
 			usage
 			exit
 			;;
 
-		-r | --resolution)
-			resolution=$VALUE
-			;;
-
 		set)
 			set-wallpaper $VALUE
+			exit
 			;;
 
 		dotfiles)
-			set-random-wallpaper
+			random_wallpaper=$(ls $local_wallpaper_dir | shuf -n 1)
+			set-wallpaper "$local_wallpaper_dir/$random_wallpaper"
+			. $HOME/.dotfiles/bspwmrc > /dev/null
 			exit
 			;;
 
 		unsplash)
-			set-random-unsplash-wallpaper
+			wget "https://source.unsplash.com/random/$resolution" -O $wallpaper_dir/$wallpaper_name
+			set-wallpaper $wallpaper_dir/$wallpaper_name
 			exit
 			;;
 
 		search)
-			set-unsplash-wallpaper-search $VALUE
+			wget "https://source.unsplash.com/$resolution/?$VALUE" -O $wallpaper_dir/$wallpaper_name
+			set-wallpaper $wallpaper_dir/$wallpaper_name
 			exit
 			;;
 
 		save)
-			save-unsplash-wallpaper
+			[ -f $wallpaper_dir/$wallpaper_name ] && cp --backup=numbered $wallpaper_dir/$wallpaper_dir $local_wallpaper_dir
 			exit
 			;;
 
@@ -61,33 +67,6 @@ while [ "$1" != "" ]; do
 			exit 1
 			;;
 	esac
-	shift
-done
+fi
 
-echo "No options specified."
 usage
-
-set-wallpaper() {
-	wal -i "$@"
-	. ~/.dotfiles/bspwmrc > /dev/null
-}
-
-set-random-wallpaper() {
-	wallpaper=$(ls $HOME/.dotfiles/wallpapers | shuf -n 1)
-	set-wallpaper "$HOME/.dotfiles/wallpapers/$wallpaper"
-	. ~/.dotfiles/bspwmrc > /dev/null
-}
-
-set-unsplash-wallpaper-search() {
-	wget "https://source.unsplash.com/$resolution/?$@" -O $wallpaper_dir/$wallpaper_name
-	set-wallpaper $wallpaper_dir/$wallpaper_name
-}
-
-set-random-unsplash-wallpaper() {
-	wget "https://source.unsplash.com/random/$resolution" -O $wallpaper_dir/$wallpaper_name
-	set-wallpaper $wallpaper_dir/$wallpaper_name
-}
-
-save-unsplash-wallpaper() {
-	[ -f $HOME/unsplash/wallpaper.jpg ] && cp --backup=numbered $HOME/unsplash/wallpaper.jpg $HOME/.dotfiles/wallpapers
-}
