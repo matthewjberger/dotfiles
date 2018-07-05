@@ -1,0 +1,9 @@
+[wpgtk]
+openbox = false
+gtk = true
+active = 0
+tint2 = true
+light_theme = false
+editor = urxvt -e nvim
+execute_cmd = false
+set_wallpaper = true
