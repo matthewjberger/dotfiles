@@ -13,6 +13,7 @@
     ~/.config/bspwm/bspwmrc: bspwmrc
     ~/.config/compton.conf: compton
     ~/.config/dunst/dunstrc: dunstrc
+    ~/.config/gtk-3.0/settings.ini: gtk-3.0.ini
     ~/.config/nvim: nvim/
     ~/.config/polybar: polybar/
     ~/.config/ranger/rc.conf: ranger
