@@ -17,6 +17,7 @@ bspc rule -a Spotify pseudo_tiled=on
 bspc rule -a Thunar pseudo_tiled=on
 bspc rule -a feh floating=on manage=off
 bspc rule -a Firefox desktop='^2'
+bspc rule -a plank layer=above manage=on border=off
 
 # Source the pywal colors
 wal -R
@@ -28,4 +29,4 @@ bspc config presel_feedback_color "$color1"
 
 compton -b > /dev/null 2>&1
 $HOME/.config/polybar/launch.sh > /dev/null 2>&1
-pgrep cairo-dock > /dev/null  || (cairo-dock -o &) > /dev/null 2>&1
+pgrep plank > /dev/null  || plank > /dev/null 2>&1
