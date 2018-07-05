@@ -8,6 +8,7 @@ mkdir -p $wallpaper_dir
 
 set-wallpaper() {
 	wal -i "$@" -g
+	notify-send "Set wallpaper" "$@" -u normal -t 6000 -i "$@"
 	. $HOME/.dotfiles/bspwmrc > /dev/null
 }
 
@@ -57,7 +58,10 @@ if [ "$1" != "" ]; then
 			;;
 
 		save)
-			[ -f $wallpaper_dir/$wallpaper_name ] && cp --verbose --backup=numbered $wallpaper_dir/$wallpaper_name $local_wallpaper_dir
+			if [ -f $wallpaper_dir/$wallpaper_name ]; then
+				message=$(cp --verbose --backup=numbered $wallpaper_dir/$wallpaper_name $local_wallpaper_dir)
+				notify-send "Saved Wallpaper" "$message" -u normal -t 8000 -i "$wallpaper_dir/$wallpaper_name"
+			fi
 			exit
 			;;
 
