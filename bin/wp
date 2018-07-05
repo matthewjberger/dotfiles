@@ -7,7 +7,7 @@ local_wallpaper_dir=$HOME/.dotfiles/wallpapers
 mkdir -p $wallpaper_dir
 
 set-wallpaper() {
-	wal -i "$@"
+	wal -i "$@" -g
 	. $HOME/.dotfiles/bspwmrc > /dev/null
 }
 

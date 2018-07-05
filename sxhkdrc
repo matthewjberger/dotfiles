@@ -2,10 +2,21 @@
 # wm independent hotkeys
 #
 
+# Load random unsplash wallpaper
+ctrl + alt + r
+	wp unsplash
+
+# Save unsplash wallpaper
+ctrl + alt + s
+	wp save
+
+# Load random wallpaper from dotfiles
+ctrl + alt + d
+	wp dotfiles
+
 # Open logout manager
 alt + shift + s
 	oblogout
-
 
 # Reload polybar
 alt + shift + p
