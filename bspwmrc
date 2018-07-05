@@ -28,3 +28,4 @@ bspc config presel_feedback_color "$color1"
 
 compton -b > /dev/null 2>&1
 $HOME/.config/polybar/launch.sh > /dev/null 2>&1
+pgrep cairo-dock > /dev/null  || (cairo-dock -o &) > /dev/null 2>&1
