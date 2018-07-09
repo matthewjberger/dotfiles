@@ -82,6 +82,10 @@ alt + Tab
 alt + Escape
 	pkill -USR1 -x sxhkd
 
+# launch clearine
+{XF86PowerOff, XF86PowerDown}
+	clearine
+
 #
 # bspwm hotkeys
 #
