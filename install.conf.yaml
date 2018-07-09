@@ -11,6 +11,7 @@
     ~/.gitignore_global: gitignore_global
     ~/.spacemacs: spacemacs
     ~/.config/bspwm/bspwmrc: bspwmrc
+    ~/.config/clearine.conf: clearine
     ~/.config/compton.conf: compton
     ~/.config/dunst/dunstrc: dunstrc
     ~/.config/gtk-3.0/settings.ini: gtk-3.0.ini
