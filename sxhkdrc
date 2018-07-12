@@ -15,8 +15,12 @@ ctrl + alt + d
 	wp dotfiles
 
 # Open logout manager
-alt + shift + s
-	oblogout
+ctrl + alt + e
+	clearine
+
+# launch clearine
+{XF86PowerOff, XF86PowerDown}
+	clearine
 
 # Reload polybar
 alt + shift + p
@@ -81,10 +85,6 @@ alt + Tab
 # make sxhkd reload its configuration files:
 alt + Escape
 	pkill -USR1 -x sxhkd
-
-# launch clearine
-{XF86PowerOff, XF86PowerDown}
-	clearine
 
 #
 # bspwm hotkeys
