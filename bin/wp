@@ -59,8 +59,8 @@ if [ "$1" != "" ]; then
 
 		save)
 			if [ -f $wallpaper_dir/$wallpaper_name ]; then
-				message=$(cp --verbose --backup=numbered $wallpaper_dir/$wallpaper_name $local_wallpaper_dir)
-				notify-send "Saved Wallpaper" "$message" -u normal -t 8000 -i "$wallpaper_dir/$wallpaper_name"
+				message=$(cp --verbose --backup=numbered $wallpaper_dir/$wallpaper_name $local_wallpaper_dir/$VALUE.jpg)
+				notify-send "Saved Wallpaper" "$message" -u normal -t 8000 -i "$wallpaper_dir/$VALUE.jpg"
 			fi
 			exit
 			;;
