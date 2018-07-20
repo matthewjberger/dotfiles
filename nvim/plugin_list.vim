@@ -93,20 +93,30 @@ call plug#begin('~/.config/nvim/plugged')
 	" Add tagbar
 	Plug 'majutsushi/tagbar'
 
+	" Autocomplete pairs
+	Plug 'jiangmiao/auto-pairs'
+
+	" Add indent guides
+	Plug 'nathanaelkane/vim-indent-guides'
+
 	" Load dev icons
 	Plug 'ryanoasis/vim-devicons'
+
+	" Add cargo commands for vim
+	Plug 'timonv/vim-cargo'
+
+	" Align characters in text
+	Plug 'tommcdo/vim-lion'
 
 	"Plug 'dahu/vim-fanfingtastic'
 	"Plug 'equalsraf/neovim-gui-shim'
 	"Plug 'janko-m/vim-test'
 	"Plug 'jceb/vim-orgmode'
-	"Plug 'jiangmiao/auto-pairs'
 
 	"Plug 'kassio/neoterm'
 	"Plug 'mbbill/undotree'
 	"Plug 'michaeljsmith/vim-indent-object'
 	"Plug 'mzlogin/vim-markdown-toc', { 'for': 'markdown' }
-	"Plug 'nathanaelkane/vim-indent-guides'
 	"Plug 'roxma/nvim-completion-manager'
 	"Plug 'roxma/python-support.nvim'
 	"Plug 'sheerun/vim-polyglot'
@@ -120,8 +130,6 @@ call plug#begin('~/.config/nvim/plugged')
 	""Plug 'Shougo/neosnippet-snippets'
 	"Plug 'takac/vim-hardtime'
 	"Plug 'terryma/vim-multiple-cursors'
-	"Plug 'timonv/vim-cargo'
-	"Plug 'tommcdo/vim-lion'
 	"Plug 'tpope/vim-endwise'
 	"Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 	"Plug 'tpope/vim-unimpaired'
