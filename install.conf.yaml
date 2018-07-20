@@ -24,7 +24,7 @@
     ~/.config/wpg/wpg.conf: wpg
     ~/.ctags: ctags
     ~/.tmux.conf: tmux/.tmux.conf
-    ~/.tmux.conf.local: tmux/.tmux.conf.local
+    ~/.tmux.conf.local: tmux.conf.local
     ~/.xprofile: xprofile
     ~/.xinitrc: xinitrc
     ~/.zsh: zsh/
