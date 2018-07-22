@@ -64,7 +64,7 @@ alt + {j,k}
 
 # Launch web browser
 alt + w
-	firefox -P default
+	vivaldi-stable
 
 # Launch emacs
 alt + e
