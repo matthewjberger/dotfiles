@@ -16,7 +16,6 @@ bspc config focus_follows_pointer true
 bspc rule -a Spotify pseudo_tiled=on
 bspc rule -a Thunar pseudo_tiled=on
 bspc rule -a feh floating=on manage=off
-bspc rule -a plank layer=above manage=on border=off
 
 # Source the pywal colors
 wal -R
@@ -28,4 +27,3 @@ bspc config presel_feedback_color "$color1"
 
 pgrep compton > /dev/null || (compton &) > /dev/null 2>&1
 $HOME/.config/polybar/launch.sh > /dev/null 2>&1
-pgrep plank > /dev/null  || plank > /dev/null 2>&1
