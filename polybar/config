@@ -51,7 +51,7 @@ font-2 = "Wuncon Siji"
 
 modules-left = bspwm player-mpris-simple
 modules-center =
-modules-right = filesystem xbacklight xkeyboard memory cpu battery temperature date powermenu
+modules-right = filesystem xbacklight xkeyboard memory cpu battery temperature date
 
 tray-position = right
 tray-padding = 2
