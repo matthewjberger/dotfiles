@@ -8,12 +8,12 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      "${builtins.fetchTarball https://github.com/rycee/home-manager/archive/master.tar.gz}/nixos"
     ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
   boot.plymouth.enable = true;
 
   networking.hostName = "odinsbeard"; # Define your hostname.
@@ -32,22 +32,6 @@
   # Set your time zone.
   time.timeZone = "America/Los_Angeles";
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim
-    polybar
-    networkmanagerapplet
-    git
-    pywal
-    termite
-    sxhkd
-  ];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  programs.gnupg.agent = { enable = true; enableSSHSupport = true; };
-
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
@@ -61,29 +45,39 @@
   hardware.pulseaudio.enable = true;
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  services.xserver.layout = "us";
-  services.xserver.xkbOptions = "eurosign:e";
-  services.xserver.windowManager.bspwm.enable = true;
-  services.xserver.windowManager.bspwm.configFile = "/home/odin/dotfiles/bspwmrc";
-  services.xserver.windowManager.bspwm.sxhkd.configFile = "/home/odin/dotfiles/sxhkdrc";
-  services.xserver.displayManager.auto = {
-     enable = true;
-     user = "odin";
+  services.xserver = {
+    enable = true;
+    layout = "us";
+    xkbOptions = "eurosign:e";
+    windowManager.bspwm = {
+       enable = true;
+       configFile = "/home/odin/dotfiles/bspwmrc";
+       sxhkd.configFile = "/home/odin/dotfiles/sxhkdrc";
+    };
+    displayManager.auto = {
+       enable = true;
+       user = "odin";
+    };
+    desktopManager.default = "none";
+    desktopManager.xterm.enable = false;
+    autoRepeatDelay = 200;
+    autoRepeatInterval = 25;
+    libinput.enable = true;
+    resolutions = [
+       { x = 1920; y = 1080; }
+    ];
   };
-  services.compton.enable = true;
-  services.compton.shadow = true;
-  services.compton.inactiveOpacity = "0.8";
+
+  services.compton = {
+      enable = true;
+      shadow = true;
+      inactiveOpacity = "0.8";
+  };
 
   services.fstrim.enable = true;
-  services.xserver.autoRepeatDelay = 200;
-  services.xserver.autoRepeatInterval = 25;
-
-  # Enable touchpad support.
-  services.xserver.libinput.enable = true;
-
+  
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.extraUsers.odin = {
+  users.users.odin = {
     isNormalUser = true;
     home = "/home/odin";
     shell = pkgs.fish;
@@ -91,10 +85,20 @@
     uid = 1001;
   };
 
+  home-manager.users.odin = {
+    home.file.".config/bspwm/bspwmrc".source = "/home/odin/dotfiles/bspwmrc";
+    home.file.".config/sxhkd/sxhkdrc".source = "/home/odin/dotfiles/sxhkdrc";
+    home.packages = [
+       pkgs.fortune
+    ];
+    services.random-background = { enable = true; imageDirectory = "/home/code/dotfiles/wallpapers"; };
+  };
+
   programs.fish.enable = true;
 
   fonts.fonts = with pkgs; [
     hack-font
+    siji
   ];
 
   # This value determines the NixOS release with which your system is to be
@@ -102,5 +106,4 @@
   # servers. You should change this only after NixOS release notes say you
   # should.
   system.stateVersion = "18.03"; # Did you read the comment?
-
 }
