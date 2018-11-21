@@ -27,8 +27,4 @@
     ~/.tmux.conf.local: tmux.conf.local
     ~/.xprofile: xprofile
     ~/.xinitrc: xinitrc
-    ~/.zsh: zsh/
-    ~/.zshenv: zsh/zshenv
-    ~/.zshrc: zsh/zshrc
-    ~/.zlogin: zsh/zlogin
 
