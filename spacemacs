@@ -71,7 +71,7 @@ This function should only modify configuration layer settings."
    ;; To use a local version of a package, use the `:location' property:
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '( doom-themes editorconfig )
+   dotspacemacs-additional-packages '( doom-themes editorconfig gdb-mi )
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -468,6 +468,8 @@ before packages are loaded."
    evil-escape-key-sequence "jk"
    diff-hl-side 'right
    vc-follow-symlinks t
+   gdb-many-windows t
+   gdb-show-main t
    )
 
   ;; Disable line wrapping on startup
