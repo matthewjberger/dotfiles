@@ -45,7 +45,8 @@ This function should only modify configuration layer settings."
      emacs-lisp
      git
      github
-     helm
+     gpu
+     ivy     
      lsp
      markdown
      neotree
