@@ -21,3 +21,13 @@ wget https://git.io/fh5b3 -O bootstrap.sh && chmod +x bootstrap.sh
 
 # bootstrap.sh odinsbeard somerootpassword odin somepassword "amdgpu.dc=0 nosplash" false
 ```
+
+### Choosing video drivers
+
+Uncomment the proper line for the desired graphics driver in `bootstrap.sh`:
+
+```
+vulkan-radeon # default
+# vulkan-intel
+# nvidia 
+```
