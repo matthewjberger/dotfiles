@@ -209,9 +209,6 @@ pacman --noconfirm -S alacritty \
                       wpa_supplicant \
                       wget
 
-# Change shell
-chsh $user_name -s $(which fish)
-
 # Install dotfiles
 echo "Installing dotfiles..."
 
@@ -246,6 +243,9 @@ rustup component add rls-preview rust-analysis rust-src clippy-preview
 rustup target install wasm32-unknown-unknown
 cargo install cargo-web rustsym ripgrep cargo-audit cargo-asm cargo-count
 cargo +nightly install racer
+
+# Change shell
+chsh $user_name -s $(which fish)
 
 reset
 EOF
