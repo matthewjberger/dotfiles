@@ -136,8 +136,14 @@ menuentry "Arch Linux LTS" {
     options = "root=$(blkid | grep sda2 | cut -f 4 -d ' ' | tr -d '"') rw $additional_kernel_parameters"
 }
 
+default_selection "Arch Linux LTS"
+
+scanfor manual,external
+
 include themes/refind-minimal/theme.conf
 CONF
+
+rm /boot/refind_linux.conf
 
 # Add a non-root user
 useradd -m -g users -s /bin/bash $user_name
