@@ -194,7 +194,6 @@ pacman --noconfirm -S alacritty \
                       python-pywal \
                       ranger \
                       reflector \
-                      rofi \
                       stone-soup \
                       tmux \
                       ttf-font-awesome \
