@@ -174,8 +174,6 @@ REFLECTOR
 
 # Install tools
 pacman --noconfirm -S alacritty \
-                      bspwm \
-                      compton \
                       dialog \
                       emacs \
                       fish \
@@ -189,12 +187,10 @@ pacman --noconfirm -S alacritty \
                       python \
                       python-pip \
                       python-pywal \
-                      python2 \
                       ranger \
                       reflector \
                       rofi \
                       stone-soup \
-                      sxhkd \
                       tmux \
                       ttf-font-awesome \
                       ttf-hack \
@@ -205,6 +201,7 @@ pacman --noconfirm -S alacritty \
                       # vulkan-intel \
                       # nvidia \
                       vim \
+                      wpa_supplicant \
                       wget
 
 # Change shell
@@ -222,7 +219,7 @@ su $user_name << UserCommands
 mkdir -p /home/$user_name/code
 git clone https://github.com/matthewjberger/dotfiles /home/$user_name/code/dotfiles
 cd /home/$user_name/code/dotfiles
-# ./install
+./install
 UserCommands
 systemctl enable reflector.service
 
