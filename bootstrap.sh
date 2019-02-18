@@ -137,7 +137,6 @@ menuentry "Arch Linux LTS" {
 }
 
 default_selection "Arch Linux LTS"
-
 scanfor manual,external
 
 include themes/refind-minimal/theme.conf
