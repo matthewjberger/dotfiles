@@ -12,8 +12,4 @@ sudo ./install
 
 ## Bootstrapper
 
-[A script for setting up this environment from the Arch ISO command line can be found here.](https://github.com/matthewjberger/arch-install)
-
-## Screenshots
-
-![Arch Desktop](/screenshots/screenshot.png?raw=true "Arch Desktop")
+`bootstrap.sh` is a script for setting up this environment from the Arch ISO command line.

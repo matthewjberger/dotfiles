@@ -10,19 +10,8 @@
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.spacemacs: spacemacs
-    ~/.config/bspwm/bspwmrc: bspwmrc
-    ~/.config/clearine.conf: clearine
-    ~/.config/compton.conf: compton
-    ~/.config/dunst/dunstrc: dunstrc
-    ~/.config/gtk-3.0/settings.ini: gtk-3.0.ini
-    ~/.config/nvim: nvim/
-    ~/.config/polybar: polybar/
     ~/.config/ranger/rc.conf: ranger
     ~/.config/rofi/config: rofi
-    ~/.config/sxhkd/sxhkdrc: sxhkdrc
-    ~/.config/termite/config: termite
-    ~/.config/wpg/wpg.conf: wpg
-    ~/.ctags: ctags
     ~/.tmux.conf: tmux/.tmux.conf
     ~/.tmux.conf.local: tmux.conf.local
     ~/.xprofile: xprofile
