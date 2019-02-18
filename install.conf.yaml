@@ -10,6 +10,7 @@
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.spacemacs: spacemacs
+    ~/.config/alacritty/alacritty.yml: alacritty.yml
     ~/.config/ranger/rc.conf: ranger
     ~/.config/rofi/config: rofi
     ~/.tmux.conf: tmux/.tmux.conf
