@@ -1,7 +1,6 @@
 # Thank you code_nomad: http://9m.no/ꪯ鵞
 #
 opacity-rule = [
-	"85:class_g = 'Termite'",
 	"95:class_g = 'Emacs'"
 ];
 
