@@ -10,9 +10,13 @@
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.spacemacs: spacemacs
+    ~/.kde4: kde4/
     ~/.config/alacritty/alacritty.yml: alacritty.yml
+    ~/.config/bspwm/bspwmrc: bspwmrc 
+    ~/.config/polybar: polybar/
     ~/.config/ranger/rc.conf: ranger
     ~/.config/rofi/config: rofi
+    ~/.config/sxhkd/sxhkdrc: sxhkdrc 
     ~/.tmux.conf: tmux/.tmux.conf
     ~/.tmux.conf.local: tmux.conf.local
     ~/.xinitrc: xinitrc

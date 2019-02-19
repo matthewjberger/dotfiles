@@ -179,9 +179,14 @@ REFLECTOR
 
 # Install tools
 pacman --noconfirm -S alacritty \
+                      bspwm \
                       cmake \
+                      compton \
+                      conky \
                       dialog \
+                      dunst \
                       emacs \
+                      feh \
                       fish \
                       fzf \
                       hub \
@@ -190,12 +195,15 @@ pacman --noconfirm -S alacritty \
                       neofetch \
                       nodejs \
                       npm \
+                      playerctl \
                       python \
                       python-pip \
                       python-pywal \
                       ranger \
                       reflector \
+                      rofi \
                       stone-soup \
+                      sxhkd \
                       tmux \
                       ttf-font-awesome \
                       ttf-hack \
@@ -222,6 +230,8 @@ mkdir -p /home/$user_name/code
 git clone https://github.com/matthewjberger/dotfiles /home/$user_name/code/dotfiles
 cd /home/$user_name/code/dotfiles
 ./install
+
+yay -S --noconfirm polybar
 UserCommands
 
 systemctl enable reflector.service
