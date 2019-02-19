@@ -231,7 +231,7 @@ git clone https://github.com/matthewjberger/dotfiles /home/$user_name/code/dotfi
 cd /home/$user_name/code/dotfiles
 ./install
 
-yay -S --noconfirm polybar bspwm-kde-session
+yay -S --noconfirm polybar bspwm-kde-session pulseaudio-ctl
 UserCommands
 
 systemctl enable reflector.service
