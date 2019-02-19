@@ -179,6 +179,7 @@ REFLECTOR
 
 # Install tools
 pacman --noconfirm -S alacritty \
+                      cmake \
                       dialog \
                       emacs \
                       fish \
