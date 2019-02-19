@@ -222,17 +222,18 @@ git clone https://github.com/matthewjberger/dotfiles /home/$user_name/code/dotfi
 cd /home/$user_name/code/dotfiles
 ./install
 UserCommands
+
 systemctl enable reflector.service
 
 # Install spacemacs
-git clone https://github.com/syl20bnr/spacemacs -b develop $HOME/.emacs.d
+git clone https://github.com/syl20bnr/spacemacs -b develop /home/$user_name/.emacs.d
 
 # Install rust
 su $user_name
 curl https://sh.rustup.rs -sSf -o rustup-init.sh
 chmod +x rustup-init.sh
 ./rustup-init.sh -y
-source $HOME/.cargo/env
+source /home/$user_name/.cargo/env
 
 rustup self update
 rustup update
