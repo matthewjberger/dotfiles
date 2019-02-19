@@ -13,6 +13,8 @@
     ~/.kde4: kde4/
     ~/.config/alacritty/alacritty.yml: alacritty.yml
     ~/.config/bspwm/bspwmrc: bspwmrc 
+    ~/.config/compton.conf: compton
+    ~/.config/dunst/dunstrc: dunstrc
     ~/.config/polybar: polybar/
     ~/.config/ranger/rc.conf: ranger
     ~/.config/rofi/config: rofi
