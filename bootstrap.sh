@@ -203,6 +203,7 @@ pacman --noconfirm -S alacritty \
                       python-pywal \
                       ranger \
                       reflector \
+                      ripgrep \
                       rofi \
                       stone-soup \
                       sxhkd \
