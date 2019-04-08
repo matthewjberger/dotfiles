@@ -28,7 +28,22 @@ bspc rule -a feh floating=on manage=off
 bspc rule -a plasmashell state=floating sticky=on border=off
 bspc rule -a krunner state=floating layer=above sticky=on border=off
 
-wal -i ~/.dotfiles/wallpapers/iamroot.jpg
+wallpaper_path=$(shuf -n1 -e ~/.dotfiles/wallpapers/*)
+wallpaper='"file://'$wallpaper_path'"'
+qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript '
+    var allDesktops = desktops();
+    print (allDesktops);
+    for (i=0;i<allDesktops.length;i++) {{
+        d = allDesktops[i];
+        d.wallpaperPlugin = "org.kde.image";
+        d.currentConfigGroup = Array("Wallpaper",
+                                     "org.kde.image",
+                                     "General");
+        d.writeConfig("Image",'$wallpaper')
+    }}
+'
+
+wal -i $wallpaper_path
 chmod +x ${HOME}/.cache/wal/colors.sh
 . "${HOME}/.cache/wal/colors.sh"
 bspc config normal_border_color "$color1"
