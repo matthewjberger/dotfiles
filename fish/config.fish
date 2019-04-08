@@ -309,3 +309,5 @@ function fish_greeting
     fortune -s
 end
 funcsave fish_greeting
+
+source ~/.cargo/env
