@@ -6,10 +6,6 @@
 alt + shift + r
     ~/.config/bspwm/bspwmrc
 
-# Reload polybar
-alt + shift + p
-	polybar-msg cmd restart
-
 # Play button
 XF86AudioPlay
 	playerctl -p spotify play
@@ -52,22 +48,18 @@ alt + w
 
 # Launch emacs
 alt + e
-	emacsclient -c
+	emacsclient -nc
 
 # terminal emulator
 alt + Return
 	alacritty
-
-# conky toggling
-alt + c
-    pgrep conky && killall conky || conky &
 
 # ssh browser
 alt + backslash
     rofi -show ssh
 
 # program launcher
-alt + space
+alt + p
 	rofi -show run
 
 # window switcher
