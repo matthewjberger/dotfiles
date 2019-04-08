@@ -232,7 +232,7 @@ git clone https://github.com/matthewjberger/dotfiles /home/$user_name/code/dotfi
 cd /home/$user_name/code/dotfiles
 ./install
 
-yay -S --noconfirm pulseaudio-ctl fisher
+yay -S --noconfirm pulseaudio-ctl fisher polybar
 UserCommands
 
 systemctl enable reflector.service
@@ -259,7 +259,7 @@ cargo install cargo-web rustsym ripgrep cargo-audit cargo-asm cargo-count xargo
 cargo +nightly install racer
 
 # Change shell
-chsh $user_name -s $(which fish)
+chsh $user_name -s /usr/bin/fish
 
 reset
 EOF
