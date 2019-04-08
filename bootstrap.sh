@@ -232,7 +232,7 @@ git clone https://github.com/matthewjberger/dotfiles /home/$user_name/code/dotfi
 cd /home/$user_name/code/dotfiles
 ./install
 
-yay -S --noconfirm pulseaudio-ctl fisher polybar
+yay -S --noconfirm pulseaudio-ctl fisher polybar nerd-fonts-hack
 UserCommands
 
 systemctl enable reflector.service
