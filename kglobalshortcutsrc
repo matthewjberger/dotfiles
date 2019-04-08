@@ -23,7 +23,6 @@ display=Display\tMeta+P,Display\tMeta+P,Switch Display
 
 [khotkeys]
 _k_friendly_name=KDE Daemon
-{09459d83-44f0-4774-9df2-1c54d93eccda}=Ctrl+Alt+T,none,Launch Konsole
 {55c4065a-8041-4d41-9841-b4ad4d6765e1}=Alt+T,none,Run Alacritty
 {d03619b6-9b3c-48cc-9d9c-a2aadb485550}=,none,Search
 {df9f8936-58b5-419f-a613-43b9ff2e9aea}=Alt+E,none,Run Emacs

@@ -2,7 +2,8 @@
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
-printf "[..] Configuring bspwm\n"
+bspc config bottom_padding 30
+
 bspc config border_width	2
 bspc config window_gap		12
 
@@ -37,4 +38,6 @@ bspc rule -a krunner state=floating layer=above sticky=on border=off
 
 killall sxhkd
 sxhkd &
+killall compton
+compton &
 
