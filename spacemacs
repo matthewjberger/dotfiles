@@ -58,6 +58,7 @@ This function should only modify configuration layer settings."
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
+     shell-scripts
      (syntax-checking :variables
                       version-control-diff-tool 'diff-hl
                       version-control-global-margin t)
