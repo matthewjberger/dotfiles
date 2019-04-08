@@ -23,6 +23,7 @@
     ~/.config/ranger/rc.conf: ranger
     ~/.config/rofi/config: rofi
     ~/.config/sxhkd/sxhkdrc: sxhkdrc 
+    ~/.vimrc: vimrc 
     ~/.tmux.conf: tmux/.tmux.conf
     ~/.tmux.conf.local: tmux.conf.local
 
