@@ -15,6 +15,7 @@
     ~/.config/bspwm/bspwmrc: bspwmrc 
     ~/.config/compton.conf: compton
     ~/.config/dunst/dunstrc: dunstrc
+    ~/.config/fish: fish/
     ~/.config/kglobalshortcutsrc: kglobalshortcutsrc
     ~/.config/khotkeysrc: khotkeysrc
     ~/.config/polybar: polybar/
