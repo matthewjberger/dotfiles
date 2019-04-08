@@ -188,6 +188,7 @@ pacman --noconfirm -S alacritty \
                       emacs \
                       feh \
                       fish \
+		      firefox \
                       fzf \
                       hub \
                       irssi \
