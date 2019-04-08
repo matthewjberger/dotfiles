@@ -11,6 +11,8 @@
     ~/.gitignore_global: gitignore_global
     ~/.spacemacs: spacemacs
     ~/.kde4: kde4/
+    ~/.config/kglobalshortcutsrc: kglobalshortcutsrc
+    ~/.config/khotkeysrc: khotkeysrc
     ~/.config/alacritty/alacritty.yml: alacritty.yml
     ~/.config/bspwm/bspwmrc: bspwmrc 
     ~/.config/compton.conf: compton

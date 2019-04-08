@@ -240,6 +240,8 @@ systemctl enable reflector.service
 # Install spacemacs
 git clone https://github.com/syl20bnr/spacemacs -b develop /home/$user_name/.emacs.d
 
+systemctl --user enable --now emacs
+
 # Install rust
 su $user_name
 curl https://sh.rustup.rs -sSf -o rustup-init.sh
