@@ -311,3 +311,4 @@ end
 funcsave fish_greeting
 
 source ~/.cargo/env
+cat ~/.cache/wal/sequences &
