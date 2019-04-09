@@ -179,6 +179,7 @@ REFLECTOR
 
 # Install tools
 pacman --noconfirm -S alacritty \
+                      arm-none-eabi-gcc \
                       bat \
                       bspwm \
                       cmake \
@@ -189,7 +190,7 @@ pacman --noconfirm -S alacritty \
                       emacs \
                       feh \
                       fish \
-		      firefox \
+                      firefox \
                       fzf \
                       hub \
                       irssi \
@@ -201,6 +202,8 @@ pacman --noconfirm -S alacritty \
                       python \
                       python-pip \
                       python-pywal \
+                      qemu \
+                      qemu-headless-arch-extra \
                       ranger \
                       reflector \
                       ripgrep \
@@ -234,7 +237,7 @@ git clone https://github.com/matthewjberger/dotfiles /home/$user_name/code/dotfi
 cd /home/$user_name/code/dotfiles
 ./install
 
-yay -S --noconfirm pulseaudio-ctl fisher polybar nerd-fonts-hack fortune-mod-firefly fortune-mod-calvin
+yay -S --noconfirm pulseaudio-ctl fisher polybar nerd-fonts-hack fortune-mod-firefly fortune-mod-calvin s
 UserCommands
 
 systemctl enable reflector.service
