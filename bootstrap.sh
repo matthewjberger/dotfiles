@@ -203,7 +203,7 @@ pacman --noconfirm -S alacritty \
                       python-pip \
                       python-pywal \
                       qemu \
-                      qemu-headless-arch-extra \
+                      qemu-arch-extra \
                       ranger \
                       reflector \
                       ripgrep \
