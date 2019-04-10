@@ -103,7 +103,7 @@ alt + g
 #
 
 # set the window state
-alt + {t,shift + t,s,f}
+alt + ctrl + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags
