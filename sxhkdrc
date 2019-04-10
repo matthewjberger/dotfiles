@@ -39,8 +39,8 @@ XF86Audio{Raise,Lower}Volume
 	pulseaudio-ctl {up,down} 2
 
 # Change volume
-alt + {j,k}
-	pulseaudio-ctl {down,up} 2
+#alt + {j,k}
+#	pulseaudio-ctl {down,up} 2
 
 # Launch web browser
 alt + w
