@@ -208,6 +208,7 @@ pacman --noconfirm -S alacritty \
                       reflector \
                       ripgrep \
                       rofi \
+                      sdcv \
                       stone-soup \
                       sxhkd \
                       tmux \

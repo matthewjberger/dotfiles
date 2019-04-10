@@ -312,3 +312,6 @@ funcsave fish_greeting
 
 source ~/.cargo/env
 cat ~/.cache/wal/sequences &
+
+alias e="emacsclient -nw"
+alias def="/usr/bin/sdcv"
