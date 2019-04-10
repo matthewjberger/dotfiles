@@ -1,33 +1,45 @@
 function fish_prompt
-	# Store the exit code of the last command
-	set -g sf_exit_code $status
-	set -g SPACEFISH_VERSION 2.4.0
+  # Cache exit status
+  set -l last_status $status
 
-	# ------------------------------------------------------------------------------
-	# Configuration
-	# ------------------------------------------------------------------------------
+  # Just calculate these once, to save a few cycles when displaying the prompt
+  if not set -q __fish_prompt_hostname
+    set -g __fish_prompt_hostname (hostname|cut -d . -f 1)
+  end
+  if not set -q __fish_prompt_char
+    switch (id -u)
+      case 0
+        set -g __fish_prompt_char \u276f\u276f
+      case '*'
+        set -g __fish_prompt_char »
+    end
+  end
 
-	__sf_util_set_default SPACEFISH_PROMPT_ADD_NEWLINE true
-	__sf_util_set_default SPACEFISH_PROMPT_FIRST_PREFIX_SHOW false
-	__sf_util_set_default SPACEFISH_PROMPT_PREFIXES_SHOW true
-	__sf_util_set_default SPACEFISH_PROMPT_SUFFIXES_SHOW true
-	__sf_util_set_default SPACEFISH_PROMPT_DEFAULT_PREFIX "via "
-	__sf_util_set_default SPACEFISH_PROMPT_DEFAULT_SUFFIX " "
-	__sf_util_set_default SPACEFISH_PROMPT_ORDER time user dir host git package node ruby golang php rust haskell julia docker aws venv conda pyenv dotnet kubecontext exec_time line_sep battery vi_mode jobs exit_code char
+  # Setup colors
+  set -l normal (set_color normal)
+  set -l cyan (set_color cyan)
+  set -l yellow (set_color yellow)
+  set -l bpurple (set_color -o purple)
+  set -l bred (set_color -o red)
+  set -l bcyan (set_color -o cyan)
+  set -l bwhite (set_color -o white)
 
-	# ------------------------------------------------------------------------------
-	# Sections
-	# ------------------------------------------------------------------------------
+  # Configure __fish_git_prompt
+  set -g __fish_git_prompt_show_informative_status true
+  set -g __fish_git_prompt_showcolorhints true
 
-	# Keep track of whether the prompt has already been opened
-	set -g sf_prompt_opened $SPACEFISH_PROMPT_FIRST_PREFIX_SHOW
+  # Color prompt char red for non-zero exit status
+  set -l pcolor $bpurple
+  if [ $last_status -ne 0 ]
+    set pcolor $bred
+  end
 
-	if test "$SPACEFISH_PROMPT_ADD_NEWLINE" = "true"
-		echo
-	end
+  # Top
+  echo -n $cyan$USER$normal at $yellow$__fish_prompt_hostname$normal in $bred(prompt_pwd)$normal
+  __fish_git_prompt
 
-	for i in $SPACEFISH_PROMPT_ORDER
-		eval __sf_section_$i
-	end
-	set_color normal
+  echo
+
+  # Bottom
+  echo -n $pcolor$__fish_prompt_char $normal
 end
