@@ -3,6 +3,10 @@
 SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
 SETUVAR __fish_init_3_x:\x1d
+SETUVAR _fish_abbr_def:/usr/bin/sdcv
+SETUVAR _fish_abbr_e:emacsclient\x20\x2dnw
+SETUVAR _fish_abbr_getclip:xclip\x20\x2d\x2dselection\x20c\x20\x2do
+SETUVAR _fish_abbr_setclip:xclip\x20\x2d\x2dselection\x20c
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:005fd7

@@ -305,13 +305,10 @@ for file in $__fish_config_dir/conf.d/*.fish $__fish_sysconf_dir/conf.d/*.fish $
     and source $file
 end
 
-function fish_greeting
-    fortune -s
-end
-funcsave fish_greeting
-
 source ~/.cargo/env
 cat ~/.cache/wal/sequences &
 
-alias e="emacsclient -nw"
-alias def="/usr/bin/sdcv"
+abbr e "emacsclient -nw"
+abbr def "/usr/bin/sdcv"
+abbr setclip "xclip --selection c"
+abbr getclip "xclip --selection c -o"
