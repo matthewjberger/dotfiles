@@ -245,7 +245,8 @@ yay -S --noconfirm arch-wiki-man \
                    nerd-fonts-hack \
                    polybar \
                    pulseaudio-ctl \
-                   s
+                   s \
+                   siji-git \
 UserCommands
 
 systemctl enable reflector.service

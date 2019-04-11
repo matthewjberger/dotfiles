@@ -57,5 +57,5 @@ killall compton
 sxhkd &
 compton &
 
-~/.dotfiles/polybar/launch.sh
+$HOME/.dotfiles/polybar/launch.sh
 
