@@ -265,7 +265,7 @@ source /home/$user_name/.cargo/env
 rustup self update
 rustup update
 rustup update nightly
-rustup component add rls-preview rust-analysis rust-src clippy-preview miri
+rustup component add rls-preview rust-analysis rust-src clippy-preview rustfmt
 
 rustup target install wasm32-unknown-unknown
 cargo install cargo-web rustsym ripgrep cargo-audit cargo-asm cargo-count xargo
