@@ -2,8 +2,6 @@
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
-bspc config bottom_padding 30
-
 bspc config border_width	2
 bspc config window_gap		6
 
@@ -23,6 +21,7 @@ bspc config pointer_action1		move
 bspc config pointer_action2		resize_corner
 
 bspc rule -a feh floating=on manage=off
+bspc rule -a feh tiled=on manage=off
 
 # Plasma rules
 bspc rule -a plasmashell state=floating sticky=on border=off
