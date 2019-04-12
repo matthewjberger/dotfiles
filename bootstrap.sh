@@ -198,6 +198,7 @@ pacman --noconfirm -S alacritty \
                       neofetch \
                       nodejs \
                       npm \
+                      openssh \
                       playerctl \
                       python \
                       python-pip \
