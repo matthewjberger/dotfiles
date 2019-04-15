@@ -206,10 +206,12 @@ pacman --noconfirm -S alacritty \
                       qemu \
                       qemu-arch-extra \
                       ranger \
+                      redshift \
                       reflector \
                       ripgrep \
                       rofi \
                       sdcv \
+                      strace \
                       stone-soup \
                       sxhkd \
                       tmux \
