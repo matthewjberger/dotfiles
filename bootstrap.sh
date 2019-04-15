@@ -3,12 +3,12 @@
 # UEFI/GPT Installation
 # This is meant to be run from the archiso live media command line
 
-host_name=$1
-root_password=$2
-user_name=$3
-user_password=$4
-additional_kernel_parameters=$5
-using_virtualbox=$6
+host_name=odinsbeard
+root_password=toor
+user_name=odin
+user_password=password
+additional_kernel_parameters="nosplash"
+using_virtualbox=false
 
 # Check for UEFI
 echo "Checking for UEFI..."
@@ -154,13 +154,6 @@ echo $user_name ALL=\(ALL\) NOPASSWD: ALL >> /etc/sudoers
 # Do a full system upgrade
 pacman --noconfirm -Syyu
 
-# Install an aur helper
-cd /home/$user_name
-git clone https://aur.archlinux.org/yay.git
-chown $user_name yay
-cd yay
-su $user_name -c "yes | makepkg -sri"
-
 # Add reflector service to update the mirrorlist every time the computer boots
 echo "Adding reflector service..."
 cat << REFLECTOR > /etc/systemd/system/reflector.service
@@ -176,6 +169,8 @@ ExecStart=/usr/bin/reflector --country US --protocol https --latest 30 --number 
 [Install]
 RequiredBy=multi-user.target
 REFLECTOR
+
+systemctl enable reflector.service
 
 # Install tools
 pacman --noconfirm -S alacritty \
@@ -227,61 +222,10 @@ pacman --noconfirm -S alacritty \
                       wpa_supplicant \
                       wget
 
-# Install dotfiles
-echo "Installing dotfiles..."
-
 if [ $using_virtualbox ]; then
     pacman --noconfirm -S virtualbox-guest-utils virtualbox-guest-dkms
     systemctl enable vboxservice.service
 fi
-
-su $user_name << UserCommands
-mkdir -p /home/$user_name/code
-git clone https://github.com/matthewjberger/dotfiles /home/$user_name/code/dotfiles
-cd /home/$user_name/code/dotfiles
-./install
-
-yay -S --noconfirm arch-wiki-man \
-                   fisher \
-                   fortune-mod-calvin \
-                   fortune-mod-firefly \
-                   nerd-fonts-hack \
-                   polybar \
-                   pulseaudio-ctl \
-                   s \
-                   siji-git \
-UserCommands
-
-systemctl enable reflector.service
-
-# Install spacemacs
-git clone https://github.com/syl20bnr/spacemacs -b develop /home/$user_name/.emacs.d
-
-systemctl --user enable --now emacs
-
-# Install rust
-su $user_name
-curl https://sh.rustup.rs -sSf -o rustup-init.sh
-chmod +x rustup-init.sh
-./rustup-init.sh -y
-source /home/$user_name/.cargo/env
-
-rustup self update
-rustup update
-rustup update nightly
-rustup component add rls-preview rust-analysis rust-src clippy-preview rustfmt
-
-rustup target install wasm32-unknown-unknown
-cargo install cargo-web rustsym ripgrep cargo-audit cargo-asm cargo-count xargo
-cargo +nightly install racer
-
-# Change shell
-chsh $user_name -s /usr/bin/fish
-
-# Install dictionary for sdcv
-wget http://download.huzheng.org/dict.org/stardict-dictd_www.dict.org_gcide-2.4.2.tar.bz2
-tar -xjvf stardict-dictd_www.dict.org_gcide-2.4.2.tar.bz2 -C /usr/share/stardict/dic/
-rm stardict-dictd_www.dict.org_gcide-2.4.2.tar.bz2
 
 reset
 EOF

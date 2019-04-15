@@ -17,10 +17,16 @@ sudo ./install
 ```
 wget https://git.io/fh5b3 -O bootstrap.sh && chmod +x bootstrap.sh
 
-./bootstrap.sh hostname root_password user_name user_password additional_kernel_parameters using_virtualbox
-
-# bootstrap.sh odinsbeard somerootpassword odin somepassword "amdgpu.dc=0 nosplash" false
+./bootstrap.sh 
 ```
+
+then after booting and logging in:
+
+```
+./post-bootstrap.sh
+```
+
+and remember to update the root and user passwords.
 
 ### Choosing video drivers
 
