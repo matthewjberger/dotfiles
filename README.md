@@ -23,6 +23,7 @@ wget https://git.io/fh5b3 -O bootstrap.sh && chmod +x bootstrap.sh
 then after booting and logging in:
 
 ```
+wget https://git.io/fjmS6 -O post-bootstrap.sh && chmod +x post-bootstrap.sh
 ./post-bootstrap.sh
 ```
 
