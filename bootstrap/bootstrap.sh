@@ -227,7 +227,6 @@ if [ $using_virtualbox ]; then
     systemctl enable vboxservice.service
 fi
 
-
 # Install dictionary for sdcv
 wget http://download.huzheng.org/dict.org/stardict-dictd_www.dict.org_gcide-2.4.2.tar.bz2
 mkdir -p /usr/share/stardict/dic/
@@ -239,3 +238,4 @@ EOF
 
 umount -R /mnt
 reboot
+

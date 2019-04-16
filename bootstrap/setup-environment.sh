@@ -18,6 +18,7 @@ yay -S --noconfirm \
     fortune-mod-calvin \
     fortune-mod-firefly \
     nerd-fonts-hack \
+    nerd-fonts-noto-sans-mono \
     polybar \
     pulseaudio-ctl \
     s \
@@ -46,3 +47,4 @@ cargo +nightly install racer
 
 # Change shell
 chsh odin -s /usr/bin/fish
+
