@@ -17,6 +17,7 @@ yay -S --noconfirm \
     fisher \
     fortune-mod-calvin \
     fortune-mod-firefly \
+    imgur-screenshot-git \
     nerd-fonts-hack \
     nerd-fonts-noto-sans-mono \
     polybar \
