@@ -33,6 +33,7 @@ curl https://sh.rustup.rs -sSf -o rustup-init.sh
 chmod +x rustup-init.sh
 ./rustup-init.sh -y
 source $HOME/.cargo/env
+rm rustup-init.sh
 
 rustup self update
 rustup update
@@ -42,11 +43,6 @@ rustup component add rls-preview rust-analysis rust-src clippy-preview rustfmt
 rustup target install wasm32-unknown-unknown
 cargo install cargo-web rustsym ripgrep cargo-audit cargo-asm cargo-count xargo
 cargo +nightly install racer
-
-# Install dictionary for sdcv
-wget http://download.huzheng.org/dict.org/stardict-dictd_www.dict.org_gcide-2.4.2.tar.bz2
-tar -xjvf stardict-dictd_www.dict.org_gcide-2.4.2.tar.bz2 -C /usr/share/stardict/dic/
-rm stardict-dictd_www.dict.org_gcide-2.4.2.tar.bz2
 
 # Change shell
 chsh odin -s /usr/bin/fish
