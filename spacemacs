@@ -51,6 +51,7 @@ This function should only modify configuration layer settings."
      markdown
      neotree
      org
+     python
      (rust :variables
            rust-backend 'lsp
            rust-rls-cmd '("rustup" "run" "stable" "rls")
@@ -484,3 +485,24 @@ before packages are loaded."
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 
+(defun dotspacemacs/emacs-custom-settings ()
+  "Emacs custom settings.
+This is an auto-generated function, do not modify its content directly, use
+Emacs customize menu instead.
+This function is called at the very end of Spacemacs initialization."
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(evil-want-Y-yank-to-eol nil)
+ '(package-selected-packages
+   (quote
+    (yapfify pytest pyenv-mode py-isort pippel pipenv pyvenv pip-requirements live-py-mode importmagic epc ctable concurrent deferred cython-mode company-anaconda anaconda-mode pythonic zenburn-theme yasnippet-snippets yaml-mode xterm-color ws-butler writeroom-mode visual-fill-column winum wgrep volatile-highlights vi-tilde-fringe uuidgen toml-mode toc-org symon string-inflection spaceline-all-the-icons spaceline powerline smex smeargle shell-pop restart-emacs request rainbow-delimiters racer popwin persp-mode password-generator paradox overseer orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download org-bullets org-brain opencl-mode open-junk-file neotree nameless multi-term move-text mmm-mode markdown-toc magit-svn magit-gitflow magit-popup macrostep lsp-ui lsp-treemacs treemacs pfuture lorem-ipsum link-hint kaolin-themes ivy-yasnippet ivy-xref ivy-purpose window-purpose imenu-list ivy-hydra insert-shebang indent-guide hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-make helm-lsp helm helm-core gruvbox-theme autothemer google-translate golden-ratio gnuplot glsl-mode gitignore-templates gitignore-mode github-search github-clone gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gist gh marshal logito pcache gh-md fuzzy forge ghub closql emacsql-sqlite emacsql treepy graphql flycheck-rust flycheck-pos-tip pos-tip flycheck-package package-lint flycheck-bashate flycheck flx-ido flx fish-mode fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-org evil-numbers evil-nerd-commenter evil-matchit evil-magit magit transient git-commit with-editor evil-lisp-state evil-lion evil-indent-plus evil-iedit-state iedit evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens smartparens paredit evil-args evil-anzu anzu eshell-z eshell-prompt-extras esh-help elisp-slime-nav editorconfig dumb-jump doom-themes doom-modeline eldoc-eval shrink-path all-the-icons memoize diff-hl define-word cuda-mode counsel-projectile projectile counsel swiper ivy company-statistics company-shell company-lsp lsp-mode ht dash-functional company column-enforce-mode clojure-snippets clean-aindent-mode cider-eval-sexp-fu eval-sexp-fu cider sesman spinner queue pkg-info clojure-mode epl centered-cursor-mode cargo markdown-mode rust-mode browse-at-remote f dash s auto-yasnippet yasnippet auto-highlight-symbol auto-compile packed aggressive-indent ace-window ace-link avy ac-ispell auto-complete popup which-key use-package pcre2el org-plus-contrib hydra lv font-lock+ evil goto-chg undo-tree dotenv-mode diminish bind-map bind-key async))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+)

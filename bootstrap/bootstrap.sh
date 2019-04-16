@@ -190,6 +190,7 @@ pacman --noconfirm -S alacritty \
                       hub \
                       irssi \
                       kakoune \
+                      libnotify \
                       neofetch \
                       nodejs \
                       npm \
