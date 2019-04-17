@@ -221,6 +221,7 @@ pacman --noconfirm -S alacritty \
                       # vulkan-intel \
                       # nvidia \
                       vim \
+                      wabt \
                       wpa_supplicant \
                       wget
 
