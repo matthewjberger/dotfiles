@@ -312,4 +312,4 @@ abbr def "/usr/bin/sdcv"
 abbr setclip "xclip --selection c"
 abbr getclip "xclip --selection c -o"
 
-set PATH "$PATH:(ruby -e 'puts Gem.user_dir')/bin"
+set -g fish_user_paths (ruby -e 'puts Gem.user_dir')/bin $fish_user_paths
