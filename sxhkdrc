@@ -52,7 +52,7 @@ alt + e
 
 # terminal emulator
 alt + Return
-	alacritty -e tmux
+	alacritty -e tmux new-session -A -s asgard
 
 # ssh browser
 alt + backslash
