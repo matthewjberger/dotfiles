@@ -30,13 +30,7 @@ git clone https://github.com/syl20bnr/spacemacs -b develop $HOME/.emacs.d
 
 systemctl --user enable --now emacs
 
-# Install rust
-curl https://sh.rustup.rs -sSf -o rustup-init.sh
-chmod +x rustup-init.sh
-./rustup-init.sh -y
-source $HOME/.cargo/env
-rm rustup-init.sh
-
+# Setup rust
 rustup self update
 rustup update
 rustup update nightly

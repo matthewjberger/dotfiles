@@ -207,6 +207,7 @@ pacman --noconfirm -S alacritty \
                       reflector \
                       ripgrep \
                       rofi \
+                      rustup \
                       sdcv \
                       strace \
                       stone-soup \

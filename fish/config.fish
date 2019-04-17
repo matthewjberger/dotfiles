@@ -305,7 +305,6 @@ for file in $__fish_config_dir/conf.d/*.fish $__fish_sysconf_dir/conf.d/*.fish $
     and source $file
 end
 
-source ~/.cargo/env
 cat ~/.cache/wal/sequences &
 
 abbr e "emacsclient -nw"
