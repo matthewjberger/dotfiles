@@ -30,16 +30,6 @@ git clone https://github.com/syl20bnr/spacemacs -b develop $HOME/.emacs.d
 
 systemctl --user enable --now emacs
 
-# Setup rust
-rustup self update
-rustup update
-rustup update nightly
-rustup component add rls-preview rust-analysis rust-src clippy-preview rustfmt
-
-rustup target install wasm32-unknown-unknown
-cargo install cargo-web rustsym ripgrep cargo-audit cargo-asm cargo-count xargo
-cargo +nightly install racer
-
 # Change shell
 chsh odin -s /usr/bin/fish
 

@@ -238,6 +238,19 @@ mkdir -p /usr/share/stardict/dic/
 tar -xjvf stardict-dictd_www.dict.org_gcide-2.4.2.tar.bz2 -C /usr/share/stardict/dic/
 rm stardict-dictd_www.dict.org_gcide-2.4.2.tar.bz2
 
+# Setup rust
+rustup self update
+rustup update
+rustup update nightly
+rustup component add rls-preview rust-analysis rust-src clippy-preview rustfmt
+
+rustup target install wasm32-unknown-unknown
+cargo install cargo-web rustsym ripgrep cargo-audit cargo-asm cargo-count xargo
+cargo +nightly install racer
+
+# Setup ruby
+gem install bundler jekyll
+
 reset
 EOF
 
