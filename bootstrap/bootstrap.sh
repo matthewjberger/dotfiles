@@ -183,6 +183,7 @@ pacman --noconfirm -S alacritty \
                       dialog \
                       dunst \
                       emacs \
+                      evince \
                       feh \
                       fish \
                       firefox \
