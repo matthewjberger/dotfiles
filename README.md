@@ -15,7 +15,7 @@ sudo ./install
 `bootstrap.sh` is a script for setting up this environment from the Arch ISO command line.
 
 ```
-wget https://git.io/fh5b3 -O bootstrap.sh && chmod +x bootstrap.sh
+wget https://git.io/fjYxm -O bootstrap.sh && chmod +x bootstrap.sh
 
 ./bootstrap.sh 
 ```
@@ -23,7 +23,7 @@ wget https://git.io/fh5b3 -O bootstrap.sh && chmod +x bootstrap.sh
 then after booting and logging in:
 
 ```
-wget https://git.io/fjmS6 -O post-bootstrap.sh && chmod +x post-bootstrap.sh
+wget https://git.io/fjYxO -O post-bootstrap.sh && chmod +x post-bootstrap.sh
 ./post-bootstrap.sh # if in fish shell, use `bax ./post-bootstrap.sh`
 ```
 
