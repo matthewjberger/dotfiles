@@ -208,6 +208,7 @@ pacman --noconfirm -S alacritty \
                       ripgrep \
                       rofi \
                       ruby \
+                      rust-racer \
                       rustup \
                       sdcv \
                       strace \
@@ -225,7 +226,7 @@ pacman --noconfirm -S alacritty \
                       vim \
                       wabt \
                       wpa_supplicant \
-                      wget
+                      wget \
 
 if [ $using_virtualbox ]; then
     pacman --noconfirm -S virtualbox-guest-utils virtualbox-guest-dkms
@@ -239,14 +240,12 @@ tar -xjvf stardict-dictd_www.dict.org_gcide-2.4.2.tar.bz2 -C /usr/share/stardict
 rm stardict-dictd_www.dict.org_gcide-2.4.2.tar.bz2
 
 # Setup rust
-rustup self update
 rustup update
 rustup update nightly
 rustup component add rls-preview rust-analysis rust-src clippy-preview rustfmt
 
 rustup target install wasm32-unknown-unknown
 cargo install cargo-web rustsym ripgrep cargo-audit cargo-asm cargo-count xargo
-cargo +nightly install racer
 
 # Setup ruby
 gem install bundler jekyll
