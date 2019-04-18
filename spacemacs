@@ -480,6 +480,8 @@ before packages are loaded."
 
   (add-hook 'prog-mode-hook (lambda()(define-key evil-normal-state-map "H" "^")))
   (add-hook 'prog-mode-hook (lambda()(define-key evil-normal-state-map "L" "$")))
+
+  (setq multi-term-program "/bin/bash")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

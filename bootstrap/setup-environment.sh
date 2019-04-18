@@ -30,6 +30,3 @@ git clone https://github.com/syl20bnr/spacemacs -b develop $HOME/.emacs.d
 
 systemctl --user enable --now emacs
 
-# Change shell
-chsh odin -s /usr/bin/fish
-
