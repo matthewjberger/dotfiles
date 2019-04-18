@@ -27,4 +27,6 @@
     ~/.vimrc: vimrc 
     ~/.tmux.conf: tmux/.tmux.conf
     ~/.tmux.conf.local: tmux.conf.local
+    ~/.xinitrc: xinitrc
+    ~/.xmodmap: xmodmap
 
