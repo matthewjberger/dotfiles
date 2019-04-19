@@ -57,4 +57,4 @@ sxhkd &
 compton &
 
 $HOME/.dotfiles/polybar/launch.sh
-
+xmodmap $HOME/.xmodmap
