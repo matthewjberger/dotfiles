@@ -220,13 +220,13 @@ pacman --noconfirm -S alacritty \
                       vim \
                       vulkan-icd-loader \
                       vulkan-devel \
-                      vulkan-radeon \
-                      # vulkan-intel \
-                      # nvidia \
                       vim \
                       wabt \
                       wpa_supplicant \
                       wget \
+                      vulkan-radeon \
+                      # vulkan-intel \
+                      # nvidia \
 
 if [ $using_virtualbox ]; then
     pacman --noconfirm -S virtualbox-guest-utils virtualbox-guest-dkms
