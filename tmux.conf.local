@@ -265,4 +265,4 @@ tmux_conf_copy_to_os_clipboard=false
 
 # move status line to top
 #set -g status-position top
-exec fish
+set-option -g default-shell "/usr/bin/fish"
