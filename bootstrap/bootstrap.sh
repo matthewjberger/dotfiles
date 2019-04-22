@@ -231,7 +231,7 @@ pacman --noconfirm -S alacritty \
 if [ $using_virtualbox ]; then
     pacman --noconfirm -S virtualbox-guest-utils virtualbox-guest-dkms
     systemctl enable vboxservice.service
-    echo /EFI/refind/refind_x64.efi | tee /boot/startup.nsh
+    echo fs0:\\EFI\\refind\\refind_x64.efi | tee /boot/startup.nsh
 fi
 
 # Install dictionary for sdcv
