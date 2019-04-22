@@ -309,7 +309,7 @@ cat ~/.cache/wal/sequences &
 
 abbr e "emacsclient -nw"
 abbr def "/usr/bin/sdcv"
-abbr setclip "xclip --selection c"
-abbr getclip "xclip --selection c -o"
+abbr setclip "xclip -selection c"
+abbr getclip "xclip -selection c -o"
 
 set -g fish_user_paths (ruby -e 'puts Gem.user_dir')/bin $fish_user_paths
