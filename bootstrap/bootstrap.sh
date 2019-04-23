@@ -181,6 +181,7 @@ pacman --noconfirm -S alacritty \
                       compton \
                       conky \
                       dialog \
+                      dotnet-sdk \
                       dunst \
                       emacs \
                       evince \
