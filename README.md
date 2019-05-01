@@ -24,7 +24,7 @@ then after booting and logging in:
 
 ```
 wget https://git.io/fjYxO -O post-bootstrap.sh && chmod +x post-bootstrap.sh
-./post-bootstrap.sh # if in fish shell, use `bax ./post-bootstrap.sh`
+bax ./post-bootstrap.sh
 ```
 
 and remember to update the root and user passwords.

@@ -30,3 +30,10 @@ git clone https://github.com/syl20bnr/spacemacs -b develop $HOME/.emacs.d
 
 systemctl --user enable --now emacs
 
+# Setup blackarch repo and package manager for pentesting tools
+curl -O https://blackarch.org/strap.sh
+chmod +x strap.sh
+sudo ./strap.sh
+yay -S blackman
+
+
