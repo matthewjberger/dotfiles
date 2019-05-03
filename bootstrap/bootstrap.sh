@@ -209,6 +209,7 @@ pacman --noconfirm -S alacritty \
                       reflector \
                       ripgrep \
                       rofi \
+                      rtv \
                       ruby \
                       rust-racer \
                       rustup \
