@@ -13,3 +13,6 @@
 [submodule "tmux"]
 	path = tmux
 	url = https://github.com/gpakosz/.tmux
+[submodule "wallpapers"]
+	path = wallpapers
+	url = https://github.com/matthewjberger/wallpapers
