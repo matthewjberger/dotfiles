@@ -189,6 +189,7 @@ pacman --noconfirm -S alacritty \
                       fish \
                       firefox \
                       fzf \
+                      glslang \
                       hub \
                       irssi \
                       kakoune \
