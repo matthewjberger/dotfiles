@@ -52,7 +52,7 @@ alt + e
 
 # terminal emulator
 alt + Return
-	alacritty -e tmux new-session -A -s asgard 'exec fish'
+	alacritty -e tmux new-session -A -s asgard 'wal -R -n -q; exec fish'
 
 # ssh browser
 alt + backslash
