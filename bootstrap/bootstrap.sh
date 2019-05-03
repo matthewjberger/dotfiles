@@ -194,6 +194,7 @@ pacman --noconfirm -S alacritty \
                       kakoune \
                       libnotify \
                       neofetch \
+                      net-tools \
                       nodejs \
                       npm \
                       openssh \
