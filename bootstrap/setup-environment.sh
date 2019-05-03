@@ -7,7 +7,7 @@ yes | makepkg -sri
 # Install dotfiles
 echo "Installing dotfiles..."
 mkdir -p $HOME/code
-git clone https://github.com/matthewjberger/dotfiles $HOME/code/dotfiles
+git clone https://github.com/matthewjberger/dotfiles $HOME/code/dotfiles --recursive
 cd $HOME/code/dotfiles
 ./install
 
@@ -24,9 +24,6 @@ yay -S --noconfirm \
     pulseaudio-ctl \
     s \
     siji-git
-
-# Install spacemacs
-git clone https://github.com/syl20bnr/spacemacs -b develop $HOME/.emacs.d
 
 systemctl --user enable --now emacs
 
