@@ -2,6 +2,8 @@
 
 These are my personal dotfiles for Arch Linux.
 
+![Desktop GIF](gifs/Desktop.gif)
+
 ## Installation Instructions
 
 ```bash
