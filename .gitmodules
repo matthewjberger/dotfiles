@@ -7,9 +7,6 @@
 [submodule "dotbot-apt-get"]
 	path = dotbot-apt-get
 	url = https://github.com/matthewjberger/dotbot-apt-get
-[submodule "emacs.d"]
-	path = emacs.d
-	url = https://github.com/syl20bnr/spacemacs
 [submodule "tmux"]
 	path = tmux
 	url = https://github.com/gpakosz/.tmux
