@@ -20,11 +20,11 @@ wget https://git.io/fjYxm -O bootstrap.sh && chmod +x bootstrap.sh
 ./bootstrap.sh 
 ```
 
-then after booting and logging in:
+then after booting and logging in, open `konsole` and run:
 
 ```
 wget https://git.io/fjYxO -O post-bootstrap.sh && chmod +x post-bootstrap.sh
-bax ./post-bootstrap.sh
+./post-bootstrap.sh
 ```
 
 and remember to update the root and user passwords.
