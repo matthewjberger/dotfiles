@@ -16,7 +16,6 @@ sudo ./install
 
 ```
 wget https://git.io/fjYxm -O bootstrap.sh && chmod +x bootstrap.sh
-
 ./bootstrap.sh 
 ```
 
