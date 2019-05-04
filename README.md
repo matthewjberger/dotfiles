@@ -37,3 +37,14 @@ vulkan-radeon # default
 # vulkan-intel
 # nvidia 
 ```
+
+### KDE Changes
+
+#### Disable Desktop Toolbox
+
+Right click on the desktop -> `Configure Desktop` -> `Tweaks` -> Disable `Show Desktop Toolbox`
+
+#### Disable Wallpaper Change Messages
+
+`Notifications` -> `Local System Message Service` -> Disable `Show Message in a Popup` and `Play a Sound`
+
