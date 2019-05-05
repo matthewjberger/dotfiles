@@ -46,7 +46,9 @@ This function should only modify configuration layer settings."
      git
      github
      gpu
+     html
      ivy
+     javascript
      lsp
      markdown
      neotree
