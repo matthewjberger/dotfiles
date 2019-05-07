@@ -42,12 +42,14 @@ This function should only modify configuration layer settings."
      auto-completion
      (clojure :variables
               clojure-enable-fancify-symbols t)
+     csharp
      emacs-lisp
      git
      github
      gpu
+     helm
      html
-     ivy
+     ;; ivy
      javascript
      lsp
      markdown
