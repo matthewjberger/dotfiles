@@ -53,6 +53,7 @@ This function should only modify configuration layer settings."
      javascript
      lsp
      markdown
+     multiple-cursors
      neotree
      org
      python
