@@ -24,7 +24,7 @@ yay -S --noconfirm \
     polybar \
     pulseaudio-ctl \
     s \
-    siji-git
+    siji-git \
 
 # Install spacemacs
 git clone https://github.com/syl20bnr/spacemacs -b develop $HOME/.emacs.d
