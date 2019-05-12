@@ -14,6 +14,7 @@ cd $HOME/code/dotfiles
 # Install AUR packages
 yay -S --noconfirm \
     arch-wiki-man \
+    browsh \
     fisher \
     fortune-mod-calvin \
     fortune-mod-firefly \
