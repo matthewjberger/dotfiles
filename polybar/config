@@ -34,6 +34,8 @@ height = 27
 radius = 0.0
 fixed-center = true
 
+bottom = true
+
 background = ${colors.background}
 foreground = ${colors.foreground}
 
@@ -367,7 +369,7 @@ screenchange-reload = true
 ;pseudo-transparency = false
 
 [global/wm]
-margin-top = 5
+margin-top = 0
 margin-bottom = 5
 
 ; vim:ft=dosini
