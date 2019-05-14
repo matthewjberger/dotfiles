@@ -55,7 +55,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm
 modules-center = xwindow
-modules-right = pulseaudio battery wlan eth date
+modules-right = pulseaudio battery date
 
 tray-position = right
 tray-padding = 2
