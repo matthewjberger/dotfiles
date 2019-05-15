@@ -46,7 +46,7 @@ border-size = 0
 border-color = #00000000
 
 padding-left = 0
-padding-right = 2
+padding-right = 0
 
 module-margin-left = 1
 module-margin-right = 2
@@ -57,7 +57,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm
 modules-center = xwindow
-modules-right = pulseaudio battery date
+modules-right = pulseaudio battery date powermenu
 
 tray-position = right
 tray-padding = 2
