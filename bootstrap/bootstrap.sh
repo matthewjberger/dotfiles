@@ -183,6 +183,7 @@ pacman --noconfirm -S alacritty \
                       dialog \
                       dotnet-sdk \
                       dunst \
+                      dwarffortress \
                       emacs \
                       evince \
                       feh \
