@@ -14,7 +14,11 @@ cd $HOME/code/dotfiles
 # Install AUR packages
 yay -S --noconfirm \
     arch-wiki-man \
+    brogue \
     browsh \
+    dfhack-twbt-bin \
+    dwarffortress-ironhand \
+    dwarftherapist \
     fisher \
     fortune-mod-calvin \
     fortune-mod-firefly \
@@ -25,6 +29,7 @@ yay -S --noconfirm \
     pulseaudio-ctl \
     s \
     siji-git \
+    tome4-git \
 
 # Install spacemacs
 git clone https://github.com/syl20bnr/spacemacs -b develop $HOME/.emacs.d

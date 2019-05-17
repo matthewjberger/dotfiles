@@ -151,6 +151,9 @@ echo "${user_name}:${user_password}" | chpasswd
 # Make the non-root user a sudoer
 echo $user_name ALL=\(ALL\) NOPASSWD: ALL >> /etc/sudoers
 
+# Add to games group
+gpasswd -a $user_name games
+
 # Do a full system upgrade
 pacman --noconfirm -Syyu
 
