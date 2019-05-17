@@ -180,6 +180,8 @@ pacman --noconfirm -S alacritty \
                       arm-none-eabi-gcc \
                       bat \
                       bspwm \
+                      cataclysm-dda \
+                      cataclysm-dda-tiles \
                       cmake \
                       compton \
                       conky \
