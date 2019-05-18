@@ -253,6 +253,7 @@ tar -xjvf stardict-dictd_www.dict.org_gcide-2.4.2.tar.bz2 -C /usr/share/stardict
 rm stardict-dictd_www.dict.org_gcide-2.4.2.tar.bz2
 
 # Setup rust
+rustup default stable
 rustup update
 rustup update nightly
 rustup component add rls-preview rust-analysis rust-src clippy-preview rustfmt
