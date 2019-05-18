@@ -50,3 +50,33 @@ Right click on the desktop -> `Configure Desktop` -> `Tweaks` -> Disable `Show D
 
 `Notifications` -> `Local System Message Service` -> Disable `Show Message in a Popup` and `Play a Sound`
 
+### Lenovo Ideapad 330s
+
+To get Arch Linux working on the Lenovo Ideapad 330s, some extra steps are required.
+
+#### Arch ISO
+
+To get the Arch ISO to boot, press 'e' when the Arch ISO live usb menu comes up, and add the following kernel command line argument:
+
+```
+ivrs_ioapic[32]=00:14.0
+```
+
+#### Installing a WiFi Driver
+
+The wifi driver necessary for using the wireless chip on the Lenovo Ideapad 330s is not present on the Arch ISO by default.
+Connect to the internet via ethernet using a usb to ethernet adapter or a tethered android phone. Then after you've installed and booted into the system, run:
+
+```
+git clone https://github.com/tomaspinho/rtl8821ce
+cd rtl8821ce
+make all
+make install
+modprobe 8821ce
+```
+
+This allows the touchpad to work and allows the computer to boot.
+
+#### Video Drivers
+
+The `xf86-video-amdgpu` package contains the video drivers necessary for the Lenovo Ideapad 330s.
