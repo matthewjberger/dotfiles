@@ -203,6 +203,7 @@ pacman --noconfirm -S alacritty \
                       neofetch \
                       net-tools \
                       nethack \
+                      network-manager-applet \
                       nodejs \
                       npm \
                       openssh \
