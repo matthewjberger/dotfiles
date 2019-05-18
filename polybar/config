@@ -46,7 +46,7 @@ border-size = 0
 border-color = #00000000
 
 padding-left = 0
-padding-right = 0
+padding-right = 4
 
 module-margin-left = 1
 module-margin-right = 2
