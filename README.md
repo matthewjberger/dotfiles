@@ -80,3 +80,23 @@ This allows the touchpad to work and allows the computer to boot.
 #### Video Drivers
 
 The `xf86-video-amdgpu` package contains the video drivers necessary for the Lenovo Ideapad 330s.
+
+#### Tapping Touchpad
+
+Find your touchpad id:
+
+```
+xinput list
+```
+
+List Properties:
+
+```
+xinput list-props id
+```
+
+Set Tapping enabled (assuming touchpad id is `11` property id is `280`):
+
+```
+xinput set-prop 11 280 1
+```
