@@ -233,6 +233,8 @@ pacman --noconfirm -S alacritty \
                       vulkan-icd-loader \
                       vulkan-devel \
                       vim \
+                      xorg-xinput \
+                      xorg-xbacklight \
                       wabt \
                       wpa_supplicant \
                       wget \
