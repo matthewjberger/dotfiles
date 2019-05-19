@@ -62,6 +62,8 @@ To get the Arch ISO to boot, press `e` when the Arch ISO live usb menu comes up,
 ivrs_ioapic[32]=00:14.0
 ```
 
+This allows the touchpad to work and allows the computer to boot.
+
 #### Installing a WiFi Driver
 
 The wifi driver necessary for using the wireless chip on the Lenovo Ideapad 330s is not present on the Arch ISO by default.
@@ -74,8 +76,6 @@ make all
 make install
 modprobe 8821ce
 ```
-
-This allows the touchpad to work and allows the computer to boot.
 
 #### Video Drivers
 
