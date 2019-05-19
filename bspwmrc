@@ -69,4 +69,7 @@ killall nm-applet
 pgrep -x redshift >/dev/null || (redshift &)
 
 xmodmap $HOME/.xmodmap
-source ${HOME}/.after-bspwm.sh
+
+# Enable Tap-To-Click for Lenovo Ideapad 330s
+xinput set-prop 11 280 11
+
