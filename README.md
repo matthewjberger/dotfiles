@@ -56,7 +56,7 @@ To get Arch Linux working on the Lenovo Ideapad 330s, some extra steps are requi
 
 #### Arch ISO
 
-To get the Arch ISO to boot, press 'e' when the Arch ISO live usb menu comes up, and add the following kernel command line argument:
+To get the Arch ISO to boot, press `e` when the Arch ISO live usb menu comes up, and add the following kernel command line argument:
 
 ```
 ivrs_ioapic[32]=00:14.0
