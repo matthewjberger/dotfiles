@@ -70,6 +70,3 @@ pgrep -x redshift >/dev/null || (redshift &)
 
 xmodmap $HOME/.xmodmap
 
-# Enable Tap-To-Click for Lenovo Ideapad 330s
-xinput set-prop 11 280 11
-
