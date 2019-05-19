@@ -71,8 +71,11 @@ alt + Escape
 	pkill -USR1 -x sxhkd
 
 # Brightness controls
-XF86MonBrightness(Up,Down)
-    xbacklight (-inc,-dec) 5
+XF86MonBrightnessUp
+    ~/.dotfiles/brightness.sh + eDP
+
+XF86MonBrightnessDown
+    ~/.dotfiles/brightness.sh - eDP
 
 #
 # bspwm hotkeys
