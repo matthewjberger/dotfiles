@@ -100,3 +100,10 @@ Set Tapping enabled (assuming touchpad id is `11` property id is `280`):
 ```
 xinput set-prop 11 280 1
 ```
+
+#### Brightness Controls
+
+Using the brightness keys on the keyboard doesn't work for this laptop by default or
+with any combination of acpi kernel parameters, so `xrandr` is used for controlling brightness.
+The `brightness.sh` script increases or decreases the brightness incrementally using `xrandr`
+and is invoked by `sxhkd`.
