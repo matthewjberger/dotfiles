@@ -69,3 +69,4 @@ killall nm-applet
 pgrep -x redshift >/dev/null || (redshift &)
 
 xmodmap $HOME/.xmodmap
+source ${HOME}/.after-bspwm.sh
