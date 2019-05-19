@@ -234,7 +234,6 @@ pacman --noconfirm -S alacritty \
                       vulkan-devel \
                       vim \
                       xorg-xinput \
-                      xorg-xbacklight \
                       wabt \
                       wpa_supplicant \
                       wget \
