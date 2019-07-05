@@ -43,6 +43,7 @@ This function should only modify configuration layer settings."
      (clojure :variables
               clojure-enable-fancify-symbols t)
      csharp
+     dap
      emacs-lisp
      git
      github
