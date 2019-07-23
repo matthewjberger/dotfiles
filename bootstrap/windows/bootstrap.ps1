@@ -14,6 +14,7 @@ scoop install `
   bitwarden `
   busybox `
   cataclysm-dda `
+  ccleaner `
   cmake `
   cmder `
   curl `
@@ -31,6 +32,15 @@ scoop install `
   openssh `
   ripgrep `
   rustup `
+  s `
   sed `
+  speccy `
+  stone-soup `
+  stone-soup-tiles `
   sudo `
+  sumatrapdf `
+  sumatrapdf `
+  wiztree `
+
 [environment]::setenvironmentvariable('GIT_SSH', (resolve-path (scoop which ssh)), 'USER')
+
