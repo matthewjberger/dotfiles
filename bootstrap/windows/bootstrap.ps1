@@ -12,14 +12,16 @@ scoop bucket add games
 scoop install `
   bat `
   bitwarden `
+  brave `
   busybox `
   cataclysm-dda `
+  cataclysm-dda-tiles `
   ccleaner `
   cmake `
   cmder `
   curl `
   discord `
-  dwarffortress `
+  dwarf-fortress-lnp `
   emacs `
   fzf `
   gcc `
@@ -39,8 +41,15 @@ scoop install `
   stone-soup-tiles `
   sudo `
   sumatrapdf `
-  sumatrapdf `
   wiztree `
 
 [environment]::setenvironmentvariable('GIT_SSH', (resolve-path (scoop which ssh)), 'USER')
 
+# Setup rust
+rustup default stable
+rustup update
+rustup update nightly
+rustup component add rls-preview rust-analysis rust-src clippy-preview rustfmt
+
+rustup target install wasm32-unknown-unknown
+cargo install cargo-web rustsym ripgrep cargo-audit cargo-asm cargo-count xargo
