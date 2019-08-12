@@ -42,6 +42,7 @@ scoop install `
   nethack `
   nodejs `
   openssh `
+  python `
   rapidee `
   ripgrep `
   rustup `
