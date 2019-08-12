@@ -3,7 +3,7 @@
 
 # Install scoop
 iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
-set-executionpolicy unrestricted -s cu
+set-executionpolicy RemoteSigned -scope CurrentUser
 
 scoop install 7zip git innounp
 scoop bucket add extras
@@ -66,6 +66,14 @@ rustup default stable
 rustup update
 rustup update nightly
 rustup component add rls-preview rust-analysis rust-src clippy-preview rustfmt
-
 rustup target install wasm32-unknown-unknown
 cargo install cargo-web rustsym ripgrep cargo-audit cargo-asm cargo-count xargo
+
+# Symlink files (Relative path for dotfiles repo)
+function Create-Symlink([string]$source, [string]$dest)
+{ 
+  New-Item -ItemType SymbolicLink -Path $dest -Target $source -Force | Out-Null 
+}
+Create-Symlink ~/.gitconfig ..\..\gitconfig
+Create-Symlink $env:APPDATA/.spacemacs ..\..\spacemacs
+Create-Symlink $env:USERPROFILE/alacritty.yml ..\..\alacritty.yml
