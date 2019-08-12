@@ -2,8 +2,8 @@
 # Powershell 5+
 
 # Install scoop
-iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
-set-executionpolicy RemoteSigned -scope CurrentUser
+Invoke-Expression (new-object net.webclient).downloadstring('https://get.scoop.sh')
+Set-ExecutionPolicy RemoteSigned -scope CurrentUser
 
 scoop install 7zip git innounp
 scoop bucket add extras
