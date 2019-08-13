@@ -12,7 +12,6 @@
     smtpserverport = 587
 [credential]
     username       = matthewjberger
-    helper         = cache --timeout 3600
 [web]
     browser        = chrome
 [rerere]
