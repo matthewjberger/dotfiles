@@ -116,4 +116,3 @@ Open a powershell terminal (Powershell 5+ required) and run:
 Invoke-WebExpression -Uri https://git.io/fj5Vz -OutFile bootstrap.ps1
 ./bootstrap.ps1
 ```
-```
