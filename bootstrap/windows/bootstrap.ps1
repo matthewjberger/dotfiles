@@ -39,6 +39,7 @@ scoop install `
   hub `
   keypirinha `
   lf `
+  meld `
   nethack `
   nodejs `
   openssh `
