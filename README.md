@@ -110,7 +110,7 @@ and is invoked by `sxhkd`.
 
 ## Windows Bootstrapper
 
-Open a powershell terminal (Powershell 5+ required) and run:
+Open a powershell terminal (Powershell 5+ required) and run (as admin):
 
 ```
 Invoke-WebExpression -Uri https://git.io/fj5Vz -OutFile bootstrap.ps1
