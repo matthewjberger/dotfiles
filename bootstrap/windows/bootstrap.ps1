@@ -37,7 +37,6 @@ scoop install `
   hack-font `
   hub `
   keypirinha `
-  less `
   lf `
   nethack `
   nodejs `
