@@ -12,7 +12,7 @@ cd dotfiles
 sudo ./install
 ```
 
-## Bootstrapper
+## Linux Bootstrapper
 
 `bootstrap.sh` is a script for setting up this environment from the Arch ISO command line.
 
@@ -107,3 +107,13 @@ Using the brightness keys on the keyboard doesn't work for this laptop by defaul
 with any combination of acpi kernel parameters, so `xrandr` is used for controlling brightness.
 The `brightness.sh` script increases or decreases the brightness incrementally using `xrandr`
 and is invoked by `sxhkd`.
+
+## Windows Bootstrapper
+
+Open a powershell terminal (Powershell 5+ required) and run:
+
+```
+Invoke-WebExpression -Uri https://git.io/fj5Vz -OutFile bootstrap.ps1
+./bootstrap.ps1
+```
+```
