@@ -115,4 +115,7 @@ Open a powershell terminal (Powershell 5+ required) and run (as admin):
 ```
 Invoke-WebExpression -Uri https://git.io/fj5Vz -OutFile bootstrap.ps1
 ./bootstrap.ps1
+git clone https://github.com/matthewjberger/dotfiles
+cd ./bootstrap/windows
+./install.ps1
 ```

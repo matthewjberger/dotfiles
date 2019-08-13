@@ -35,6 +35,7 @@ scoop install `
   gitkraken `
   grep `
   hack-font `
+  hack-nf `
   hub `
   keypirinha `
   lf `
@@ -68,12 +69,3 @@ rustup update nightly
 rustup component add rls-preview rust-analysis rust-src clippy-preview rustfmt
 rustup target install wasm32-unknown-unknown
 cargo install cargo-web rustsym ripgrep cargo-audit cargo-asm cargo-count xargo
-
-# Symlink files (Relative path for dotfiles repo)
-function Create-Symlink([string]$source, [string]$dest)
-{ 
-  New-Item -ItemType SymbolicLink -Path $dest -Target $source -Force | Out-Null 
-}
-Create-Symlink ~/.gitconfig ..\..\gitconfig
-Create-Symlink $env:APPDATA/.spacemacs ..\..\spacemacs
-Create-Symlink $env:USERPROFILE/alacritty.yml ..\..\alacritty.yml
