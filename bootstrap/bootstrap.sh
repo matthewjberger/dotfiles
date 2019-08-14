@@ -100,7 +100,7 @@ mkinitcpio -p linux
 
 # Remove netctl in favor of network manager
 netctl stop-all
-pacman -Rsc netctl
+pacman --noconfirm -Rsc netctl
 pacman --noconfirm -S networkmanager network-manager-applet
 systemctl enable NetworkManager.service
 
