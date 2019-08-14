@@ -11,6 +11,7 @@ scoop bucket add games
 scoop bucket add nerd-fonts
 
 scoop install `
+  aria2 `
   adom `
   alacritty `
   angband `
