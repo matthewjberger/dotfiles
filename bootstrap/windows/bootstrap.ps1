@@ -10,8 +10,10 @@ scoop bucket add extras
 scoop bucket add games
 scoop bucket add nerd-fonts
 
+# Speed up downloads using aria2
+scoop install aria2
+
 scoop install `
-  aria2 `
   adom `
   alacritty `
   angband `
