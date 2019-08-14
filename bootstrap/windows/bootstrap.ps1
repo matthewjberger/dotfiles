@@ -40,6 +40,7 @@ scoop install `
   keypirinha `
   lf `
   meld `
+  neovim `
   nethack `
   nodejs `
   openssh `
