@@ -76,7 +76,7 @@ rustup update
 rustup update nightly
 rustup component add rls-preview rust-analysis rust-src clippy-preview rustfmt
 rustup target install wasm32-unknown-unknown
-cargo install cargo-web rustsym ripgrep cargo-audit cargo-asm cargo-count xargo cargo-watch
+cargo install cargo-web rustsym ripgrep cargo-audit cargo-asm cargo-count xargo cargo-watch cargo-edit
 
 # Setup rust-analyzer
 git clone https://github.com/rust-analyzer/rust-analyzer
