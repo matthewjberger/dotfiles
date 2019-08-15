@@ -68,7 +68,7 @@ scoop install `
 git clone https://github.com/syl20bnr/spacemacs $env:APPDATA/.emacs.d -b develop
 
 # Install chocolatey
-Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
 # Setup rust
 rustup default stable
