@@ -32,11 +32,10 @@ RequiredBy=multi-user.target
 REFLECTOR
 sudo mv reflector.service /etc/systemd/system/
 
-
-systemctl enable reflector.service
+sudo systemctl enable reflector.service
 
 # Install tools
-pacman --noconfirm -S alacritty \
+sudo pacman --noconfirm -S alacritty \
                       arm-none-eabi-gcc \
                       bat \
                       bspwm \
