@@ -110,7 +110,6 @@ cargo install cargo-web rustsym ripgrep cargo-audit cargo-asm cargo-count xargo 
 # Install AUR packages
 yay -S --noconfirm \
     arch-wiki-man \
-    brave \
     brogue \
     browsh \
     fisher \
