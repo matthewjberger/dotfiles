@@ -122,7 +122,6 @@ yay -S --noconfirm \
     pulseaudio-ctl \
     s \
     siji-git \
-    tome4-git \
 
 # Install spacemacs
 if [ ! -d "$HOME/.emacs.d" ]; then
