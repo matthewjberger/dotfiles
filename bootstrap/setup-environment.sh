@@ -17,7 +17,7 @@ fi
 
 # Add reflector service to update the mirrorlist every time the computer boots
 echo "Adding reflector service..."
-cat << REFLECTOR > /etc/systemd/system/reflector.service
+sudo cat << REFLECTOR > /etc/systemd/system/reflector.service
 [Unit]
 Description=Pacman mirrorlist update
 Wants=network-online.target
@@ -31,10 +31,11 @@ ExecStart=/usr/bin/reflector --country US --protocol https --latest 30 --number 
 RequiredBy=multi-user.target
 REFLECTOR
 
-systemctl enable reflector.service
+sudo systemctl enable reflector.service
 
 # Install tools
-pacman --noconfirm -S alacritty \
+sudo pacman --noconfirm -S \
+                      alacritty \
                       arm-none-eabi-gcc \
                       bat \
                       brave \
@@ -101,8 +102,8 @@ pacman --noconfirm -S alacritty \
 
 # Install dictionary for sdcv
 wget http://download.huzheng.org/dict.org/stardict-dictd_www.dict.org_gcide-2.4.2.tar.bz2
-mkdir -p /usr/share/stardict/dic/
-tar -xjvf stardict-dictd_www.dict.org_gcide-2.4.2.tar.bz2 -C /usr/share/stardict/dic/
+sudo mkdir -p /usr/share/stardict/dic/
+sudo tar -xjvf stardict-dictd_www.dict.org_gcide-2.4.2.tar.bz2 -C /usr/share/stardict/dic/
 rm stardict-dictd_www.dict.org_gcide-2.4.2.tar.bz2
 
 # Setup rust
@@ -136,7 +137,7 @@ yay -S --noconfirm \
 if [ ! -d "$HOME/.emacs.d" ]; then
 	git clone https://github.com/syl20bnr/spacemacs -b develop $HOME/.emacs.d
 fi
-systemctl --user enable --now emacs
+sudo systemctl --user enable --now emacs
 
 # Setup ruby
-gem install bundler jekyll
+sudo gem install bundler jekyll
