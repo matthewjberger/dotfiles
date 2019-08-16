@@ -113,7 +113,6 @@ yay -S --noconfirm \
     brave \
     brogue \
     browsh \
-    dfhack-twbt-bin \
     fisher \
     fortune-mod-firefly \
     imgur-screenshot-git \
