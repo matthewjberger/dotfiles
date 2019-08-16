@@ -24,15 +24,15 @@ wget https://git.io/fjYxm -O bootstrap.sh && chmod +x bootstrap.sh
 then after booting and logging in, open `konsole` and run:
 
 ```
-wget https://git.io/fjYxO -O post-bootstrap.sh && chmod +x post-bootstrap.sh
-./post-bootstrap.sh
+wget https://git.io/fjYxO -O setup-environment.sh && chmod +x setup-environment.sh
+./setup-environment.sh
 ```
 
 and remember to update the root and user passwords.
 
 ### Choosing video drivers
 
-Uncomment the proper line for the desired graphics driver in `bootstrap.sh`:
+Uncomment the proper line for the desired graphics driver in `setup-environment.sh`:
 
 ```
 vulkan-radeon # default
