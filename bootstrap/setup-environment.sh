@@ -34,11 +34,9 @@ REFLECTOR
 sudo systemctl enable reflector.service
 
 # Install tools
-sudo pacman --noconfirm -S \
-                      alacritty \
+pacman --noconfirm -S alacritty \
                       arm-none-eabi-gcc \
                       bat \
-                      brave \
                       bspwm \
                       cataclysm-dda \
                       cataclysm-dda-tiles \
@@ -118,6 +116,7 @@ cargo install cargo-web rustsym ripgrep cargo-audit cargo-asm cargo-count xargo 
 # Install AUR packages
 yay -S --noconfirm \
     arch-wiki-man \
+    brave \
     brogue \
     browsh \
     dfhack-twbt-bin \
