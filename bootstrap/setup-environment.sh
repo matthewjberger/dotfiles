@@ -17,7 +17,7 @@ fi
 
 # Add reflector service to update the mirrorlist every time the computer boots
 echo "Adding reflector service..."
-sudo cat << REFLECTOR > /etc/systemd/system/reflector.service
+cat << REFLECTOR > reflector.service
 [Unit]
 Description=Pacman mirrorlist update
 Wants=network-online.target
@@ -30,8 +30,10 @@ ExecStart=/usr/bin/reflector --country US --protocol https --latest 30 --number 
 [Install]
 RequiredBy=multi-user.target
 REFLECTOR
+sudo mv reflector.service /etc/systemd/system/
 
-sudo systemctl enable reflector.service
+
+systemctl enable reflector.service
 
 # Install tools
 pacman --noconfirm -S alacritty \
