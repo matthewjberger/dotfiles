@@ -114,7 +114,6 @@ yay -S --noconfirm \
     brogue \
     browsh \
     dfhack-twbt-bin \
-    dwarftherapist \
     fisher \
     fortune-mod-firefly \
     imgur-screenshot-git \
