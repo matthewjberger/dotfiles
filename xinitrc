@@ -1,0 +1,1 @@
+source ~/.xinitrc.local

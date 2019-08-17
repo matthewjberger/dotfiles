@@ -87,6 +87,7 @@ sudo pacman --noconfirm -S alacritty \
                       tmux \
                       ttf-font-awesome \
                       ttf-hack \
+                      unzip \
                       vim \
                       vulkan-icd-loader \
                       vulkan-devel \
