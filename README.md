@@ -24,8 +24,8 @@ wget https://git.io/fjYxm -O bootstrap.sh && chmod +x bootstrap.sh
 then after booting and logging in, open `konsole` and run:
 
 ```
-wget https://git.io/fjYxO -O setup-environment.sh && chmod +x setup-environment.sh
-./setup-environment.sh
+wget https://git.io/fjYxO -O setup.sh && chmod +x setup.sh
+./setup.sh
 ```
 
 and remember to update the root and user passwords.
@@ -75,6 +75,10 @@ cd rtl8821ce
 make all
 make install
 modprobe 8821ce
+
+# OR use yay
+
+yay -S rtl8821ce-dkms-git
 ```
 
 #### Video Drivers

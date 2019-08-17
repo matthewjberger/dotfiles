@@ -10,6 +10,9 @@ user_password=password
 additional_kernel_parameters="nosplash"
 using_virtualbox=false
 
+# Reset the screen
+reset
+
 # Check for UEFI
 echo "Checking for UEFI..."
 efivar -l >/dev/null 2>&1
@@ -18,9 +21,6 @@ if [[ $? -ne 0 ]]; then
     exit 0
 fi
 echo "UEFI detected!"
-
-# Reset the screen
-reset
 
 # Update the system clock
 timedatectl set-ntp true
