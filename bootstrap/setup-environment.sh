@@ -34,6 +34,8 @@ sudo mv reflector.service /etc/systemd/system/
 
 sudo systemctl enable reflector.service
 
+sudo pacman-key --populate archlinux
+
 # Install tools
 sudo pacman --noconfirm -S alacritty \
                       arm-none-eabi-gcc \
