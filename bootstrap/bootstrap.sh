@@ -154,6 +154,7 @@ echo $user_name ALL=\(ALL\) NOPASSWD: ALL >> /etc/sudoers
 # Add to video and games group
 gpasswd -a $user_name video
 gpasswd -a $user_name games
+gpasswd -a $user_name systemd-journal
 
 # Do a full system upgrade
 pacman --noconfirm -Syyu
