@@ -98,6 +98,7 @@ sudo pacman --noconfirm -S alacritty \
                       wabt \
                       wpa_supplicant \
                       vulkan-radeon \
+                      xorg-xev \
                       # vulkan-intel \
                       # nvidia \
 
