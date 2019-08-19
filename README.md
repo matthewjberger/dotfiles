@@ -112,6 +112,13 @@ with any combination of acpi kernel parameters, so `xrandr` is used for controll
 The `brightness.sh` script increases or decreases the brightness incrementally using `xrandr`
 and is invoked by `sxhkd`.
 
+To prevent the backlight from failing to load (even though it still doesn't work),
+add the following kernel parameter:
+
+```
+acpi_backlight=vendor
+```
+
 ## Windows Bootstrapper
 
 Open a powershell terminal (Powershell 5+ required) and run (as admin):
