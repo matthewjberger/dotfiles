@@ -1,6 +1,9 @@
 # Prerequisites
 # Powershell 5+
 
+# Set HOME
+[environment]::setenvironmentvariable('HOME', "$env:USERPROFILE", 'USER')
+
 # Install scoop
 Invoke-Expression (new-object net.webclient).downloadstring('https://get.scoop.sh')
 Set-ExecutionPolicy RemoteSigned -scope CurrentUser
