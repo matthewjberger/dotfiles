@@ -62,6 +62,7 @@ sudo pacman --noconfirm -S alacritty \
                       kakoune \
                       libnotify \
                       neofetch \
+                      neovim \
                       net-tools \
                       nethack \
                       network-manager-applet \
@@ -70,6 +71,7 @@ sudo pacman --noconfirm -S alacritty \
                       openssh \
                       playerctl \
                       python \
+                      python-neovim \
                       python-pip \
                       python-pywal \
                       qemu \
@@ -94,7 +96,9 @@ sudo pacman --noconfirm -S alacritty \
                       vulkan-icd-loader \
                       vulkan-devel \
                       vim \
+                      xclip \
                       xorg-xinput \
+                      xsel \
                       wabt \
                       wpa_supplicant \
                       vulkan-radeon \
