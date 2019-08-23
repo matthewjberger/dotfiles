@@ -20,7 +20,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'airblade/vim-rooter'
 
 	" Fuzzy-Finding
-	Plug 'junegunn/fzf'
+	Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 	Plug 'junegunn/fzf.vim'
 
 	" Describe keybindings
