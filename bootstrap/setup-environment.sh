@@ -126,6 +126,7 @@ yay -S --noconfirm \
     brogue \
     browsh \
     fisher \
+    flatpak \
     fortune-mod-firefly \
     imgur-screenshot-git \
     nerd-fonts-hack \
@@ -144,3 +145,4 @@ sudo systemctl --user enable --now emacs
 
 # Setup ruby
 sudo gem install bundler jekyll
+
