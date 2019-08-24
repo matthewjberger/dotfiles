@@ -118,7 +118,7 @@ cargo install cargo-web rustsym ripgrep cargo-audit cargo-asm cargo-count xargo 
 # Install rust-analyzer
 git clone https://github.com/rust-analyzer/rust-analyzer $HOME/code/rust-analyzer
 cd $HOME/code/rust-analyzer
-cargo install-ra
+cargo install-ra --server
 
 # Install AUR packages
 yay -S --noconfirm \
