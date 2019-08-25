@@ -90,6 +90,7 @@ sudo pacman --noconfirm -S alacritty \
                       stone-soup \
                       sxhkd \
                       tmux \
+                      tree \
                       ttf-font-awesome \
                       ttf-hack \
                       unzip \
