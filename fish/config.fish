@@ -313,3 +313,4 @@ abbr setclip "xclip -selection c"
 abbr getclip "xclip -selection c -o"
 
 set -g fish_user_paths (ruby -e 'puts Gem.user_dir')/bin $fish_user_paths
+set -x PATH ~/.cargo/bin $PATH
