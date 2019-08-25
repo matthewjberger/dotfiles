@@ -159,8 +159,8 @@ set softtabstop=4
 " Number of columns text is indented with when reindenting using << or >>
 set shiftwidth=4
 
-" Highlight current line
-set cursorline
+" Don't highlight current line
+set nocursorline
 
 " Highlight matching [{()}]
 set showmatch
@@ -455,12 +455,11 @@ nnoremap <leader>gl :Commits<cr>
 set background=dark
 set t_Co=256
 
-" Set the colorscheme to molokai
-" let g:molokai_original = 1
-" colorscheme molokai
+colorscheme dracula
 
-colorscheme seoul256
-" colorscheme wal
+if has('unix')
+	colorscheme wal
+endif
 
 " Make comments italic
 "autocmd VimEnter * highlight Comment cterm=italic
