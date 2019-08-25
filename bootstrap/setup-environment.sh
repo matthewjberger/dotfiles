@@ -44,6 +44,7 @@ sudo pacman --noconfirm -S alacritty \
                       cataclysm-dda \
                       cataclysm-dda-tiles \
                       cmake \
+                      code \
                       compton \
                       conky \
                       dialog \
