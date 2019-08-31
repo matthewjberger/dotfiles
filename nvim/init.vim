@@ -45,6 +45,8 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'dracula/vim'
 	"Plug 'frankier/neovim-colors-solarized-truecolor-only'
 	Plug 'tomasr/molokai'
+	Plug 'morhetz/gruvbox'
+	Plug 'joshdick/onedark.vim'
 
 	" Show git diff in margins
 	Plug 'mhinz/vim-signify'
@@ -436,7 +438,7 @@ nnoremap <leader>gl :Commits<cr>
 set background=dark
 set t_Co=256
 
-colorscheme dracula
+colorscheme onedark
 
 if has('unix')
 	colorscheme wal
