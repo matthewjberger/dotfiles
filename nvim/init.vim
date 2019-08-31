@@ -1,15 +1,6 @@
 " Matthew Berger's vimrc
 " init.vim
 
-" Automatically install vim-plug
-if has('unix')
-	if empty(glob('~/.config/nvim/autoload/plug.vim'))
-		silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-			\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-		autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-	endif
-endif
-
 " Plugins ----------------------------------------------------------------- {{{
 call plug#begin('~/.config/nvim/plugged')
 
@@ -37,7 +28,8 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'dense-analysis/ale'
 
     " Status line
-	Plug 'liuchengxu/eleline.vim'
+	Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline-themes'
 
 	" Highlight yanked region
 	Plug 'machakann/vim-highlightedyank'
@@ -119,15 +111,6 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'timonv/vim-cargo'
 call plug#end()
 " }}}
-
-" Plugin Settings
-runtime plugins/ale.vim
-runtime plugins/deoplete.vim
-runtime plugins/fzf.vim
-runtime plugins/git.vim
-runtime plugins/nerdtree.vim
-runtime plugins/rooter.vim
-runtime plugins/sort_motion.vim
 
 " Options ----------------------------------------------------------------- {{{
 if has('unix')
@@ -264,7 +247,6 @@ if executable('rg')
 	set grepformat=%f:%l:%c:%m
 endif
 " }}}
-
 
 " Keybindings ------------------------------------------------------------- {{{
 " Set leader
@@ -449,7 +431,6 @@ nnoremap <leader>gp :Gpush<cr>
 nnoremap <leader>gl :Commits<cr>
 " }}}
 
-
 " Style ------------------------------------------------------------------- {{{
 " set termguicolors
 set background=dark
@@ -511,7 +492,6 @@ endif
 	" }}}
 " }}}
 
-
 " Plugin settings --------------------------------------------------------- {{{
 
 " Rooter
@@ -553,7 +533,13 @@ command! FZFR call s:find_root()
 let g:fzf_layout = { 'down': '~20%' }
 " }}}
 
-" Sort motion
+" Sort motion {{{
 " Make all sorts case insensitive
 let g:sort_motion_flags = "ui"
+" }}}
+
+" Airline {{{
+let g:airline_powerline_fonts = 1
+" }}}
+
 " }}}
