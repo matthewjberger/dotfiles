@@ -85,3 +85,6 @@ cargo install cargo-web rustsym ripgrep cargo-audit cargo-asm cargo-count xargo 
 git clone https://github.com/rust-analyzer/rust-analyzer
 cd rust-analyzer
 cargo install-ra
+
+# Install some npm tools
+npm install -g diff-so-fancy vmd nyaovim

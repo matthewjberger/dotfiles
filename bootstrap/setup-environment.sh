@@ -149,3 +149,5 @@ sudo systemctl --user enable --now emacs
 # Setup ruby
 sudo gem install bundler jekyll
 
+# Install npm tools
+sudo npm install -g diff-so-fancy vmd

@@ -73,8 +73,11 @@
     # Add and commit all changes
     comma     = !git add -A && git commit -m
 
+    # Add, commit, and push all changes
+    commap    = !git add -A && git commit -m && git push
+
     # Use diff so fancy for diffs
-    dsf = "!f() { [ -z \"$GIT_PREFIX\" ] || cd \"$GIT_PREFIX\" && git diff --color \"$@\" | diff-so-fancy | less --tabs=4 -RFX; }; f"
+    dsf       = "!f() { [ -z \"$GIT_PREFIX\" ] || cd \"$GIT_PREFIX\" && git diff --color \"$@\" | diff-so-fancy | less --tabs=4 -RFX; }; f"
 
     # Edit config with $EDITOR
     ec        = config --global -e
