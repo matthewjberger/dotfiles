@@ -77,7 +77,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object
 rustup default stable
 rustup update
 rustup update nightly
-rustup component add rls-preview rust-analysis rust-src clippy-preview rustfmt
+rustup component add rls rust-analysis rust-src clippy-preview rustfmt
 rustup target install wasm32-unknown-unknown
 cargo install cargo-web rustsym ripgrep cargo-audit cargo-asm cargo-count xargo cargo-watch cargo-edit
 
