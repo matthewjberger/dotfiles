@@ -59,6 +59,7 @@ sudo pacman --noconfirm -S alacritty \
                       fzf \
                       glslang \
                       hub \
+                      hyperfine \
                       irssi \
                       kakoune \
                       libnotify \

@@ -24,7 +24,6 @@ scoop install `
   bitwarden `
   brave `
   brogue `
-  busybox `
   cataclysm-dda `
   cataclysm-dda-tiles `
   ccat `
@@ -43,6 +42,7 @@ scoop install `
   hack-font `
   hack-nf `
   hub `
+  hyperfine `
   keypirinha `
   lf `
   meld `
@@ -83,7 +83,7 @@ cargo install cargo-web rustsym ripgrep cargo-audit cargo-asm cargo-count xargo 
 
 # Setup rust-analyzer
 git clone https://github.com/rust-analyzer/rust-analyzer
-cd rust-analyzer
+Set-Location rust-analyzer
 cargo install-ra
 
 # Install some npm tools
