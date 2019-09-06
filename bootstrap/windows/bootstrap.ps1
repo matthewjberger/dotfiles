@@ -42,6 +42,7 @@ scoop install `
   hack-font `
   hack-nf `
   hub `
+  hxd `
   hyperfine `
   keypirinha `
   lf `
