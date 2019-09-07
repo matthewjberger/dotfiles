@@ -106,6 +106,8 @@ sudo pacman --noconfirm -S alacritty \
                       wpa_supplicant \
                       vulkan-radeon \
                       xorg-xev \
+                      zathura \
+                      zathura-pdf-mupdf \
                       # vulkan-intel \
                       # nvidia \
 
