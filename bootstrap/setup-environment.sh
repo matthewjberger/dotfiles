@@ -145,7 +145,9 @@ yay -S --noconfirm \
 if [ ! -d "$HOME/.emacs.d" ]; then
 	git clone https://github.com/syl20bnr/spacemacs -b develop $HOME/.emacs.d
 fi
-sudo systemctl --user enable --now emacs
+
+systemctl enable --user emacs
+systemctl start --user emacs
 
 # Setup ruby
 sudo gem install bundler jekyll
