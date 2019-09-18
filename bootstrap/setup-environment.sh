@@ -37,79 +37,79 @@ sudo systemctl enable reflector.service
 sudo pacman-key --populate archlinux
 
 # Install tools
-sudo pacman --noconfirm -S alacritty \
-                      arm-none-eabi-gcc \
-                      bat \
-                      bspwm \
-                      cataclysm-dda \
-                      cataclysm-dda-tiles \
-                      cmake \
-                      code \
-                      compton \
-                      conky \
-                      dialog \
-                      dotnet-sdk \
-                      dunst \
-                      dwarffortress \
-                      emacs \
-                      evince \
-                      feh \
-                      fish \
-                      firefox \
-                      fzf \
-                      glslang \
-                      hub \
-                      hyperfine \
-                      irssi \
-                      kakoune \
-                      libnotify \
-                      neofetch \
-                      neovim \
-                      net-tools \
-                      nethack \
-                      network-manager-applet \
-                      nodejs \
-                      npm \
-                      openssh \
-                      playerctl \
-                      python \
-                      python-neovim \
-                      python-pip \
-                      python-pywal \
-                      qemu \
-                      qemu-arch-extra \
-                      ranger \
-                      redshift \
-                      reflector \
-                      ripgrep \
-                      rofi \
-                      rtv \
-                      ruby \
-                      rust-racer \
-                      rustup \
-                      strace \
-                      stone-soup \
-                      sxhkd \
-                      tmux \
-                      tree \
-                      ttf-font-awesome \
-                      ttf-hack \
-                      unzip \
-                      vim \
-                      vulkan-icd-loader \
-                      vulkan-devel \
-                      vim \
-                      xclip \
-                      xorg-xinput \
-                      xsel \
-                      wabt \
-                      wpa_supplicant \
-                      vulkan-radeon \
-                      xorg-xev \
-                      zathura \
-                      zathura-pdf-mupdf \
-                      # vulkan-intel \
-                      # nvidia \
+sudo pacman --noconfirm -S \
+	alacritty \
+	arm-none-eabi-gcc \
+	bat \
+	bspwm \
+	cataclysm-dda \
+	cataclysm-dda-tiles \
+	cmake \
+	code \
+	conky \
+	dialog \
+	dotnet-sdk \
+	dunst \
+	dwarffortress \
+	emacs \
+	evince \
+	feh \
+	fish \
+	firefox \
+	fzf \
+	glslang \
+	hub \
+	hyperfine \
+	irssi \
+	kakoune \
+	libnotify \
+	neofetch \
+	neovim \
+	net-tools \
+	nethack \
+	network-manager-applet \
+	nodejs \
+	npm \
+	openssh \
+	playerctl \
+	python \
+	python-neovim \
+	python-pip \
+	python-pywal \
+	qemu \
+	qemu-arch-extra \
+	ranger \
+	redshift \
+	reflector \
+	ripgrep \
+	rofi \
+	rtv \
+	ruby \
+	rust-racer \
+	rustup \
+	strace \
+	stone-soup \
+	sxhkd \
+	tmux \
+	tree \
+	ttf-font-awesome \
+	ttf-hack \
+	unzip \
+	vim \
+	vulkan-icd-loader \
+	vulkan-devel \
+	vim \
+	xclip \
+	xorg-xinput \
+	xsel \
+	wabt \
+	wpa_supplicant \
+	vulkan-radeon \
+	xorg-xev \
+	zathura \
+	zathura-pdf-mupdf \
+	# vulkan-intel \
+	# nvidia \
 
 # Setup rust
 rustup default stable
@@ -127,10 +127,11 @@ cargo install-ra --server
 
 # Install AUR packages
 yay -S --noconfirm \
-    arch-wiki-man \
+	arch-wiki-man \
     brave-bin \
     brogue \
     browsh \
+    compton-tryone-git \
     fisher \
     flatpak \
     fortune-mod-firefly \
