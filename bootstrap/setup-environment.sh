@@ -48,6 +48,7 @@ sudo pacman --noconfirm -S \
 	code \
 	conky \
 	dialog \
+	diff-so-fancy \
 	dotnet-sdk \
 	dunst \
 	dwarffortress \
@@ -156,4 +157,4 @@ systemctl start --user emacs
 sudo gem install bundler jekyll
 
 # Install npm tools
-sudo npm install -g diff-so-fancy vmd
+sudo npm install -g vmd
