@@ -5,6 +5,7 @@
     editor         = vim
     whitespace     = fix,-indent-with-non-tab,trailing-space,cr-at-eol
     excludesfile   = ~/.gitignore
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [sendemail]
     smtpencryption = tls
     smtpserver     = smtp.gmail.com
@@ -24,18 +25,20 @@
     # Only push branches one at a time
     default        = simple
 [color]
-    ui             = auto
+	ui = true
 [color "branch"]
     # Alter coloring by branch
     current        = yellow bold
     local          = green bold
     remote         = cyan bold
 [color "diff"]
-    meta           = yellow bold
-    frag           = magenta bold
+	meta = 11
+	frag = magenta bold
     ld             = red bold
-    new            = green bold
-    whitespace     = red reverse
+	new = green bold
+	whitespace = red reverse
+	commit = yellow bold
+	old = red bold
 [color "status"]
     added          = green bold
     changed        = yellow bold
@@ -137,10 +140,10 @@
     wipe      = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
 
 [color "diff-highlight"]
-    oldNormal = red bold
-    oldHighlight = red bold 52
-    newNormal = green bold
-    newHighlight = green bold 22
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
 [url "https://github.com/"]
 	insteadOf = git://github.com/
 [help]
