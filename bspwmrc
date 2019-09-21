@@ -20,8 +20,9 @@ bspc config pointer_modifier	mod1
 bspc config pointer_action1		move
 bspc config pointer_action2		resize_corner
 
-bspc rule -a feh floating=on manage=off
-bspc rule -a feh tiled=on manage=off
+bspc rule -a Alacritty state=fullscreen
+bspc rule -a Brave-browser desktop='^2'
+bspc rule -a Emacs state=tiled desktop='^3'
 
 # Plasma rules
 bspc rule -a plasmashell state=floating sticky=on border=off
