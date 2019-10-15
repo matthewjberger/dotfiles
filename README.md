@@ -4,6 +4,8 @@ These are my personal dotfiles for Arch Linux.
 
 ![Desktop GIF](gifs/Desktop.gif)
 
+> For demonstration of swapping out wallpapers and then regenerating a colorscheme in the gif I'm pressing a reload hotkey set in my `sxhkdrc`.
+
 ## Installation Instructions
 
 ```bash
