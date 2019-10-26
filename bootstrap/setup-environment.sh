@@ -93,6 +93,7 @@ sudo pacman --noconfirm -S \
 	sxhkd \
 	tmux \
 	tree \
+	ttf-cascadia-code \
 	ttf-font-awesome \
 	ttf-hack \
 	unzip \
