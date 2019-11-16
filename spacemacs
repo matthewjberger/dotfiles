@@ -60,7 +60,7 @@ This function should only modify configuration layer settings."
      python
      (rust :variables
            rust-backend 'lsp
-           rust-rls-cmd '("rustup" "run" "stable" "rls")
+           rust-rls-cmd '("ra_lsp_server")
            rust-format-on-save t)
      (shell :variables
             shell-default-height 30
