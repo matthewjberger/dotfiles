@@ -72,6 +72,7 @@ sudo pacman --noconfirm -S \
 	nodejs \
 	npm \
 	openssh \
+	powertop \
 	playerctl \
 	python \
 	python-neovim \
