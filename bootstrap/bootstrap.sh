@@ -7,7 +7,7 @@ host_name=odinsbeard
 root_password=toor
 user_name=odin
 user_password=password
-additional_kernel_parameters="nosplash"
+additional_kernel_parameters=""
 using_virtualbox=false
 
 # Reset the screen
