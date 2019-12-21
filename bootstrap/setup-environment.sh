@@ -64,6 +64,7 @@ sudo pacman --noconfirm -S \
 	irssi \
 	kakoune \
 	libnotify \
+	ncdu \
 	neofetch \
 	neovim \
 	net-tools \
