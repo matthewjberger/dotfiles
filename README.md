@@ -48,6 +48,10 @@ vulkan-radeon # default
 
 Right click on the desktop -> `Configure Desktop` -> `Tweaks` -> Disable `Show Desktop Toolbox`
 
+#### Disable Showing Desktop Icons
+
+Right click on the desktop -> `Configure Desktop` -> `Wallpaper` -> Change Layout to `Desktop`
+
 #### Disable Wallpaper Change Messages
 
 `Notifications` -> `Local System Message Service` -> Disable `Show Message in a Popup` and `Play a Sound`

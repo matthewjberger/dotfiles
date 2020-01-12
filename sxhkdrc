@@ -59,7 +59,7 @@ alt + backslash
     rofi -show ssh
 
 # program launcher
-alt + p
+alt + space
 	rofi -show run
 
 # window switcher
