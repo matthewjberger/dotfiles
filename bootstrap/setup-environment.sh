@@ -81,6 +81,7 @@ sudo pacman --noconfirm -S \
 	python-pywal \
 	qemu \
 	qemu-arch-extra \
+	qt5-tools \
 	ranger \
 	redshift \
 	reflector \
