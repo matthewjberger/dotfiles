@@ -142,6 +142,7 @@ yay -S --noconfirm \
     imgur-screenshot-git \
     nerd-fonts-hack \
     nerd-fonts-noto-sans-mono \
+    nodejs-vmd \
     polybar \
     pulseaudio-ctl \
     s \
@@ -159,5 +160,3 @@ systemctl start --user emacs
 # Setup ruby
 sudo gem install bundler jekyll
 
-# Install npm tools
-sudo npm install -g vmd
