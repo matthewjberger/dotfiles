@@ -482,6 +482,11 @@ before packages are loaded."
    gdb-show-main t
    )
 
+  (use-package editorconfig
+    :ensure t
+    :config
+    (editorconfig-mode 1))
+
   ;; Disable line wrapping on startup
   (add-hook 'hack-local-variables-hook (lambda()(setq truncate-lines t)))
 
