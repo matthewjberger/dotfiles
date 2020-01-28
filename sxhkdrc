@@ -2,6 +2,10 @@
 # wm independent hotkeys
 #
 
+# Launch krunner
+alt + p
+	krunner
+
 # Reload configuration
 alt + shift + r
     ~/.config/bspwm/bspwmrc
