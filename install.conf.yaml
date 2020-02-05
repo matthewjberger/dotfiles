@@ -16,8 +16,6 @@
     ~/.config/compton.conf: compton
     ~/.config/dunst/dunstrc: dunstrc
     ~/.config/fish: fish/
-    ~/.config/kglobalshortcutsrc: kglobalshortcutsrc
-    ~/.config/khotkeysrc: khotkeysrc
     ~/.config/polybar: polybar/
     ~/.config/plasma-workspace/env/set_window_manager.sh: set_window_manager.sh
     ~/.config/pulseaudio-ctl/config: pulseaudio

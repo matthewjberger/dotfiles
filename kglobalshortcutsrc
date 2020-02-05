@@ -4,10 +4,12 @@ switch-to-activity-1720d202-96cf-4d9b-a5b2-4c422d246ea1=none,none,Switch to acti
 switch-to-activity-1cfb8946-0ac1-4427-aee5-70683db106ba=none,none,Switch to activity "Default"
 switch-to-activity-43f41850-82db-45ce-a60b-037b16758fd8=none,none,Switch to activity "Default"
 switch-to-activity-69f97018-afbd-48e3-a9ee-7cc9c4c6666e=none,none,Switch to activity "Default"
+switch-to-activity-8256b751-5e0d-4317-a27a-9c8ed6bf3a13=none,none,Switch to activity "Default"
 switch-to-activity-cbd56248-1f34-4aff-a2fa-d51b6500ade1=none,none,Switch to activity "Default"
 switch-to-activity-f2c42599-1d48-4d62-b91f-bd336c99f891=none,none,Switch to activity "Default"
 
 [KDE Keyboard Layout Switcher]
+Switch keyboard layout to English (US)=none,none,Switch keyboard layout to English (US)
 Switch to Next Keyboard Layout=Ctrl+Alt+K,none,Switch to Next Keyboard Layout
 _k_friendly_name=KDE Daemon
 
@@ -43,6 +45,11 @@ mute=Volume Mute,Volume Mute,Mute
 _k_friendly_name=Run Command
 run command=Alt+Space\tAlt+F2\tSearch,Alt+Space,Run Command
 run command on clipboard contents=Alt+Shift+F2,Alt+Shift+F2,Run Command on clipboard contents
+
+[krunner.desktop]
+RunClipboard=,Alt+Shift+F2,Run command on clipboard contents
+_k_friendly_name=KRunner
+_launch=\t\t,Alt+Space\tAlt+F2\tSearch,KRunner
 
 [ksmserver]
 Halt Without Confirmation=Ctrl+Alt+Shift+PgDown,none,Halt Without Confirmation
@@ -200,6 +207,10 @@ view_actual_size=,Meta+0,Actual Size
 view_zoom_in=Meta+=,Meta+=,Zoom In
 view_zoom_out=Meta+-,Meta+-,Zoom Out
 
+[org.kde.dolphin.desktop]
+_k_friendly_name=Dolphin
+_launch=Meta+E,Meta+E,Dolphin
+
 [org_kde_powerdevil]
 Decrease Keyboard Brightness=Keyboard Brightness Down,Keyboard Brightness Down,Decrease Keyboard Brightness
 Decrease Screen Brightness=Monitor Brightness Down,Monitor Brightness Down,Decrease Screen Brightness
@@ -209,6 +220,7 @@ Increase Screen Brightness=Monitor Brightness Up,Monitor Brightness Up,Increase 
 PowerOff=Power Off,Power Off,Power Off
 Sleep=Sleep,Sleep,Suspend
 Toggle Keyboard Backlight=Keyboard Light On/Off,Keyboard Light On/Off,Toggle Keyboard Backlight
+Turn Off Screen=none,none,Turn Off Screen
 _k_friendly_name=Power Management
 
 [plasmashell]
