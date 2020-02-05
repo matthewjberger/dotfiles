@@ -24,6 +24,9 @@ call plug#begin('~/.config/nvim/plugged')
 	" Completions
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+	" Generic finder and completer. This requires cargo
+	Plug 'liuchengxu/vim-clap', {'do': ':Clap install-binary'}
+
 	" Linting
 	Plug 'dense-analysis/ale'
 
@@ -71,6 +74,9 @@ call plug#begin('~/.config/nvim/plugged')
 
 	" Navigate files easily
 	Plug 'lokaltog/vim-easymotion'
+
+	" An undo tree visualizer
+	Plug 'mbbill/undotree'
 
 	" Rust support
 	Plug 'rust-lang/rust.vim'
@@ -282,8 +288,8 @@ nnoremap <leader>u :UndotreeToggle<cr>
 nnoremap <leader>sl y:execute @@<cr>
 vnoremap <leader>sl ^vg_y:execute @@<cr>
 nnoremap <leader>qq :qa!<cr>
-nnoremap <leader>ft :NERDTreeToggle<cr>
-nnoremap <leader>fF :NERDTreeFind<cr>
+nnoremap <leader>pt :NERDTreeToggle<cr>
+nnoremap <leader>pT :NERDTreeFind<cr>
 nnoremap <leader>bd :bdelete<cr>
 nnoremap <leader>bb :Buffers<cr>
 nnoremap <leader>bn :bn<cr>
