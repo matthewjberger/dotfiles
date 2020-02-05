@@ -310,7 +310,7 @@ cat ~/.cache/wal/sequences &
 abbr e "emacsclient -nw"
 abbr setclip "xclip -selection c"
 abbr getclip "xclip -selection c -o"
-abbr clearpkgs "yay -R (yay -Qtdq)"
+abbr clearpkgs "yay -Rns (yay -Qtdq)"
 
 set -g fish_user_paths (ruby -e 'puts Gem.user_dir')/bin $fish_user_paths
 set -x PATH ~/.cargo/bin $PATH
