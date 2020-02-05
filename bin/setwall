@@ -1,6 +1,6 @@
 #!/bin/bash
 
-wallpaper_path=$(find $HOME/.dotfiles/wallpapers/ | fzf)
+wallpaper_path=$(find $HOME/.dotfiles/wallpapers/ -type f -name "*.jpg" | fzf --delimiter / --with-nth -1)
 wallpaper='"file://'$wallpaper_path'"'
 qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript '
     var allDesktops = desktops();
