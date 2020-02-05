@@ -142,7 +142,6 @@ yay -S --noconfirm \
     fortune-mod-firefly \
     imgur-screenshot-git \
     nerd-fonts-hack \
-    nerd-fonts-noto-sans-mono \
     nodejs-vmd \
     polybar \
     pulseaudio-ctl \
@@ -160,4 +159,30 @@ systemctl start --user emacs
 
 # Setup ruby
 sudo gem install bundler jekyll
+
+# Setup the blackarch unofficial user repository
+curl -O https://blackarch.org/strap.sh
+sha1sum strap.sh
+chmod +x strap.sh
+sudo ./strap.sh
+
+# BlackArch Notes
+#
+# To list all of the available tools, run
+# > sudo pacman -Sgg | grep blackarch | cut -d' ' -f2 | sort -u
+#
+# To install all of the tools, run
+# > sudo pacman -S blackarch
+#
+# To install a category of tools, run
+# > sudo pacman -S blackarch-<category>
+#
+# To see the blackarch categories, run
+# > sudo pacman -Sg | grep blackarch
+#
+# Note - it maybe be necessary to overwrite certain packages when installing blackarch tools. If
+# you experience "failed to commit transaction" errors, use the --needed and --overwrite switches
+# For example:
+# > sudo pacman -Syyu --needed blackarch --overwrite='*'
+
 
