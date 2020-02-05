@@ -314,3 +314,4 @@ abbr clearpkgs "yay -Rns (yay -Qtdq)"
 
 set -g fish_user_paths (ruby -e 'puts Gem.user_dir')/bin $fish_user_paths
 set -x PATH ~/.cargo/bin $PATH
+set -x PATH ~/.dotfiles/bin $PATH

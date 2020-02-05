@@ -229,7 +229,7 @@ tmux_conf_battery_status_discharging='↓'    # U+2193
 
 # clock style
 tmux_conf_theme_clock_colour='#00afff'  # light blue
-tmux_conf_theme_clock_style='24'
+tmux_conf_theme_clock_style='12'
 
 
 # -- clipboard -----------------------------------------------------------------
