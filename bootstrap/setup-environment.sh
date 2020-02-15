@@ -108,6 +108,7 @@ sudo pacman --noconfirm -S \
 	xclip \
 	xorg-xinput \
 	xsel \
+	w3m \
 	wabt \
 	wpa_supplicant \
 	vulkan-radeon \
@@ -124,7 +125,7 @@ rustup update nightly
 rustup component add rls rust-analysis rust-src clippy-preview rustfmt
 
 rustup target install wasm32-unknown-unknown
-cargo install cargo-web rustsym ripgrep cargo-audit cargo-asm cargo-count xargo cargo-watch cargo-edit
+cargo install cargo-web rustsym ripgrep cargo-audit cargo-asm cargo-count xargo cargo-watch cargo-edit cargo-expand
 
 # Install rust-analyzer
 git clone https://github.com/rust-analyzer/rust-analyzer $HOME/code/rust-analyzer
