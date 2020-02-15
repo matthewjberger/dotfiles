@@ -99,7 +99,7 @@
 
     # Has the same effect as deleting the entire repo and re-cloning
     # Except it doesn't delete files in the .gitignore, to be safe
-    nuke      = "!sh -c \"git checkout $1 && git stash -u && git fetch --all && git reset --hard origin/$1  && git clean -df && git submodule update --init --recursive\" -"
+    nuke      = "!sh -c \"git checkout $1 && git stash -u && git stash clear && git fetch --all && git reset --hard origin/$1  && git clean -df && git submodule update --init --recursive\" -"
 
     # Deletes a submodule
     rmsub     = "!sh -c \"git rm $1 && rm -rf .git/modules/$1\" -"
