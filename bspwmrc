@@ -71,3 +71,6 @@ pgrep -x redshift >/dev/null || (redshift &)
 
 xmodmap $HOME/.xmodmap
 
+if [ -f "${HOME}/.after_bspwm" ]; then
+	source "${HOME}/.after_bspwm"
+fi
