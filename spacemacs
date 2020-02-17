@@ -52,15 +52,14 @@ This function should only modify configuration layer settings."
      html
      ;; ivy
      javascript
-     lsp
+     (lsp :variables
+          lsp-rust-server 'rust-analyzer)
      markdown
      multiple-cursors
      neotree
      org
      python
      (rust :variables
-           rust-backend 'lsp
-           rust-rls-cmd '("ra_lsp_server")
            rust-format-on-save t)
      (shell :variables
             shell-default-height 30
