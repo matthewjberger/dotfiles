@@ -266,7 +266,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; If non-nil then the last auto saved layouts are resumed automatically upon
    ;; start. (default nil)
-   dotspacemacs-auto-resume-layouts nil
+   dotspacemacs-auto-resume-layouts t
 
    ;; If non-nil, auto-generate layout name when creating new layouts. Only has
    ;; effect when using the "jump to layout by number" commands. (default nil)
@@ -493,6 +493,49 @@ before packages are loaded."
   (add-hook 'prog-mode-hook (lambda()(define-key evil-normal-state-map "L" "$")))
 
   (setq multi-term-program "/bin/bash")
+
+  ;; (setq org-agenda-files (list "c:/Users/matth/Documents/sg/IDeckRefactor.org"))
+  
+  ;; Set default column view headings: Task Total-Time Time-Stamp
+  (setq org-columns-default-format "%50ITEM(Task) %10CLOCKSUM %16TIMESTAMP_IA")
+  
+  ;; Define the custom capture templates
+  (setq org-capture-templates
+        '(("t" "todo" entry (file org-default-notes-file)
+           "* TODO %?\n%u\n%a\n" :clock-in t :clock-resume t)
+          ("m" "Meeting" entry (file org-default-notes-file)
+           "* MEETING with %? :MEETING:\n%t" :clock-in t :clock-resume t)
+          ("d" "Diary" entry (file+datetree "~/org/diary.org")
+           "* %?\n%U\n" :clock-in t :clock-resume t)
+          ("i" "Idea" entry (file org-default-notes-file)
+           "* %? :IDEA: \n%t" :clock-in t :clock-resume t)
+          ("n" "Next Task" entry (file+headline org-default-notes-file "Tasks")
+           "** NEXT %? \nDEADLINE: %t") ))
+  (setq org-refile-targets (quote ((nil :maxlevel . 9)
+                                   (org-agenda-files :maxlevel . 9))))
+  (setq org-use-fast-todo-selection t)
+  (setq org-todo-keywords
+        '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
+          (sequence "WAITING(w@/!)" "INACTIVE(i)" "|" "CANCELLED(c@/!)" "MEETING")))
+  ;; Custom colors for the keywords
+  (setq org-todo-keyword-faces
+        '(("TODO" :foreground "red" :weight bold)
+          ("NEXT" :foreground "blue" :weight bold)
+          ("DONE" :foreground "forest green" :weight bold)
+          ("WAITING" :foreground "orange" :weight bold)
+          ("INACTIVE" :foreground "magenta" :weight bold)
+          ("CANCELLED" :foreground "forest green" :weight bold)
+          ("MEETING" :foreground "forest green" :weight bold)))
+  ;; Auto-update tags whenever the state is changed
+  (setq org-todo-state-tags-triggers
+        '(("CANCELLED" ("CANCELLED" . t))
+          ("WAITING" ("WAITING" . t))
+          ("INACTIVE" ("WAITING") ("INACTIVE" . t))
+          (done ("WAITING") ("INACTIVE"))
+          ("TODO" ("WAITING") ("CANCELLED") ("INACTIVE"))
+          ("NEXT" ("WAITING") ("CANCELLED") ("INACTIVE"))
+          ("DONE" ("WAITING") ("CANCELLED") ("INACTIVE"))))
+  (setq org-bullets-bullet-list '("■" "◆" "▲" "▶"))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
