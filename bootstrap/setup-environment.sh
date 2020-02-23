@@ -139,6 +139,7 @@ yay -S --noconfirm \
     brogue \
     browsh \
     compton-tryone-git \
+    downgrader-git \
     fisher \
     flatpak \
     fortune-mod-firefly \
