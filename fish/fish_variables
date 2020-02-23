@@ -7,6 +7,7 @@ SETUVAR _fish_abbr_cleanuppackages:yay\x20\x2dR\x20\x28yay\x20\x2dQtdq\x29
 SETUVAR _fish_abbr_clearpkgs:yay\x20\x2dRns\x20\x28yay\x20\x2dQtdq\x29
 SETUVAR _fish_abbr_def:/usr/bin/sdcv
 SETUVAR _fish_abbr_e:emacsclient\x20\x2dnw
+SETUVAR _fish_abbr_gc:git\x20comma
 SETUVAR _fish_abbr_getclip:xclip\x20\x2dselection\x20c\x20\x2do
 SETUVAR _fish_abbr_setclip:xclip\x20\x2dselection\x20c
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
