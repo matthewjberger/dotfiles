@@ -96,6 +96,7 @@ sudo pacman --noconfirm -S \
 	stone-soup \
 	sxhkd \
 	tmux \
+	tokei \
 	tree \
 	ttf-cascadia-code \
 	ttf-font-awesome \
@@ -188,4 +189,6 @@ sudo ./strap.sh
 # For example:
 # > sudo pacman -Syyu --needed blackarch --overwrite='*'
 
+# Package manager for blackarch from the blackarch repos
+yay -S --noconfirm blackman
 
