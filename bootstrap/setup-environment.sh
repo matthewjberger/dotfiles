@@ -135,7 +135,8 @@ cargo install-ra --server
 
 # Install AUR packages
 yay -S --noconfirm \
-	arch-wiki-man \
+    arch-wiki-man \
+    bottom-bin \
     brave-bin \
     brogue \
     browsh \
