@@ -112,12 +112,10 @@ sudo pacman --noconfirm -S \
 	w3m \
 	wabt \
 	wpa_supplicant \
-	vulkan-radeon \
+	vulkan-amdgpu-pro \
 	xorg-xev \
 	zathura \
 	zathura-pdf-mupdf \
-	# vulkan-intel \
-	# nvidia \
 
 # Setup rust
 rustup default stable
