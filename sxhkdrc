@@ -50,6 +50,10 @@ alt + w
 alt + e
 	emacsclient -nc
 
+# program launcher
+alt + p
+	rofi -show run
+
 # terminal emulator
 alt + Return
 	alacritty -e tmux new-session -A -s asgard 'wal -R -n -q; exec fish'
@@ -58,9 +62,9 @@ alt + Return
 alt + backslash
     rofi -show ssh
 
-# program launcher
+# plasma launcher
 alt + space
-	rofi -show run
+	krunner
 
 # window switcher
 alt + Tab
