@@ -3,10 +3,12 @@
 SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
 SETUVAR __fish_init_3_x:\x1d
+SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr_cleanuppackages:yay\x20\x2dR\x20\x28yay\x20\x2dQtdq\x29
 SETUVAR _fish_abbr_clearpkgs:yay\x20\x2dRns\x20\x28yay\x20\x2dQtdq\x29
 SETUVAR _fish_abbr_def:/usr/bin/sdcv
 SETUVAR _fish_abbr_e:emacsclient\x20\x2dnw
+SETUVAR _fish_abbr_fr:cd\x20\x28find\x20/home/odin/code\x20\x2dmaxdepth\x201\x20\x2dtype\x20d\x20\x7c\x20fzf\x29
 SETUVAR _fish_abbr_gc:git\x20comma
 SETUVAR _fish_abbr_getclip:xclip\x20\x2dselection\x20c\x20\x2do
 SETUVAR _fish_abbr_setclip:xclip\x20\x2dselection\x20c
@@ -21,6 +23,7 @@ SETUVAR fish_color_error:ff0000
 SETUVAR fish_color_escape:00a6b2
 SETUVAR fish_color_history_current:\x2d\x2dbold
 SETUVAR fish_color_host:normal
+SETUVAR fish_color_host_remote:yellow
 SETUVAR fish_color_match:\x2d\x2dbackground\x3dbrblue
 SETUVAR fish_color_normal:normal
 SETUVAR fish_color_operator:00a6b2
