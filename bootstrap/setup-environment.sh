@@ -105,6 +105,7 @@ sudo pacman --noconfirm -S \
 	vim \
 	vulkan-icd-loader \
 	vulkan-devel \
+	vulkan-radeon \
 	vim \
 	xclip \
 	xorg-xinput \
@@ -112,7 +113,6 @@ sudo pacman --noconfirm -S \
 	w3m \
 	wabt \
 	wpa_supplicant \
-	vulkan-amdgpu-pro \
 	xorg-xev \
 	zathura \
 	zathura-pdf-mupdf \
