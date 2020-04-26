@@ -313,6 +313,7 @@ abbr getclip "xclip -selection c -o"
 abbr clearpkgs "yay -Rns (yay -Qtdq)"
 abbr gc "git comma"
 abbr fr "cd (find $HOME/code -maxdepth 1 -type d | fzf)"
+abbr car "cargo run --release"
 
 set -g fish_user_paths (ruby -e 'puts Gem.user_dir')/bin $fish_user_paths
 set -x PATH ~/.cargo/bin $PATH
