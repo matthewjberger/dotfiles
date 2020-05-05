@@ -57,6 +57,7 @@ sudo pacman --noconfirm -S \
 	feh \
 	fish \
 	firefox \
+	frotz-ncurses \
 	fzf \
 	glslang \
 	hub \
