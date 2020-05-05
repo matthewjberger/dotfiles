@@ -117,6 +117,7 @@ sudo pacman --noconfirm -S \
 	xorg-xev \
 	zathura \
 	zathura-pdf-mupdf \
+	zip \
 
 # Setup rust
 rustup default stable
@@ -145,6 +146,7 @@ yay -S --noconfirm \
     flatpak \
     fortune-mod-firefly \
     frobtads \
+    gargoyle \
 	glulxe-term \
     imgur-screenshot-git \
     nerd-fonts-hack \
