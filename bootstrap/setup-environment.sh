@@ -144,6 +144,7 @@ yay -S --noconfirm \
     fisher \
     flatpak \
     fortune-mod-firefly \
+    frobtads \
 	glulxe-term \
     imgur-screenshot-git \
     nerd-fonts-hack \
