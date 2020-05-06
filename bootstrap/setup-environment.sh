@@ -128,11 +128,6 @@ rustup component add rls rust-analysis rust-src clippy-preview rustfmt
 rustup target install wasm32-unknown-unknown
 cargo install cargo-web rustsym ripgrep cargo-audit cargo-asm cargo-count xargo cargo-watch cargo-edit cargo-expand
 
-# Install rust-analyzer
-git clone https://github.com/rust-analyzer/rust-analyzer $HOME/code/rust-analyzer
-cd $HOME/code/rust-analyzer
-cargo install-ra --server
-
 # Install AUR packages
 yay -S --noconfirm \
     arch-wiki-man \
@@ -153,6 +148,7 @@ yay -S --noconfirm \
     nodejs-vmd \
     polybar \
     pulseaudio-ctl \
+    rust-analyzer \
     s \
     siji-git \
     tome4-git \
