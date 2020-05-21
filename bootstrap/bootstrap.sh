@@ -70,7 +70,7 @@ arch-chroot /mnt /bin/bash <<EOF
 
 # Set the time zone
 echo "Setting time zone..."
-ln -sf /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
+ln -sf /usr/share/zoneinfo/America/Denver /etc/localtime
 
 # Setup the hardware clock
 echo "Setting up the hardware clock..."
