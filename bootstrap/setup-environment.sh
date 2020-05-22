@@ -126,7 +126,7 @@ rustup update nightly
 rustup component add rls rust-analysis rust-src clippy-preview rustfmt
 
 rustup target install wasm32-unknown-unknown
-cargo install cargo-web rustsym ripgrep cargo-audit cargo-asm cargo-count xargo cargo-watch cargo-edit cargo-expand
+cargo install cargo-web rustsym ripgrep cargo-audit cargo-asm cargo-count xargo cargo-watch cargo-edit cargo-expand cargo-tree
 
 # Install AUR packages
 yay -S --noconfirm \
@@ -142,7 +142,7 @@ yay -S --noconfirm \
     fortune-mod-firefly \
     frobtads \
     gargoyle \
-	glulxe-term \
+    glulxe-term \
     imgur-screenshot-git \
     nerd-fonts-hack \
     nodejs-vmd \
