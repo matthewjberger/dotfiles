@@ -44,6 +44,7 @@ sudo pacman --noconfirm -S \
 	bspwm \
 	cataclysm-dda \
 	cataclysm-dda-tiles \
+	ccls \
 	cmake \
 	code \
 	conky \
