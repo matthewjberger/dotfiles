@@ -39,6 +39,7 @@ sudo pacman-key --populate archlinux
 # Install tools
 sudo pacman --noconfirm -S \
 	alacritty \
+	amdvlk \
 	arm-none-eabi-gcc \
 	bat \
 	bspwm \
@@ -107,7 +108,6 @@ sudo pacman --noconfirm -S \
 	vim \
 	vulkan-icd-loader \
 	vulkan-devel \
-	vulkan-radeon \
 	vim \
 	xclip \
 	xorg-xinput \
