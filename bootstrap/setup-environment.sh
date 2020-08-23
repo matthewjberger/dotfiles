@@ -142,6 +142,7 @@ yay -S --noconfirm \
     flatpak \
     fortune-mod-firefly \
     frobtads \
+    fvim \
     gargoyle \
     glulxe-term \
     imgur-screenshot-git \
