@@ -50,6 +50,10 @@ alt + w
 alt + e
 	emacsclient -nc
 
+# Launch fvim
+alt + v
+    fvim
+
 # program launcher
 alt + p
 	rofi -show run
