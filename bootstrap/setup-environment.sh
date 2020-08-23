@@ -112,6 +112,7 @@ sudo pacman --noconfirm -S \
 	xclip \
 	xorg-xinput \
 	xsel \
+	yarn \
 	w3m \
 	wabt \
 	wpa_supplicant \
@@ -165,6 +166,9 @@ systemctl start --user emacs
 
 # Setup ruby
 sudo gem install bundler jekyll
+
+# Neovim
+sudo yarn global add neovim
 
 # Setup the blackarch unofficial user repository
 curl -O https://blackarch.org/strap.sh
