@@ -44,11 +44,7 @@ XF86Audio{Raise,Lower}Volume
 
 # Launch web browser
 alt + w
-	brave
-
-# Launch emacs
-alt + e
-	emacsclient -nc
+	firefox
 
 # Launch fvim
 alt + v
