@@ -284,6 +284,14 @@ nnoremap <leader>pf :GFiles<cr>
 nnoremap <leader>pp :RG<cr>
 nnoremap <leader>ff :Files ~/code<cr>
 
+" Fugitive mappings
+nnoremap <leader>gd :Gvdiffsplit!<CR>
+nnoremap <leader>gm :Git mergetool<cr>
+nnoremap <leader>gb :Gblame<cr>
+nnoremap <leader>gw :Gwrite<cr>
+nnoremap <leader>gr :Gread<cr>
+nnoremap <leader>gg :Git<space>
+
 " Coc.nvim {{{
 
 " Applying codeAction to the selected region.
