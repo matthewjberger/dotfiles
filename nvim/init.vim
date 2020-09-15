@@ -52,8 +52,8 @@ call plug#begin('~/.config/nvim/plugged')
     " Display diff symbols
     Plug 'mhinz/vim-signify'
 
-	" FileTree navigator
-	Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggleVCS' }
+    " FileTree navigator
+    Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggleVCS' }
 
     " Automatically set cwd
     Plug 'airblade/vim-rooter'
