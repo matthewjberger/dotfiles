@@ -352,6 +352,11 @@ nnoremap <leader>fm :Marks<cr>
 nnoremap <leader>pr :History<cr>
 nnoremap <leader>hh :Helptags<cr>
 
+" Goyo with Limelight integration
+nnoremap <leader>Tz :Goyo<cr>
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
 " Coc.nvim {{{
 
 " Open Coc config 
