@@ -1,8 +1,25 @@
 " Matthew Berger's vimrc
 " init.vim
 
+" Install the following with :CocInstall plugin_name
+" coc-clangd
+" coc-json
+" coc-lists
+" coc-pairs
+" coc-rust-analyzer
+" coc-yank
+
+" Assign these coc settings with :CocConfig
+"{
+"    "rust-analyzer.checkOnSave.command": "clippy",
+"    "clangd.semanticHighlighting": true
+"}
+
 " Plugins ----------------------------------------------------------------- {{{
 call plug#begin('~/.config/nvim/plugged')
+
+    " Sensible defaults
+    Plug 'tpope/vim-sensible'
 
     " Requires nodejs and yarn
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
@@ -23,6 +40,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'junegunn/seoul256.vim'
     Plug 'joshdick/onedark.vim'
     Plug 'ajmwagar/vim-deus'
+    Plug 'embark-theme/vim', { 'as': 'embark' }
 
     " Status line
     Plug 'itchyny/lightline.vim'
@@ -36,14 +54,26 @@ call plug#begin('~/.config/nvim/plugged')
     " Change surrounding characters
     Plug 'tpope/vim-surround'
 
-    " Git
+    " Git support
     Plug 'tpope/vim-fugitive'
+
+    " Github support
+    Plug 'tpope/vim-rhubarb'
 
     " Allow repetition of plugin mappings
     Plug 'tpope/vim-repeat'
 
     " Commenting plugin
     Plug 'tpope/vim-commentary'
+
+    " Session management
+    Plug 'tpope/vim-obsession'
+
+    " Netrw enhancement
+    Plug 'tpope/vim-vinegar'
+
+    " Handy bracket mappings
+    Plug 'tpope/vim-unimpaired'
 
     " Fuzzy finder
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -52,8 +82,8 @@ call plug#begin('~/.config/nvim/plugged')
     " Display diff symbols
     Plug 'mhinz/vim-signify'
 
-    " FileTree navigator
-    Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggleVCS' }
+	" FileTree navigator
+	Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggleVCS' }
 
     " Automatically set cwd
     Plug 'airblade/vim-rooter'
@@ -61,10 +91,38 @@ call plug#begin('~/.config/nvim/plugged')
     " View LSP Symbols
     Plug 'liuchengxu/vista.vim'
 
+    " Semantic Highlighting for C/C++
+    Plug 'jackguo380/vim-lsp-cxx-highlight'
+
+    " Pulse the line after a search
+    Plug 'danilamihailov/beacon.nvim'
+
+    " Highlight word under the cursor
+    Plug 'RRethy/vim-illuminate'
+
+    " Distraction free writing
+    Plug 'junegunn/goyo.vim'
+
+    " Limelight
+    Plug 'junegunn/limelight.vim'
+
+    " CMake support
+    Plug 'cdelledonne/vim-cmake'
+
+    " Org-mode for vim
+    Plug 'jceb/vim-orgmode'
+
 call plug#end()
 " }}}
 
 " Options ----------------------------------------------------------------- {{{
+
+" Default to dark color groups for backgrounds
+set background=dark
+
+if exists('g:fvim_loaded')
+    colorscheme onedark
+endif
 
 " Show line numbers
 set number
@@ -89,9 +147,6 @@ set softtabstop=4
 
 " Number of columns text is indented with when reindenting using << or >>
 set shiftwidth=4
-
-" Don't highlight current line
-set nocursorline
 
 " Highlight matching [{()}]
 set showmatch
@@ -166,6 +221,9 @@ set formatoptions+=b " Auto-wrap in insert mode, and do not wrap old long lines
 " Always show the signcolumn
 set signcolumn=yes
 
+" Enable 24-bit RGB color in the TUI
+set termguicolors
+
 " }}}
 
 " Keybindings ------------------------------------------------------------- {{{
@@ -182,10 +240,9 @@ if exists('g:fvim_loaded')
     nnoremap <leader>TF :FVimToggleFullScreen<cr>
 endif
 
-nnoremap <leader>fed :vsplit $MYVIMRC<cr>
-nnoremap <leader>feD :e $MYVIMRC<cr>
+nnoremap <leader>fed :e $MYVIMRC<cr>
+nnoremap <leader>feD :vsplit $MYVIMRC<cr>
 nnoremap <leader>fer :source $MYVIMRC<cr>
-nnoremap <leader>feR :source $MYVIMRC<cr> :PlugClean<cr> :PlugInstall<cr>
 nnoremap <leader>fs :w<cr>
 nnoremap <leader>fS :wa<cr>
 nnoremap <leader>sl y:execute @@<cr>
@@ -201,7 +258,6 @@ nnoremap <leader>w/ :vsp<cr>
 nnoremap <leader>tr :set relativenumber!<cr>
 nnoremap <leader>tn :set number!<cr>
 nnoremap <leader>tw :set wrap!<cr>
-nnoremap <leader>hdw :help <C-r><C-w><cr>
 nnoremap <silent> <leader>sc :nohlsearch<cr>:call clearmatches()<cr>
 " Open a quickfix window for the last search
 nnoremap <silent> <leader>en :lopen<cr> :lnext<cr>
@@ -274,25 +330,32 @@ inoremap <expr> <cr> pumvisible() ? "\<C-Y>" : "\<cr>"
 " Jump to previously opened buffer
 nnoremap <leader><Tab> :b#<cr>
 
+" Vim-Plug
+nnoremap <leader>vpi :PlugInstall<cr>
+nnoremap <leader>vpu :PlugUpdate<cr>
+nnoremap <leader>vpU :PlugUpgrade<cr>
+nnoremap <leader>vpc :PlugClean!<cr>
+nnoremap <leader>vps :PlugStatus<cr>
+
 " Fzf
 nnoremap <leader>? :Maps<cr>
 nnoremap <leader>ss :BLines<cr>
 nnoremap <leader>sS :Lines<cr>
 nnoremap <leader>Ts :Colors<cr>
-nnoremap <leader>/ :RG<space>
 nnoremap <leader>pf :GFiles<cr>
+nnoremap <leader>pF :Files<cr>
 nnoremap <leader>pp :RG<cr>
+nnoremap <leader>tt :RG TODO<cr>
+nnoremap <leader>tf :RG FIXME<cr>
 nnoremap <leader>ff :Files ~/code<cr>
-
-" Fugitive mappings
-nnoremap <leader>gd :Gvdiffsplit!<CR>
-nnoremap <leader>gm :Git mergetool<cr>
-nnoremap <leader>gb :Gblame<cr>
-nnoremap <leader>gw :Gwrite<cr>
-nnoremap <leader>gr :Gread<cr>
-nnoremap <leader>gg :Git<space>
+nnoremap <leader>fm :Marks<cr>
+nnoremap <leader>pr :History<cr>
+nnoremap <leader>hh :Helptags<cr>
 
 " Coc.nvim {{{
+
+" Open Coc config 
+nnoremap <leader>CC :CocConfig<cr>
 
 " Applying codeAction to the selected region.
 " Example: `<leader>aap` for current paragraph
@@ -400,7 +463,13 @@ autocmd FileType rust nnoremap ,cx :Crun --release<cr>
 " }}}
 
 " Settings ---------------------------------------------------------------- {{{
-colorscheme deus
+
+if exists('g:fvim_loaded')
+    nnoremap <leader>TF :FVimToggleFullScreen<cr>
+endif
+
+" C++ format on save
+autocmd BufWritePost *.cpp :call CocAction('format') 
 
 " Use fold markers when editing vim files
 au BufNewFile,BufRead *.vim set foldmethod=marker
@@ -417,6 +486,13 @@ if executable('rg')
     set grepprg=rg\ --no-heading\ --vimgrep
     set grepformat=%f:%l:%c:%m
 endif
+
+augroup MyCursorLineGroup
+    autocmd!
+    au WinEnter * setlocal cursorline
+    au WinLeave * setlocal nocursorline
+augroup end
+
 " }}}
 
 " Plugins ----------------------------------------------------------------- {{{
@@ -452,4 +528,5 @@ command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
+
 " }}}
