@@ -1,4 +1,8 @@
 {
-	"rust-analyzer.checkOnSave.command": "clippy",
-	"clangd.semanticHighlighting": true
+    "rust-analyzer.checkOnSave.command": "clippy",
+    "clangd.semanticHighlighting": true,
+    "coc.preferences.extensionUpdateCheck": "daily",
+    "codeLens.enable": true,
+    "diagnostic.virtualText": true
 }
+
