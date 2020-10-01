@@ -1,20 +1,6 @@
 " Matthew Berger's vimrc
 " init.vim
 
-" Install the following with :CocInstall plugin_name
-" coc-clangd
-" coc-json
-" coc-lists
-" coc-pairs
-" coc-rust-analyzer
-" coc-yank
-
-" Assign these coc settings with :CocConfig
-"{
-"    "rust-analyzer.checkOnSave.command": "clippy",
-"    "clangd.semanticHighlighting": true
-"}
-
 " Plugins ----------------------------------------------------------------- {{{
 call plug#begin('~/.config/nvim/plugged')
 
@@ -22,7 +8,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'tpope/vim-sensible'
 
     " Requires nodejs and yarn
-    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install', 'for': 'markdown'  }
 
     " Support for various languages
     Plug 'sheerun/vim-polyglot'
@@ -41,6 +27,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'joshdick/onedark.vim'
     Plug 'ajmwagar/vim-deus'
     Plug 'embark-theme/vim', { 'as': 'embark' }
+    Plug 'morhetz/gruvbox'
 
     " Status line
     Plug 'itchyny/lightline.vim'
@@ -85,6 +72,12 @@ call plug#begin('~/.config/nvim/plugged')
 	" FileTree navigator
 	Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggleVCS' }
 
+        " Nerdtree plugin to show git status
+        Plug 'Xuyuanp/nerdtree-git-plugin'
+
+        " Add developer icons
+        Plug 'ryanoasis/vim-devicons'
+
     " Automatically set cwd
     Plug 'airblade/vim-rooter'
 
@@ -111,6 +104,21 @@ call plug#begin('~/.config/nvim/plugged')
 
     " Org-mode for vim
     Plug 'jceb/vim-orgmode'
+
+    " Undo tree
+    Plug 'sjl/gundo.vim'
+
+    " Print documents in the echo area
+    Plug 'Shougo/echodoc.vim'
+
+    " Add common snippets
+    Plug 'honza/vim-snippets'
+
+    " Test Runner
+    Plug 'vim-test/vim-test'
+
+    " Disable the search highlighting after a search is over
+    Plug 'romainl/vim-cool'
 
 call plug#end()
 " }}}
@@ -465,6 +473,19 @@ nnoremap <leader>pt :NERDTreeToggleVCS<cr>
 autocmd FileType rust nnoremap ,cl :Cbuild --release<cr>
 autocmd FileType rust nnoremap ,cx :Crun --release<cr>
 
+" Undo tree
+nnoremap <leader>u :GundoToggle<cr>
+
+" vim-test
+nnoremap <leader>vtn :TestNearest<cr>
+nnoremap <leader>vtf :TestFile<cr>
+nnoremap <leader>vts :TestSuite<cr>
+nnoremap <leader>vtl :TestLast<cr>
+nnoremap <leader>vtv :TestVisit<cr>
+
+" Markdown preview
+nnoremap <leader>mp :MarkdownToggle<cr>
+
 " }}}
 
 " Settings ---------------------------------------------------------------- {{{
@@ -472,9 +493,6 @@ autocmd FileType rust nnoremap ,cx :Crun --release<cr>
 if exists('g:fvim_loaded')
     nnoremap <leader>TF :FVimToggleFullScreen<cr>
 endif
-
-" C++ format on save
-autocmd BufWritePost *.cpp :call CocAction('format') 
 
 " Use fold markers when editing vim files
 au BufNewFile,BufRead *.vim set foldmethod=marker
@@ -532,6 +550,25 @@ endfunction
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
 let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+
+let g:coc_global_extensions = [
+    \ 'coc-clangd',
+    \ 'coc-git',
+    \ 'coc-json',
+    \ 'coc-lists',
+    \ 'coc-markdownlint',
+    \ 'coc-pairs',
+    \ 'coc-rust-analyzer',
+    \ 'coc-snippets',
+    \ 'coc-yank',
+    \ ]
+
+let g:gundo_prefer_python3 = 1
+
+let g:NERDTreeGitStatusUseNerdFonts = 1
+
+let g:mkdp_auto_close = 1
 
 " }}}
