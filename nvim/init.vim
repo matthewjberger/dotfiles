@@ -33,7 +33,8 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'itchyny/lightline.vim'
 
     " Smooth scrolling
-    Plug 'yonchu/accelerated-smooth-scroll'
+    " Plug 'yonchu/accelerated-smooth-scroll'
+    Plug 'yuttie/comfortable-motion.vim'
 
     " Navigate files easily
     Plug 'lokaltog/vim-easymotion'
