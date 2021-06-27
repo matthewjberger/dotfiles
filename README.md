@@ -19,14 +19,14 @@ sudo ./install
 `bootstrap.sh` is a script for setting up this environment from the Arch ISO command line.
 
 ```
-wget https://git.io/fjYxm -O bootstrap.sh && chmod +x bootstrap.sh
+curl https://git.io/fjYxm -o bootstrap.sh && chmod +x bootstrap.sh
 ./bootstrap.sh 
 ```
 
 then after booting and logging in, open `konsole` and run:
 
 ```
-wget https://git.io/fjYxO -O setup.sh && chmod +x setup.sh
+curl https://git.io/fjYxO -o setup.sh && chmod +x setup.sh
 ./setup.sh
 ```
 
