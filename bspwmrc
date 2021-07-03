@@ -61,8 +61,8 @@ $HOME/.dotfiles/polybar/launch.sh
 killall sxhkd
 sxhkd &
 
-killall compton
-compton &
+killall picom
+picom &
 
 killall nm-applet
 (nm-applet &)
