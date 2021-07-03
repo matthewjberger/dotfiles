@@ -59,7 +59,7 @@ reflector -l 200 -n 20 -p https --sort rate --save /etc/pacman.d/mirrorlist
 
 # Install the base packages
 echo "Installing base packages..."
-pacstrap /mnt base base-devel plasma dolphin konsole refind-efi xorg-server xorg-xinit git pkgfile sddm kdeconnect wget linux linux-firmware
+pacstrap /mnt base base-devel plasma dolphin konsole refind xorg-server xorg-xinit git pkgfile sddm kdeconnect wget linux linux-firmware
 
 # Generate the fstab file
 echo "Generating fstab..."
