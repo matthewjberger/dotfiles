@@ -24,6 +24,7 @@
     ~/.config/ranger/rc.conf: ranger
     ~/.config/rofi/config: rofi
     ~/.config/sxhkd/sxhkdrc: sxhkdrc
+    ~/.gnugpg/gpg.conf: gpg
     ~/.vimrc: vimrc
     ~/.tmux.conf: tmux/.tmux.conf
     ~/.tmux.conf.local: tmux.conf.local
