@@ -63,6 +63,9 @@
 
     # Modify previous commit
     amend     = commit -a --amend
+    
+    # Apply .gitignore to committed files
+    apply-gitignore = !git ls-files -ci --exclude-standard -z | xargs -0 git rm --cached
 
     # Checkout file
     co        = checkout
