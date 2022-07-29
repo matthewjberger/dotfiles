@@ -6,6 +6,8 @@
     whitespace     = fix,-indent-with-non-tab,trailing-space,cr-at-eol
     excludesfile   = ~/.gitignore
 	pager = diff-so-fancy | less --tabs=4 -RFX
+[fetch]
+  prune = true
 [sendemail]
     smtpencryption = tls
     smtpserver     = smtp.gmail.com
