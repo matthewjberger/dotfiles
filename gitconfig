@@ -26,6 +26,7 @@
 [push]
     # Only push branches one at a time
     default        = simple
+	autoSetupRemote = true
 [color]
 	ui = true
 [color "branch"]
